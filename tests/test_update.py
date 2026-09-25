@@ -71,6 +71,15 @@ class SelectionPublishingTests(unittest.TestCase):
   items=[self.channel(i) for i in range(20)]+[self.channel(99,True)]
   got=u.select_channels(items,2,[items[3].url],'2026-09-25')
   self.assertEqual({x.url for x in got},{items[3].url,items[-1].url})
+ def test_feed_outage_rechecks_old_tv_only(self):
+  tv=dataclasses.asdict(self.channel(1));tv['sources']=['feed']
+  camera={**tv,'name':'四川峨眉山云海日出','url':'https://tv.example.com/camera.m3u8','group':'四川'}
+  got=u.restore_previous([], [tv,camera],{'feed'})
+  self.assertEqual([c.url for c in got],[tv['url']])
+  self.assertFalse(hasattr(got[0],'ok'))
+ def test_disabled_source_not_restored(self):
+  tv=dataclasses.asdict(self.channel(1));tv['sources']=['disabled']
+  self.assertEqual(u.restore_previous([], [tv],{'active'}),[])
  def test_rotation(self):
   items=[self.channel(i) for i in range(40)]
   self.assertNotEqual([c.url for c in u.select_channels(items,5,day='A')],[c.url for c in u.select_channels(items,5,day='B')])

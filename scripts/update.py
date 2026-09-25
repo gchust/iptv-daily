@@ -152,6 +152,18 @@ def collect(config,root=ROOT):
  return list(unique.values()),sources
 
 
+
+def restore_previous(items,rows,active_sources):
+ result=list(items);present={c.url for c in result}
+ for row in rows:
+  if row['url'] in present or row.get('custom') or not any(s in active_sources for s in row.get('sources',[])) or not safe_url(row['url']):continue
+  c=Channel(**{f.name:row[f.name] for f in dataclasses.fields(Channel)})
+  c.name=clean_name(c.name);c.region,c.kind=classify(c.name,c.group)
+  if c.kind in ('广播','慢直播'):continue
+  result.append(c);present.add(c.url)
+ return result
+
+
 def select_channels(items,limit,previous=(),day=None):
  """Keep custom/last-good first; rotate discoveries and fairly spread by name."""
  previous=set(previous);day=day or dt.datetime.now(dt.timezone.utc).date().isoformat()
@@ -353,10 +365,7 @@ def main(argv=None):
   # A temporary feed outage must not prevent rechecking its last known good URLs.
   # Explicitly removed custom URLs / disabled feeds are not resurrected.
   active_sources={s['url'] for s in sources if s.get('enabled',True)} if not args.custom_only else set()
-  present={c.url for c in items}
-  for row in previous_rows:
-   if row['url'] not in present and not row.get('custom') and any(s in active_sources for s in row.get('sources',[])) and safe_url(row['url']):
-    items.append(Channel(**{f.name:row[f.name] for f in dataclasses.fields(Channel)}));present.add(row['url'])
+  items=restore_previous(items,previous_rows,active_sources)
  selected=select_channels(items,settings['max_candidates'],previous)
  print(json.dumps({'stage':'collected','candidates':len(items),'selected':len(selected),'sources':source_results,'ocr':ocr},ensure_ascii=False),flush=True)
  results=[];host_locks={}
