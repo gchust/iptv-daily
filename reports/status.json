@@ -1,19 +1,31 @@
 {
   "state": "ok",
-  "last_attempt_at": "2026-09-25T14:03:22+00:00",
-  "last_success_at": "2026-09-25T14:03:22+00:00",
+  "last_attempt_at": "2026-09-25T14:45:28+00:00",
+  "last_success_at": "2026-09-25T14:45:28+00:00",
   "sample_seconds": 20,
   "ocr_enabled": true,
-  "candidate_urls": 3334,
-  "tested_urls": 60,
-  "passed_urls": 37,
-  "unique_channels": 36,
-  "regional_channels": 27,
+  "candidate_urls": 22427,
+  "tested_urls": 1600,
+  "passed_urls": 160,
+  "unique_channels": 156,
+  "regional_channels": 119,
   "failed_sources": [],
   "runner": "GitHub Actions",
-  "run_url": "https://github.com/gchust/iptv-daily/actions/runs/36144544349",
-  "duration_seconds": 173.1,
+  "run_url": "https://github.com/gchust/iptv-daily/actions/runs/36147307360",
+  "duration_seconds": 1123.3,
   "publication_note": "Only URLs passing this run are published.",
-  "eligibility_filtered_at": "2026-09-25T14:06:24+00:00",
-  "eligibility_filter_note": "Local review removed one scenic webcam after cloud media verification; media verification timestamps are unchanged."
+  "requested_channels": [
+    {
+      "name": "湖北经视",
+      "tested_urls": 39,
+      "passed_urls": 1,
+      "failure_reasons": {
+        "invalid_or_unreachable_hls": 32,
+        "decode_failed": 6
+      }
+    }
+  ],
+  "hubei_channels": 16,
+  "wuhan_channels": 4,
+  "upstream_count": 20
 }
