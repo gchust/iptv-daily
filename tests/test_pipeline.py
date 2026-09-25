@@ -30,6 +30,18 @@ class ExpandedInputTests(unittest.TestCase):
   got=u.select_channels([c],100,[c.url],priority_channels=['湖北经视'],priority_regions=['湖北'])
   self.assertEqual(got,[c])
 
+class ContentReviewTests(unittest.TestCase):
+ def test_uncertain_identity_does_not_publish_even_when_media_passes(self):
+  results=[{'url':'https://example.com/hbjs','ok':True,'name':'湖北经视','reason':'passed'}]
+  got=u.apply_content_reviews(results,[{'url':results[0]['url'],'decision':'hold','reason':'identity_unconfirmed'}])
+  self.assertFalse(got[0]['ok']);self.assertTrue(got[0]['media_ok'])
+  self.assertEqual(u.best_channels(got),[])
+  self.assertTrue(results[0]['ok'])
+ def test_unrelated_channel_not_changed(self):
+  row={'url':'https://example.com/another','ok':True}
+  self.assertEqual(u.apply_content_reviews([row],[{'url':'https://example.com/held','decision':'hold','reason':'identity_unconfirmed'}]),[row])
+
+
 class SchedulerTests(unittest.TestCase):
  def test_host_limit_does_not_starve_unrelated_hosts(self):
   lock=threading.Lock();counts=Counter();peak=Counter();order=[]

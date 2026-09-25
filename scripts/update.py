@@ -367,7 +367,14 @@ def atomic_write(path,text):
 def json_write(path,obj):atomic_write(path,json.dumps(obj,ensure_ascii=False,indent=2,allow_nan=False)+'\n')
 
 
+def apply_content_reviews(results,reviews):
+ held={r['url']:r for r in reviews if r.get('decision')=='hold'}
+ return [{**r,'media_ok':r['ok'],'ok':False,'reason':held[r['url']]['reason'],'content_review':held[r['url']]} if r['url'] in held else r for r in results]
+
+
 def publish(root,results,sources,total,selected,settings,started):
+ review_file=root/'config/content-reviews.json'
+ if review_file.exists():results=apply_content_reviews(results,json.loads(review_file.read_text()))
  checked=utcnow();rows=best_channels(results)
  reports=root/'reports';playlists=root/'playlists';old={}
  if (reports/'status.json').exists():old=json.loads((reports/'status.json').read_text())

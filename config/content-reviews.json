@@ -1,0 +1,10 @@
+[
+  {
+    "url": "http://207.56.13.146:81/daili/hbjs.m3u8",
+    "channel": "湖北经视",
+    "decision": "hold",
+    "reason": "identity_unconfirmed",
+    "reviewed_at": "2026-09-25T14:29:00+00:00",
+    "note": "A 20-second media sample and a 180-second follow-up decoded successfully. Four follow-up frames showed medicine advertisements with no broadcaster logo; the advertised channel identity could not be independently confirmed. Keep this candidate out of published TV playlists until reviewed."
+  }
+]
