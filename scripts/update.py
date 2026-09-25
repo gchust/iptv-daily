@@ -2,7 +2,7 @@
 """Collect public TV candidates, decode real media, publish only current passes."""
 from __future__ import annotations
 import argparse, concurrent.futures, dataclasses, datetime as dt, hashlib, ipaddress
-import json, math, os, re, shutil, subprocess, sys, tempfile, time, unicodedata
+import json, math, os, re, shutil, subprocess, sys, tempfile, time, unicodedata, threading
 from collections import Counter, defaultdict
 from pathlib import Path
 from urllib.parse import urlsplit, urljoin
@@ -10,6 +10,8 @@ from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
 UA = 'Mozilla/5.0 IPTV-Daily/1.0'
+OCR_SLOTS = threading.BoundedSemaphore(2)
+EXCLUDED_KINDS = {'广播','慢直播','影视轮播'}
 REGIONS = {
  '湖北':['湖北','武汉','江夏','宜昌','长阳','荆州','十堰','咸宁','襄阳','荆门','仙桃','潜江','随州','恩施','黄石','黄冈','麻城','保康','通山','远安','汉川','蕲春'],
  '广东':['广东','广州','深圳','佛山','东莞','珠海','潮州','揭阳','汕头','江门','惠州','肇庆','湛江','茂名','中山','梅州','清远','韶关','河源','阳江','汕尾','云浮'],
@@ -87,6 +89,7 @@ def classify(name,group):
  region=next((p for p,words in REGIONS.items() if any(name.upper().startswith(w.upper()) for w in words)),None)
  if not region:region=next((p for p in REGIONS if p in group), '其他')
  if any(w in name+' '+group for w in ['慢直播','风景','景区','日出','云海','草甸','远眺','观景','熊猫直播','峨眉山','九华山','玉女峰','雪山']):return region,'慢直播'
+ if any(w in name+' '+group for w in ['轮播','强森电影','林正英','周星驰','钟馗传说','成龙电影','李连杰电影','周润发电影','刘德华电影']):return region,'影视轮播'
  if re.search(r'CCTV|央视|中国教育|^CETV|^CGTN',name,re.I):return '全国','央视/教育'
  if any(w in name for w in ['广播','电台','之声']) or re.search(r'\b(?:FM|RADIO)\b',name,re.I):return region,'广播'
  if '卫视' in name:return region,'卫视'
@@ -117,7 +120,7 @@ def parse_playlist(text,source,custom=False):
    n=clean_name(name)
    if not n or not safe_url(u):continue
    region,kind=classify(n,g or name)
-   if kind in ('广播','慢直播'):continue
+   if kind in EXCLUDED_KINDS:continue
    result.append(Channel(n,u,g,region,kind,[source],custom))
  return result
 
@@ -159,7 +162,7 @@ def restore_previous(items,rows,active_sources):
   if row['url'] in present or row.get('custom') or not any(s in active_sources for s in row.get('sources',[])) or not safe_url(row['url']):continue
   c=Channel(**{f.name:row[f.name] for f in dataclasses.fields(Channel)})
   c.name=clean_name(c.name);c.region,c.kind=classify(c.name,c.group)
-  if c.kind in ('广播','慢直播'):continue
+  if c.kind in EXCLUDED_KINDS:continue
   result.append(c);present.add(c.url)
  return result
 
@@ -236,6 +239,21 @@ def inspect_hls(url,depth=0):
  return {'url':url,'signature':sequence+'|'+segments[-1]}
 
 
+
+def check_notice(frame,env):
+ started=time.monotonic()
+ try:
+  with OCR_SLOTS:
+   p=subprocess.run(['tesseract',str(frame),'stdout','-l','chi_sim+eng','--psm','11'],capture_output=True,timeout=20,env={**env,'OMP_THREAD_LIMIT':'1','OMP_NUM_THREADS':'1'})
+  text=re.sub(r'\s+','',p.stdout.decode(errors='replace')).lower()
+  blocked=next((s for s in BLOCK_TEXT if s in text),None)
+  result={'ocr_checked':p.returncode==0,'ocr_elapsed_seconds':round(time.monotonic()-started,2)}
+  if p.returncode:result.update(ok=False,reason='ocr_failed')
+  elif blocked:result.update(ok=False,reason='unavailable_notice',notice=blocked)
+  return result
+ except subprocess.TimeoutExpired:return {'ok':False,'reason':'ocr_timeout','ocr_elapsed_seconds':round(time.monotonic()-started,2)}
+
+
 def probe(channel,settings,ffmpeg,ocr=False):
  started=time.monotonic();result=dataclasses.asdict(channel);result['checked_at']=utcnow()
  env=os.environ.copy()
@@ -266,13 +284,8 @@ def probe(channel,settings,ffmpeg,ocr=False):
    if result['ok'] and ocr:
     if not frame.exists():result.update(ok=False,reason='ocr_frame_missing')
     else:
-     q=subprocess.run(['tesseract',str(frame),'stdout','-l','chi_sim+eng','--psm','11'],capture_output=True,timeout=12)
-     text=re.sub(r'\s+','',q.stdout.decode(errors='replace')).lower()
-     blocked=next((s for s in BLOCK_TEXT if s in text),None)
-     if q.returncode:result.update(ok=False,reason='ocr_failed')
-     elif blocked:result.update(ok=False,reason='unavailable_notice',notice=blocked)
-     else:result['ocr_checked']=True
- except subprocess.TimeoutExpired:result.update(ok=False,reason='timeout')
+     result.update(check_notice(frame,env))
+ except subprocess.TimeoutExpired:result.update(ok=False,reason='media_timeout')
  except OSError as e:result.update(ok=False,reason='probe_error',error=str(e)[:200])
  result['elapsed_seconds']=round(time.monotonic()-started,2)
  return result
@@ -374,7 +387,7 @@ def main(argv=None):
  def check(c):
   with host_locks[urlsplit(c.url).hostname]:
    r=probe(c,settings,ffmpeg,ocr)
-   if not r['ok'] and r['reason'] in ('timeout','decode_failed','media_errors','incomplete_sample','invalid_or_unreachable_hls','hls_recheck_failed','hls_not_updating') and settings.get('retry_failures',1):
+   if not r['ok'] and r['reason'] in ('timeout','media_timeout','decode_failed','media_errors','incomplete_sample','invalid_or_unreachable_hls','hls_recheck_failed','hls_not_updating') and settings.get('retry_failures',1):
     first=r['reason'];r=probe(c,settings,ffmpeg,ocr);r['retry_after']=first
    return r
  with concurrent.futures.ThreadPoolExecutor(max_workers=settings['workers']) as pool:

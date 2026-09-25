@@ -1,4 +1,5 @@
-import dataclasses,json,tempfile,time,unittest
+import dataclasses,json,tempfile,time,unittest,subprocess
+from types import SimpleNamespace
 from pathlib import Path
 from unittest.mock import patch
 from scripts import update as u
@@ -29,6 +30,8 @@ class ParsingTests(unittest.TestCase):
  def test_scenic_camera_not_regional_tv(self):
   self.assertEqual(u.classify('四川峨眉山云海日出','四川')[1],'慢直播')
   self.assertFalse(u.parse_playlist('四川峨眉山云海日出,'+URL,'test'))
+ def test_actor_loop_not_regional_tv(self):
+  self.assertFalse(u.parse_playlist('湖南,#genre#\n强森电影,'+URL,'test'))
  def test_camera_group_excluded(self):
   self.assertFalse(u.parse_playlist('慢直播,#genre#\n安徽综合,'+URL,'test'))
  def test_radio_skipped(self):
@@ -64,6 +67,17 @@ class MediaTests(unittest.TestCase):
  def test_corruption(self):self.assertEqual(u.analyze_decode(GOOD_ERR+'Packet corrupt',GOOD_OUT,20,0)['reason'],'media_errors')
  def test_process_failure(self):self.assertFalse(u.analyze_decode(GOOD_ERR,GOOD_OUT,20,1)['ok'])
  def test_missing_audio(self):self.assertEqual(u.analyze_decode('Video: h264, 1920x1080',GOOD_OUT,20,0)['reason'],'silent_audio')
+
+class OCRTests(unittest.TestCase):
+ def test_chinese_unavailable_notice(self):
+  with patch.object(u.subprocess,'run',return_value=SimpleNamespace(returncode=0,stdout='暂 不 支 持 播 放'.encode())):
+   self.assertEqual(u.check_notice(Path('frame.png'),{})['reason'],'unavailable_notice')
+ def test_ocr_timeout_distinct_from_media_timeout(self):
+  with patch.object(u.subprocess,'run',side_effect=subprocess.TimeoutExpired('tesseract',20)):
+   self.assertEqual(u.check_notice(Path('frame.png'),{})['reason'],'ocr_timeout')
+ def test_normal_program_caption(self):
+  with patch.object(u.subprocess,'run',return_value=SimpleNamespace(returncode=0,stdout='武汉新闻综合'.encode())):
+   self.assertTrue(u.check_notice(Path('frame.png'),{})['ocr_checked'])
 
 class SelectionPublishingTests(unittest.TestCase):
  def channel(self,i,custom=False):return u.Channel(f'武汉频道{i}',f'https://tv.example.com/{i}.m3u8',region='湖北',kind='地方台',custom=custom)
