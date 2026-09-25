@@ -1,0 +1,17 @@
+{
+  "state": "ok",
+  "last_attempt_at": "2026-09-25T13:32:03+00:00",
+  "last_success_at": "2026-09-25T13:32:03+00:00",
+  "sample_seconds": 20,
+  "ocr_enabled": false,
+  "candidate_urls": 3377,
+  "tested_urls": 180,
+  "passed_urls": 38,
+  "unique_channels": 37,
+  "regional_channels": 28,
+  "failed_sources": [],
+  "runner": "local",
+  "run_url": null,
+  "duration_seconds": 201.6,
+  "publication_note": "Only URLs passing this run are published."
+}

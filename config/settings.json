@@ -1,0 +1,7 @@
+{
+  "max_candidates": 600,
+  "workers": 10,
+  "sample_seconds": 20,
+  "probe_timeout_seconds": 45,
+  "retry_failures": 1
+}

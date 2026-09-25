@@ -1,0 +1,17 @@
+[
+  {
+    "name": "iptv-org 中国频道",
+    "url": "https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u",
+    "enabled": true
+  },
+  {
+    "name": "CCSH IPTV",
+    "url": "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt",
+    "enabled": true
+  },
+  {
+    "name": "Collect-IPTV",
+    "url": "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8",
+    "enabled": true
+  }
+]

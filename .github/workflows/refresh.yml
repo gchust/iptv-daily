@@ -1,0 +1,73 @@
+name: Refresh live TV
+
+on:
+  schedule:
+    - cron: '23 22 * * *' # Every day 06:23 Asia/Shanghai (UTC+8)
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Maximum candidate URLs to test (1-5000); blank uses config'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: iptv-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 110
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Install media tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg tesseract-ocr tesseract-ocr-chi-sim
+      - name: Run unit and media integration tests
+        run: python -m unittest discover -v
+      - name: Collect and verify live streams
+        id: refresh
+        continue-on-error: true
+        env:
+          IPTV_LIMIT: ${{ github.event.inputs.limit }}
+        run: |
+          args=()
+          if [ -n "$IPTV_LIMIT" ]; then args+=(--limit "$IPTV_LIMIT"); fi
+          python -u scripts/update.py --require-ocr "${args[@]}"
+      - name: Publish run summary
+        if: always()
+        run: |
+          if [ -f reports/summary.md ]; then cat reports/summary.md >> "$GITHUB_STEP_SUMMARY"; fi
+      - name: Commit verified playlists and health report
+        if: always() && (steps.refresh.outcome == 'success' || steps.refresh.outcome == 'failure')
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --all playlists reports
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: refresh verified TV streams"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - name: Archive verification evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: verification-${{ github.run_id }}
+          path: |
+            reports/
+            playlists/
+          retention-days: 14
+          if-no-files-found: ignore
+      - name: Fail visibly if no current streams passed
+        if: steps.refresh.outcome != 'success'
+        run: exit 1
