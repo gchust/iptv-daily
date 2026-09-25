@@ -1,2 +1,4 @@
 #EXTM3U
-# No priority channel passed this check at 2026-09-25T15:10:23+00:00
+# Verified at 2026-09-25T15:16:23+00:00; short media samples, no uptime guarantee.
+#EXTINF:-1 tvg-name="湖北经视" group-title="湖北地方台",湖北经视
+http://58.19.32.207:4022/rtp/239.254.96.178:9148

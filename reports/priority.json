@@ -1,13 +1,38 @@
 {
-  "state": "failed_no_channels",
-  "checked_at": "2026-09-25T15:10:23+00:00",
+  "state": "ok",
+  "checked_at": "2026-09-25T15:16:23+00:00",
   "sample_seconds": 60,
   "ocr_enabled": true,
   "runner": "GitHub Actions",
-  "run_url": "https://github.com/gchust/iptv-daily/actions/runs/36152160363",
-  "tested_urls": 2,
-  "passed_urls": 0,
-  "channels": [],
+  "run_url": "https://github.com/gchust/iptv-daily/actions/runs/36152869207",
+  "tested_urls": 3,
+  "passed_urls": 1,
+  "channels": [
+    {
+      "name": "湖北经视",
+      "url": "http://58.19.32.207:4022/rtp/239.254.96.178:9148",
+      "group": "湖北地方台",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "data/custom.m3u"
+      ],
+      "custom": true,
+      "checked_at": "2026-09-25T15:15:22+00:00",
+      "ok": true,
+      "reason": "passed",
+      "seconds": 59.98,
+      "frames": 1494,
+      "resolution": "720x576",
+      "audio_rms_db": -29.402817,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [],
+      "ocr_checked": true,
+      "ocr_elapsed_seconds": 0.26,
+      "elapsed_seconds": 60.68
+    }
+  ],
   "results": [
     {
       "name": "湖北经视",
@@ -19,20 +44,20 @@
         "data/custom.m3u"
       ],
       "custom": true,
-      "checked_at": "2026-09-25T15:09:22+00:00",
+      "checked_at": "2026-09-25T15:15:22+00:00",
       "ok": false,
       "reason": "identity_unconfirmed",
-      "seconds": 59.98,
-      "frames": 3599,
+      "seconds": 59.99,
+      "frames": 1498,
       "resolution": "1280x720",
-      "audio_rms_db": -16.462251,
+      "audio_rms_db": -12.216357,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
       "ocr_checked": true,
-      "ocr_elapsed_seconds": 0.73,
-      "elapsed_seconds": 33.91,
+      "ocr_elapsed_seconds": 0.3,
+      "elapsed_seconds": 29.69,
       "media_ok": true,
       "media_reason": "passed",
       "content_review": {
@@ -46,6 +71,30 @@
     },
     {
       "name": "湖北经视",
+      "url": "http://58.19.32.207:4022/rtp/239.254.96.178:9148",
+      "group": "湖北地方台",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "data/custom.m3u"
+      ],
+      "custom": true,
+      "checked_at": "2026-09-25T15:15:22+00:00",
+      "ok": true,
+      "reason": "passed",
+      "seconds": 59.98,
+      "frames": 1494,
+      "resolution": "720x576",
+      "audio_rms_db": -29.402817,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [],
+      "ocr_checked": true,
+      "ocr_elapsed_seconds": 0.26,
+      "elapsed_seconds": 60.68
+    },
+    {
+      "name": "湖北经视",
       "url": "http://hiliu.myds.me:18088/rtp/239.254.96.178:9148",
       "group": "湖北地方台",
       "region": "湖北",
@@ -54,21 +103,21 @@
         "data/custom.m3u"
       ],
       "custom": true,
-      "checked_at": "2026-09-25T15:09:23+00:00",
+      "checked_at": "2026-09-25T15:15:22+00:00",
       "ok": false,
-      "reason": "media_errors",
-      "seconds": 59.98,
-      "frames": 1496,
-      "resolution": "720x576",
-      "audio_rms_db": -29.863436,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [
-        "[mpegts @ 0x55ad3a6df700] Packet corrupt (stream = 0, dts = 6085400558).",
-        "[in#0/mpegts @ 0x55ad3a6df600] corrupt input packet in stream 0",
-        "[h264 @ 0x55ad3a728500] error while decoding MB 0 18, bytestream 40300"
+        "[http @ 0x56330cb28b40] HTTP error 503 Client limit reached",
+        "[in#0 @ 0x56330cb28600] Error opening input: Server returned 5XX Server Error reply",
+        "Error opening input file http://hiliu.myds.me:18088/rtp/239.254.96.178:9148."
       ],
-      "elapsed_seconds": 60.7,
+      "elapsed_seconds": 0.54,
       "retry_after": "decode_failed"
     }
   ],
@@ -88,6 +137,14 @@
       "reason": "channel_logo_confirmed",
       "reviewed_at": "2026-09-25T15:06:21.981763+00:00",
       "note": "Manually inspected a live video frame showing the 湖北经视 broadcaster logo. Identity confirmation is separate from media health; every publication still requires a fresh successful media probe."
+    },
+    {
+      "url": "http://58.19.32.207:4022/rtp/239.254.96.178:9148",
+      "channel": "湖北经视",
+      "decision": "allow",
+      "reason": "channel_logo_confirmed",
+      "reviewed_at": "2026-09-25T15:14:19.803746+00:00",
+      "note": "Live frame shows the 湖北经视 logo and 桃花朵朵开 program. A fresh media/OCR pass is still required before verified publication."
     }
   ]
 }
