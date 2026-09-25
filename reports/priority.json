@@ -1,0 +1,93 @@
+{
+  "state": "failed_no_channels",
+  "checked_at": "2026-09-25T15:10:23+00:00",
+  "sample_seconds": 60,
+  "ocr_enabled": true,
+  "runner": "GitHub Actions",
+  "run_url": "https://github.com/gchust/iptv-daily/actions/runs/36152160363",
+  "tested_urls": 2,
+  "passed_urls": 0,
+  "channels": [],
+  "results": [
+    {
+      "name": "湖北经视",
+      "url": "http://207.56.13.146:81/daili/hbjs.m3u8",
+      "group": "湖北",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "data/custom.m3u"
+      ],
+      "custom": true,
+      "checked_at": "2026-09-25T15:09:22+00:00",
+      "ok": false,
+      "reason": "identity_unconfirmed",
+      "seconds": 59.98,
+      "frames": 3599,
+      "resolution": "1280x720",
+      "audio_rms_db": -16.462251,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [],
+      "hls_progressed": true,
+      "ocr_checked": true,
+      "ocr_elapsed_seconds": 0.73,
+      "elapsed_seconds": 33.91,
+      "media_ok": true,
+      "media_reason": "passed",
+      "content_review": {
+        "url": "http://207.56.13.146:81/daili/hbjs.m3u8",
+        "channel": "湖北经视",
+        "decision": "hold",
+        "reason": "identity_unconfirmed",
+        "reviewed_at": "2026-09-25T14:32:15+00:00",
+        "note": "A 20-second media sample and a 180-second follow-up decoded successfully. Four follow-up frames showed medicine advertisements with no broadcaster logo; the advertised channel identity could not be independently confirmed. Keep this candidate out of published TV playlists until reviewed."
+      }
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://hiliu.myds.me:18088/rtp/239.254.96.178:9148",
+      "group": "湖北地方台",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "data/custom.m3u"
+      ],
+      "custom": true,
+      "checked_at": "2026-09-25T15:09:23+00:00",
+      "ok": false,
+      "reason": "media_errors",
+      "seconds": 59.98,
+      "frames": 1496,
+      "resolution": "720x576",
+      "audio_rms_db": -29.863436,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[mpegts @ 0x55ad3a6df700] Packet corrupt (stream = 0, dts = 6085400558).",
+        "[in#0/mpegts @ 0x55ad3a6df600] corrupt input packet in stream 0",
+        "[h264 @ 0x55ad3a728500] error while decoding MB 0 18, bytestream 40300"
+      ],
+      "elapsed_seconds": 60.7,
+      "retry_after": "decode_failed"
+    }
+  ],
+  "content_reviews": [
+    {
+      "url": "http://207.56.13.146:81/daili/hbjs.m3u8",
+      "channel": "湖北经视",
+      "decision": "hold",
+      "reason": "identity_unconfirmed",
+      "reviewed_at": "2026-09-25T14:32:15+00:00",
+      "note": "A 20-second media sample and a 180-second follow-up decoded successfully. Four follow-up frames showed medicine advertisements with no broadcaster logo; the advertised channel identity could not be independently confirmed. Keep this candidate out of published TV playlists until reviewed."
+    },
+    {
+      "url": "http://hiliu.myds.me:18088/rtp/239.254.96.178:9148",
+      "channel": "湖北经视",
+      "decision": "allow",
+      "reason": "channel_logo_confirmed",
+      "reviewed_at": "2026-09-25T15:06:21.981763+00:00",
+      "note": "Manually inspected a live video frame showing the 湖北经视 broadcaster logo. Identity confirmation is separate from media health; every publication still requires a fresh successful media probe."
+    }
+  ]
+}
