@@ -89,5 +89,11 @@
     "url": "http://207.56.13.146:81/daili/hbjs.m3u8",
     "source": "https://github.com/huakou/z/blob/main/hk.txt",
     "note": "Candidate discovered 2026-09-25. Local 20-second media sample passed; must pass each cloud run. Channel identity is not implied by the source label."
+  },
+  {
+    "name": "湖北经视",
+    "url": "http://hiliu.myds.me:18088/rtp/239.254.96.178:9148",
+    "source": "https://raw.githubusercontent.com/huaxiong96/TVBOX/HEAD/IPTV/%E6%B9%96%E5%8C%97%E7%94%B5%E4%BF%A1%E7%BB%84%E6%92%AD.txt",
+    "discovered_at": "2026-09-25T15:06:21.980074+00:00"
   }
 ]

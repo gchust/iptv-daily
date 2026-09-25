@@ -22,5 +22,13 @@
     "reason": "channel_label_mismatch",
     "reviewed_at": "2026-09-25T14:43:52+00:00",
     "note": "The sampled picture shows CCTV-11 branding. The provided regional channel label does not match the picture."
+  },
+  {
+    "url": "http://hiliu.myds.me:18088/rtp/239.254.96.178:9148",
+    "channel": "湖北经视",
+    "decision": "allow",
+    "reason": "channel_logo_confirmed",
+    "reviewed_at": "2026-09-25T15:06:21.981763+00:00",
+    "note": "Manually inspected a live video frame showing the 湖北经视 broadcaster logo. Identity confirmation is separate from media health; every publication still requires a fresh successful media probe."
   }
 ]

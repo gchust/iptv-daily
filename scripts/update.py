@@ -386,11 +386,30 @@ def apply_content_reviews(results,reviews):
  return [{**r,'media_ok':r.get('media_ok',r['ok']),'media_reason':r.get('media_reason',r.get('reason')),'ok':False,'reason':held[r['url']]['reason'],'content_review':held[r['url']]} if r['url'] in held else r for r in results]
 
 
+def publish_priority(root,results,settings,checked=None):
+ """Write independently dated priority evidence without relabeling aggregate results."""
+ names={key(n) for n in settings.get('priority_channels',())}
+ selected=[r for r in results if key(r['name']) in names]
+ selected=apply_program_eligibility(selected)
+ review_file=root/'config/content-reviews.json'
+ reviews=json.loads(review_file.read_text()) if review_file.exists() else []
+ selected=apply_content_reviews(selected,reviews)
+ rows=best_channels(selected);checked=checked or utcnow()
+ state='ok' if rows else 'failed_no_channels'
+ run_url=(os.getenv('GITHUB_SERVER_URL','https://github.com')+'/'+os.getenv('GITHUB_REPOSITORY','')+'/actions/runs/'+os.getenv('GITHUB_RUN_ID','')) if os.getenv('GITHUB_RUN_ID') else None
+ report={'state':state,'checked_at':checked,'sample_seconds':settings['sample_seconds'],'ocr_enabled':settings.get('ocr_enabled',False),'runner':'GitHub Actions' if os.getenv('GITHUB_ACTIONS') else 'local','run_url':run_url,'tested_urls':len(selected),'passed_urls':sum(r['ok'] for r in selected),'channels':rows,'results':selected,'content_reviews':[r for r in reviews if key(r.get('channel','')) in names]}
+ atomic_write(root/'playlists/priority.m3u',m3u(rows,checked) if rows else '#EXTM3U\n# No priority channel passed this check at '+checked+'\n')
+ atomic_write(root/'playlists/priority.txt',txt(rows) if rows else '')
+ json_write(root/'reports/priority.json',report)
+ return report
+
+
 def publish(root,results,sources,total,selected,settings,started):
  results=apply_program_eligibility(results)
  review_file=root/'config/content-reviews.json'
  if review_file.exists():results=apply_content_reviews(results,json.loads(review_file.read_text()))
  checked=utcnow();rows=best_channels(results)
+ if settings.get('priority_channels'):publish_priority(root,results,settings,checked)
  reports=root/'reports';playlists=root/'playlists';old={}
  if (reports/'status.json').exists():old=json.loads((reports/'status.json').read_text())
  requested=[]

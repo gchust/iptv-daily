@@ -12,6 +12,7 @@
 | 地方台合集 | [regional.m3u](https://raw.githubusercontent.com/gchust/iptv-daily/main/playlists/regional.m3u) | [regional.txt](https://raw.githubusercontent.com/gchust/iptv-daily/main/playlists/regional.txt) |
 | 湖北地方台 | [hubei.m3u](https://raw.githubusercontent.com/gchust/iptv-daily/main/playlists/hubei.m3u) | [hubei.txt](https://raw.githubusercontent.com/gchust/iptv-daily/main/playlists/hubei.txt) |
 | 武汉 / 江夏 | [wuhan.m3u](https://raw.githubusercontent.com/gchust/iptv-daily/main/playlists/wuhan.m3u) | [wuhan.txt](https://raw.githubusercontent.com/gchust/iptv-daily/main/playlists/wuhan.txt) |
+| 重点频道（目前为湖北经视） | [priority.m3u](https://raw.githubusercontent.com/gchust/iptv-daily/main/playlists/priority.m3u) | [priority.txt](https://raw.githubusercontent.com/gchust/iptv-daily/main/playlists/priority.txt) |
 
 在 nTv 网页管理中进入“频道配置 → 添加网络地址/添加源地址”，填入上述 raw 地址，启用并刷新频道列表。订阅地址固定，内容随每天检测结果更新；电视端也需要刷新才能取得新列表。GitHub raw 在部分网络可能访问缓慢，可使用自己的可访问镜像或本地上传。
 
@@ -19,7 +20,7 @@
 
 - 默认北京时间每天 **06:23**（UTC 22:23）触发，也可在 Actions 页面手动 Run workflow。GitHub 定时任务可能排队、延迟，不能保证精确到分钟。
 - 从 [config/sources.json](config/sources.json) 中启用的多个上游实时拉取候选，并合并 [data/custom.m3u](data/custom.m3u) 中的自定义频道。初始自定义列表包含人工核对过的武汉及其他地方台，它们每天仍需重新通过检测。
-- 按 URL 去重，保留签名查询参数，并剔除可识别的广播、景区慢直播、演员电影轮播及直接点播文件，避免混入地方台。默认每轮最多检测 **1600 个候选URL**，从 **20 个上游**收集候选。优先检查湖北经视的所有候选（最多128个）、自定义及上一轮通过的源，并为湖北地方台预留检查名额，上游临时不可达时会把该上游上次通过的URL加入本轮重新检测，绝不直接作为已验证结果；其余候选按日期轮换，地方台约占发现名额的三分之二。默认仅选入已归类的中国地方台、央视/教育、卫视，避免无关海外频道、歌曲和影视点播占用检测名额。不是每天穷举整个互联网；可以调整上限与 include_kinds。
+- 按 URL 去重，保留签名查询参数，并剔除可识别的广播、景区慢直播、演员电影轮播及直接点播文件，避免混入地方台。默认每轮最多检测 **1600 个候选URL**，从 **21 个上游**收集候选。优先检查湖北经视的所有候选（最多128个）、自定义及上一轮通过的源，并为湖北地方台预留检查名额，上游临时不可达时会把该上游上次通过的URL加入本轮重新检测，绝不直接作为已验证结果；其余候选按日期轮换，地方台约占发现名额的三分之二。默认仅选入已归类的中国地方台、央视/教育、卫视，避免无关海外频道、歌曲和影视点播占用检测名额。不是每天穷举整个互联网；可以调整上限与 include_kinds。
 - HLS 检查实际媒体清单、媒体分片链接及清单是否持续推进，排除结束的点播清单。
 - FFmpeg 必须实际解码 **20 秒媒体内容**、有足够视频帧和非静音音轨；仅 HTTP 200 不算通过。遇到失败或超时会按配置重试一次。
 - 自动剔除至少3秒黑屏、至少6秒冻结画面、明显解码错误。GitHub Actions 还使用中文 OCR 检测“暂不支持播放”“版权限制”等提示。
@@ -28,6 +29,10 @@
 - 正常更新只发布**本轮通过**的源，旧源不会因历史成功而自动混入。若整轮零通过，保留上次成功列表并将状态标记失败，记录最后成功时间，Actions 报错；这时旧列表不能被当作当天验证通过。
 - 所有分片均完成、URL数量完整、候选清单指纹一致、中文OCR已启用，才汇总发布。任一分片未完成或结果来自旧任务时，工作流报错并保留原列表；不会发布只测了部分候选的新列表。
 - 列表和报告由 GitHub Actions 自动提交到 main，commit message 使用英文。无须个人访问令牌，工作流使用仓库自带、仅限该仓库的 GITHUB_TOKEN 写入权限。
+
+## 重点频道专项复测
+
+[Verify priority channels](https://github.com/gchust/iptv-daily/actions/workflows/priority.yml) 可单独复测自定义列表中的重点频道，实际解码60秒并执行中文OCR。结果独立写入 priority.m3u / priority.txt 和 reports/priority.json，不改变大列表的检测时间与历史记录；每日完整检测也会刷新这份重点频道订阅。专项检测没有通过项时会清空重点频道列表并报错，避免把旧结果冒充本次通过。大列表要等下一次完整检测通过后才收录新发现的频道。
 
 ## 如何增加频道和上游
 

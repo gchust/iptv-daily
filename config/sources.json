@@ -98,5 +98,10 @@
     "name": "bravenavigator 地方台",
     "url": "https://raw.githubusercontent.com/bravenavigator/link/main/live.txt",
     "enabled": true
+  },
+  {
+    "name": "huaxiong96 湖北电信组播",
+    "url": "https://raw.githubusercontent.com/huaxiong96/TVBOX/HEAD/IPTV/%E6%B9%96%E5%8C%97%E7%94%B5%E4%BF%A1%E7%BB%84%E6%92%AD.txt",
+    "enabled": true
   }
 ]
