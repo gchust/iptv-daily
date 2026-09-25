@@ -30,5 +30,13 @@
     "reason": "channel_logo_confirmed",
     "reviewed_at": "2026-09-25T15:06:21.981763+00:00",
     "note": "Manually inspected a live video frame showing the 湖北经视 broadcaster logo. Identity confirmation is separate from media health; every publication still requires a fresh successful media probe."
+  },
+  {
+    "url": "http://58.19.32.207:4022/rtp/239.254.96.178:9148",
+    "channel": "湖北经视",
+    "decision": "allow",
+    "reason": "channel_logo_confirmed",
+    "reviewed_at": "2026-09-25T15:14:19.803746+00:00",
+    "note": "Live frame shows the 湖北经视 logo and 桃花朵朵开 program. A fresh media/OCR pass is still required before verified publication."
   }
 ]

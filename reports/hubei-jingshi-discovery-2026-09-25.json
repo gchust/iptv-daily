@@ -1,0 +1,60 @@
+{
+  "recorded_at": "2026-09-25T15:09:39.264447+00:00",
+  "channel": "湖北经视",
+  "url": "http://hiliu.myds.me:18088/rtp/239.254.96.178:9148",
+  "identity_confirmed": true,
+  "identity_method": "Manual inspection of the broadcaster logo in five sampled frames",
+  "source": "https://raw.githubusercontent.com/huaxiong96/TVBOX/HEAD/IPTV/湖北电信组播.txt",
+  "environment": "local",
+  "ocr_enabled": false,
+  "short_probe": {
+    "name": "湖北经视",
+    "url": "http://hiliu.myds.me:18088/rtp/239.254.96.178:9148",
+    "group": "华中地区",
+    "region": "湖北",
+    "kind": "地方台",
+    "sources": [
+      "https://raw.githubusercontent.com/huaxiong96/TVBOX/HEAD/IPTV/湖北电信组播.txt"
+    ],
+    "custom": false,
+    "checked_at": "2026-09-25T15:01:08+00:00",
+    "ok": true,
+    "reason": "passed",
+    "seconds": 20.0,
+    "frames": 476,
+    "resolution": "720x576",
+    "audio_rms_db": -26.244344,
+    "max_black_seconds": 0,
+    "max_freeze_seconds": 0,
+    "errors": [],
+    "elapsed_seconds": 22.22
+  },
+  "extended_probe": {
+    "name": "湖北经视",
+    "url": "http://hiliu.myds.me:18088/rtp/239.254.96.178:9148",
+    "group": "湖北",
+    "region": "湖北",
+    "kind": "地方台",
+    "sources": [
+      "https://github.com/huaxiong96/TVBOX/blob/065a0fd1ad51aa1f1f54b45cf0c9c06cbba9705e/IPTV/湖北电信组播.txt"
+    ],
+    "custom": false,
+    "checked_at": "2026-09-25T15:04:22+00:00",
+    "ok": false,
+    "reason": "media_errors",
+    "seconds": 180.0,
+    "frames": 4455,
+    "resolution": "720x576",
+    "audio_rms_db": -28.987214,
+    "max_black_seconds": 0,
+    "max_freeze_seconds": 0,
+    "errors": [
+      "[mpegts @ 0x150104780] Packet corrupt (stream = 0, dts = 6057828158).",
+      "[in#0/mpegts @ 0x150104530] corrupt input packet in stream 0",
+      "[h264 @ 0x1388126b0] error while decoding MB 41 0, bytestream 37438"
+    ],
+    "elapsed_seconds": 181.84
+  },
+  "conclusion": "Channel identity is confirmed and a 20-second sample passed. The 180-second sample decoded continuously without black/frozen/silent intervals, but reported corrupt packets and an H.264 decoding error. Long-sample strict health check therefore failed; do not describe this as an error-free 180-second pass.",
+  "image": "evidence/hubei-jingshi-2026-09-25.jpg"
+}

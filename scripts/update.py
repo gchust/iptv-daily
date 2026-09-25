@@ -73,6 +73,7 @@ def clean_name(name):
  name=unicodedata.normalize('NFKC',name).strip().lstrip('\ufeff')
  name=re.sub(r'^\[(?:BD|IPTV|HD)\]\s*','',name,flags=re.I).lstrip('💚❤❤️📺 ')
  name=re.sub(r'(?<=湖北经视)\(湖北有线\)$','',name)
+ name={'湖北经视频道':'湖北经视'}.get(name,name)
  name=re.sub(r'\s*\[(?:[^]]*(?:p|geo|not 24/7|1280|1920)[^]]*)\]', '', name, flags=re.I)
  name=re.sub(r'\s*\((?:\d{3,4}[pi]|HD|SD|高清|标清|超清)\)\s*$', '',name,flags=re.I)
  name=re.sub(r'^(?:'+ '|'.join(REGIONS)+r')\s+[I|]\s+', '',name)

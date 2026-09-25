@@ -13,7 +13,7 @@ class PriorityTests(unittest.TestCase):
   self.row={**dataclasses.asdict(u.Channel('湖北经视','https://example.com/live.m3u8','湖北','湖北','地方台',['test'],True)),'ok':True,'reason':'passed','resolution':'720x576','elapsed_seconds':20,'checked_at':'2026-09-25T15:00:00+00:00'}
 
  def test_priority_plan_selects_only_requested_custom_candidates(self):
-  (self.root/'data/custom.m3u').write_text('#EXTM3U\n#EXTINF:-1,湖北经视\nhttps://example.com/live.m3u8\n#EXTINF:-1,武汉新闻综合\nhttps://example.com/other.m3u8\n#EXTINF:-1,湖北经视\nhttps://example.com/live.m3u8\n')
+  (self.root/'data/custom.m3u').write_text('#EXTM3U\n#EXTINF:-1,湖北经视频道\nhttps://example.com/live.m3u8\n#EXTINF:-1,武汉新闻综合\nhttps://example.com/other.m3u8\n#EXTINF:-1,湖北经视\nhttps://example.com/live.m3u8\n')
   plan=priority.create_priority_plan(self.root)
   self.assertEqual(len(plan['selected']),1)
   self.assertEqual(plan['settings']['sample_seconds'],60)
