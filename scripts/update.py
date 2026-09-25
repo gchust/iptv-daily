@@ -369,7 +369,7 @@ def json_write(path,obj):atomic_write(path,json.dumps(obj,ensure_ascii=False,ind
 
 def apply_content_reviews(results,reviews):
  held={r['url']:r for r in reviews if r.get('decision')=='hold'}
- return [{**r,'media_ok':r['ok'],'ok':False,'reason':held[r['url']]['reason'],'content_review':held[r['url']]} if r['url'] in held else r for r in results]
+ return [{**r,'media_ok':r.get('media_ok',r['ok']),'media_reason':r.get('media_reason',r.get('reason')),'ok':False,'reason':held[r['url']]['reason'],'content_review':held[r['url']]} if r['url'] in held else r for r in results]
 
 
 def publish(root,results,sources,total,selected,settings,started):

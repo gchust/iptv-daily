@@ -1,0 +1,1581 @@
+{
+  "recorded_at": "2026-09-25T14:32:15+00:00",
+  "environment": "local",
+  "ocr_enabled": false,
+  "sample_seconds": 20,
+  "scope": "Focused supplemental discovery, separate from the cloud daily sweep; these results do not populate the published playlists.",
+  "tested_unique_urls": 78,
+  "media_passed": 1,
+  "eligible_passed": 0,
+  "failure_reasons": {
+    "decode_failed": 25,
+    "invalid_or_unreachable_hls": 51,
+    "hls_recheck_failed": 1,
+    "identity_unconfirmed": 1
+  },
+  "results": [
+    {
+      "name": "湖北经视",
+      "url": "http://dd.ikhs.cn:8880/udp/239.69.1.41:9886",
+      "group": "🔸湖北",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/githubhc20/tv/main/tvv.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:15:22+00:00",
+      "ok": false,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[http @ 0x11ee15980] HTTP error 502 Bad Gateway",
+        "[in#0 @ 0x11f804220] Error opening input: Server returned 5XX Server Error reply",
+        "Error opening input file http://dd.ikhs.cn:8880/udp/239.69.1.41:9886."
+      ],
+      "elapsed_seconds": 1.61
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://113.57.109.37:9901/tsfile/live/1015_1.m3u8",
+      "group": "",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/doubwing/iptv-5/main/list.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:15:22+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "timed out",
+      "elapsed_seconds": 8.07
+    },
+    {
+      "name": "湖北经视",
+      "url": "https://stream1.freetv.fun/hu-bei-jing-shi-1.m3u8",
+      "group": "湖北频道",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/songlees355-wq/okay/main/live.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:15:22+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "The read operation timed out",
+      "elapsed_seconds": 8.26
+    },
+    {
+      "name": "湖北经视",
+      "url": "https://t.freetv.fun/live/hu-bei-jing-shi-1.m3u8",
+      "group": "湖北频道",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/songlees355-wq/okay/main/live.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:15:22+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "The read operation timed out",
+      "elapsed_seconds": 8.27
+    },
+    {
+      "name": "湖北经视",
+      "url": "https://stream1.freetv.fun/hu-bei-jing-shi-2.ctv",
+      "group": "湖北频道",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/songlees355-wq/okay/main/live.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:15:22+00:00",
+      "ok": false,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[in#0 @ 0x131204450] Error opening input: Input/output error",
+        "Error opening input file https://stream1.freetv.fun/hu-bei-jing-shi-2.ctv.",
+        "Error opening input files: Input/output error"
+      ],
+      "elapsed_seconds": 8.79
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=hbjs",
+      "group": "湖北频道",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt",
+        "https://raw.githubusercontent.com/songlees355-wq/okay/main/live.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:15:22+00:00",
+      "ok": false,
+      "reason": "hls_recheck_failed",
+      "seconds": 20.0,
+      "frames": 1198,
+      "resolution": "1280x720",
+      "audio_rms_db": -8.921029,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [],
+      "error": "not an HLS playlist",
+      "elapsed_seconds": 8.83
+    },
+    {
+      "name": "湖北经视",
+      "url": "https://stream1.freetv.fun/hu-bei-jing-shi-23.m3u8",
+      "group": "湖北频道",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/songlees355-wq/okay/main/live.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:15:31+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "The read operation timed out",
+      "elapsed_seconds": 8.19
+    },
+    {
+      "name": "湖北经视",
+      "url": "https://stream1.freetv.fun/hu-bei-jing-shi-22.m3u8",
+      "group": "湖北频道",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/songlees355-wq/okay/main/live.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:15:31+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "The read operation timed out",
+      "elapsed_seconds": 8.37
+    },
+    {
+      "name": "湖北经视",
+      "url": "https://stream1.freetv.fun/hu-bei-jing-shi-14.m3u8",
+      "group": "湖北频道",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/songlees355-wq/okay/main/live.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:15:39+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "The read operation timed out",
+      "elapsed_seconds": 8.49
+    },
+    {
+      "name": "湖北经视",
+      "url": "https://stream1.freetv.fun/hu-bei-jing-shi-11.m3u8",
+      "group": "湖北频道",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/songlees355-wq/okay/main/live.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:15:39+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "The read operation timed out",
+      "elapsed_seconds": 8.21
+    },
+    {
+      "name": "湖北经视",
+      "url": "https://stream1.freetv.fun/hu-bei-jing-shi-6.m3u8",
+      "group": "湖北频道",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/songlees355-wq/okay/main/live.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:15:47+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "The read operation timed out",
+      "elapsed_seconds": 8.36
+    },
+    {
+      "name": "湖北经视",
+      "url": "https://stream1.freetv.fun/hu-bei-jing-shi-13.m3u8",
+      "group": "湖北频道",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/songlees355-wq/okay/main/live.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:15:48+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "The read operation timed out",
+      "elapsed_seconds": 8.18
+    },
+    {
+      "name": "湖北经视",
+      "url": "https://stream1.freetv.fun/hu-bei-jing-shi-8.m3u8",
+      "group": "湖北频道",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/songlees355-wq/okay/main/live.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:15:56+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "The read operation timed out",
+      "elapsed_seconds": 8.19
+    },
+    {
+      "name": "湖北经视",
+      "url": "https://stream1.freetv.fun/hu-bei-jing-shi-7.m3u8",
+      "group": "湖北频道",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/songlees355-wq/okay/main/live.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:15:56+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "The read operation timed out",
+      "elapsed_seconds": 8.38
+    },
+    {
+      "name": "湖北经视",
+      "url": "https://stream1.freetv.fun/hu-bei-jing-shi-3.m3u8",
+      "group": "湖北频道",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/songlees355-wq/okay/main/live.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:16:04+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "The read operation timed out",
+      "elapsed_seconds": 8.24
+    },
+    {
+      "name": "湖北经视",
+      "url": "https://stream1.freetv.fun/hu-bei-jing-shi-19.m3u8",
+      "group": "湖北频道",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/songlees355-wq/okay/main/live.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:16:04+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "The read operation timed out",
+      "elapsed_seconds": 8.18
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://61.184.46.85:85/tsfile/live/0019_1.m3u8?key=txiptv&playlive=1&authid=0",
+      "group": "📺央卫频道",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/CCSH/IPTV/main/assets/test.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:16:12+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "HTTP Error 502: Bad Gateway",
+      "elapsed_seconds": 0.41
+    },
+    {
+      "name": "💚湖北经视",
+      "url": "http://38.75.136.137:98/gslb/dsdqpub/hbjs.m3u8?auth=testpub",
+      "group": "📡地方频道",
+      "region": "其他",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/CCSH/IPTV/main/assets/test.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:16:13+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "not an HLS playlist",
+      "elapsed_seconds": 0.18
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://59.173.49.7:8787/rtp/239.69.1.41:9886",
+      "group": "湖北",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/maowei1125/spider-iptv/main/source/multicast/%E6%B9%96%E5%8C%97-%E7%94%B5%E4%BF%A1-239.69.1.m3u"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:16:12+00:00",
+      "ok": false,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[in#0 @ 0x144e0e900] Error opening input: Operation timed out",
+        "Error opening input file http://59.173.49.7:8787/rtp/239.69.1.41:9886.",
+        "Error opening input files: Operation timed out"
+      ],
+      "elapsed_seconds": 8.21
+    },
+    {
+      "name": "湖北经视",
+      "url": "https://stream1.freetv.fun/hu-bei-jing-shi-18.m3u8",
+      "group": "湖北频道",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/songlees355-wq/okay/main/live.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:16:12+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "The read operation timed out",
+      "elapsed_seconds": 8.28
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://192.151.150.154/live/hbjs.m3u8",
+      "group": "央视卫视",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/suxuang/myIPTV/main/%E6%A6%B4%E8%8A%92%E7%94%B5%E8%A7%86.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:16:20+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "not an HLS playlist",
+      "elapsed_seconds": 0.25
+    },
+    {
+      "name": "湖北经视",
+      "url": "https://stream1.freetv.fun/hu-bei-jing-shi-19.ctv",
+      "group": "湖北频道",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/songlees355-wq/okay/main/live.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:16:12+00:00",
+      "ok": false,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[in#0 @ 0x146d047e0] Error opening input: Input/output error",
+        "Error opening input file https://stream1.freetv.fun/hu-bei-jing-shi-19.ctv.",
+        "Error opening input files: Input/output error"
+      ],
+      "elapsed_seconds": 8.8
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://[2409:8087:4c0a:22:1::11]:6410/170000001115/UmaiCHAN63807203543e3/index.m3u8?AuthInfo=9kOOdBn7MFF%2F2bWjKgahUUAdKgLqNB5aOAUhcp5CeNLVCQ3pDe4nBySab%2B3xPL123aTSCRugzF2ABe36IIJw2evZbYdWUo0ffUw53bflDgU",
+      "group": "地方特色",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/cjh19831115/Meroser/main/IPTV-tvbox.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:16:21+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "HTTP Error 502: Bad Gateway",
+      "elapsed_seconds": 0.37
+    },
+    {
+      "name": "湖北经视",
+      "url": "https://stream1.freetv.fun/hu-bei-jing-shi-24.m3u8",
+      "group": "湖北频道",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/songlees355-wq/okay/main/live.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:16:20+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "The read operation timed out",
+      "elapsed_seconds": 8.19
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://58.48.37.158:1111/tsfile/live/0019_1.m3u8?key=txiptv&playlive=1&authid=0",
+      "group": "地方频道",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/suxuang/myIPTV/main/back/ipv6.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:16:21+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "timed out",
+      "elapsed_seconds": 8.0
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://ztecdn.hb.chinamobile.com:6060/170000001115/UmaiCHAN63807203543e3/index.m3u8?m3u8_level=2",
+      "group": "地方",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/xisohi/CHINA-IPTV/main/Unicast/hubei/mobile.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:16:21+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "timed out",
+      "elapsed_seconds": 8.0
+    },
+    {
+      "name": "湖北经视(湖北有线)",
+      "url": "http://httpdvb.slave.homed.hrtn.net/playurl?playtype=live&protocol=hls&accesstoken=R5D22D2B7U309E0093K7735BBEDIAC2DC601PBM3187915V10453Z6B7EDWE3620470C71&&playtoken=&programid=4200000145.m3u8",
+      "group": "国内",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/reysc/M3U8/master/lt.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:16:28+00:00",
+      "ok": false,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[http @ 0x14d215bd0] HTTP error 502 Bad Gateway",
+        "[in#0 @ 0x14d215480] Error opening input: Server returned 5XX Server Error reply",
+        "Error opening input file http://httpdvb.slave.homed.hrtn.net/playurl?playtype=live&protocol=hls&accesstoken=R5D22D2B7U309E0093K7735BBEDIAC2DC601PBM3187915V10453Z6B7EDWE3620470C71&&playtoken=&programid=4200000145.m3u8."
+      ],
+      "elapsed_seconds": 1.08
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://huaweicdn.hb.chinamobile.com/PLTV/88888888/224/3221226639/1.m3u8",
+      "group": "地方",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/xisohi/CHINA-IPTV/main/Unicast/hubei/mobile.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:16:22+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "timed out",
+      "elapsed_seconds": 8.0
+    },
+    {
+      "name": "湖北经视",
+      "url": "https://stream1.freetv.fun/hu-bei-jing-shi-12.m3u8",
+      "group": "湖北频道",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/songlees355-wq/okay/main/live.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:16:21+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "The read operation timed out",
+      "elapsed_seconds": 8.37
+    },
+    {
+      "name": "湖北经视",
+      "url": "https://stream1.freetv.fun/hu-bei-jing-shi-20.m3u8",
+      "group": "湖北频道",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/songlees355-wq/okay/main/live.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:16:28+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "The read operation timed out",
+      "elapsed_seconds": 8.65
+    },
+    {
+      "name": "湖北经视",
+      "url": "https://stream1.freetv.fun/hu-bei-jing-shi-10.m3u8",
+      "group": "湖北频道",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/songlees355-wq/okay/main/live.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:16:30+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "The read operation timed out",
+      "elapsed_seconds": 8.37
+    },
+    {
+      "name": "[BD]湖北经视",
+      "url": "https://stream1.freetv.fun/a968f766a86c2a7690ca00cd8d3467ef79b4266675256e0e1f5b356aa8177fd2.m3u8",
+      "group": "新闻",
+      "region": "其他",
+      "kind": "其他",
+      "sources": [
+        "https://raw.githubusercontent.com/iptvjs/iptvjs.github.io/main/txt/ew_all.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:16:37+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "The read operation timed out",
+      "elapsed_seconds": 8.22
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://live.cjyun.org/hubeitv/s10008-live-hbjs.m3u8",
+      "group": "湖北",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/imDazui/Tvlist-awesome-m3u-m3u8/blob/master/m3u/国内地方台.m3u"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:19:39+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "timed out",
+      "elapsed_seconds": 8.02
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://live.cjyun.org/video/s10008-hbjs2018/index.m3u8",
+      "group": "湖北",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/molun/molun.github.io/blob/master/list/IPTV.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:19:47+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "timed out",
+      "elapsed_seconds": 8.0
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://113.57.103.216:9000/tsfile/live/1017_1.m3u8?key=txiptv",
+      "group": "湖北",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/guot55/yg/blob/main/h/zb.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:19:55+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "timed out",
+      "elapsed_seconds": 8.0
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://107.150.60.122/live/hbjs.m3u8",
+      "group": "湖北",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/fleung49/star/blob/main/mit"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:21:43+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "not an HLS playlist",
+      "elapsed_seconds": 0.26,
+      "retry_after": "invalid_or_unreachable_hls"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://119.36.148.115:59901/tsfile/live/1004_1.m3u8",
+      "group": "湖北",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/bravenavigator/link/main/live.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:21:43+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "HTTP Error 502: Bad Gateway",
+      "elapsed_seconds": 0.36,
+      "retry_after": "invalid_or_unreachable_hls"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://121.60.207.7/live.local18.ctlcdn.com/00000110240227_1/encoder/0/playlist.m3u8",
+      "group": "湖北",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/imDazui/Tvlist-awesome-m3u-m3u8/blob/master/m3u/内蒙古联通.m3u"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:21:51+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "timed out",
+      "elapsed_seconds": 8.0,
+      "retry_after": "invalid_or_unreachable_hls"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://198.204.228.26/live/hbjs.m3u8",
+      "group": "🌉湖北频道",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/xiaoran67/update/main/output/simple/full.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:21:43+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "not an HLS playlist",
+      "elapsed_seconds": 0.25,
+      "retry_after": "invalid_or_unreachable_hls"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://207.56.13.146:81/daili/hbjs.m3u8",
+      "group": "湖北",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/huakou/z/blob/main/hk.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:21:43+00:00",
+      "ok": false,
+      "reason": "identity_unconfirmed",
+      "seconds": 20.0,
+      "frames": 599,
+      "resolution": "1280x720",
+      "audio_rms_db": -12.784855,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [],
+      "hls_progressed": true,
+      "elapsed_seconds": 11.29,
+      "media_ok": true,
+      "content_review": {
+        "url": "http://207.56.13.146:81/daili/hbjs.m3u8",
+        "channel": "湖北经视",
+        "decision": "hold",
+        "reason": "identity_unconfirmed",
+        "reviewed_at": "2026-09-25T14:32:15+00:00",
+        "note": "A 20-second media sample and a 180-second follow-up decoded successfully. Four follow-up frames showed medicine advertisements with no broadcaster logo; the advertised channel identity could not be independently confirmed. Keep this candidate out of published TV playlists until reviewed."
+      }
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://58.19.43.46:9901/tsfile/live/1017_1.m3u8",
+      "group": "",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/%E5%9B%BD%E5%86%85%E7%94%B5%E8%A7%86%E5%8F%B0202509.m3u"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:21:51+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "timed out",
+      "elapsed_seconds": 8.0,
+      "retry_after": "invalid_or_unreachable_hls"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://58.19.43.46:9901/tsfile/live/1017_1.m3u8?key=txiptv&playlive=1&authid=0",
+      "group": "湖北",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/bravenavigator/link/main/live.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:21:51+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "timed out",
+      "elapsed_seconds": 8.0,
+      "retry_after": "invalid_or_unreachable_hls"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://59.173.243.210:9901/tsfile/live/1019_1.m3u8",
+      "group": "湖北",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/imDazui/Tvlist-awesome-m3u-m3u8/blob/master/m3u/湖北电信.m3u"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:21:43+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "HTTP Error 502: Bad Gateway",
+      "elapsed_seconds": 0.34,
+      "retry_after": "invalid_or_unreachable_hls"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://59.173.243.210:9901/tsfile/live/1019_1.m3u8?key=txiptv&playlive=1&authid=0",
+      "group": "湖北",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/bravenavigator/link/main/live.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:21:44+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "HTTP Error 502: Bad Gateway",
+      "elapsed_seconds": 0.33,
+      "retry_after": "invalid_or_unreachable_hls"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://home.sylaigym.top:8887/rtp/239.69.1.41:9886",
+      "group": "湖北",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/bravenavigator/link/main/live.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:21:44+00:00",
+      "ok": false,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[http @ 0x142e15da0] HTTP error 502 Bad Gateway",
+        "[in#0 @ 0x142e156e0] Error opening input: Server returned 5XX Server Error reply",
+        "Error opening input file http://home.sylaigym.top:8887/rtp/239.69.1.41:9886."
+      ],
+      "elapsed_seconds": 0.36,
+      "retry_after": "decode_failed"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://111.48.34.138/000000001000PLTV/88888888/224/3221229804/1.m3u8",
+      "group": "湖北",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/huakou/z/blob/main/hk.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:27:12+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "timed out",
+      "elapsed_seconds": 8.0,
+      "retry_after": "invalid_or_unreachable_hls"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://111.48.34.138/000000001000PLTV/88888888/224/3221230388/1.m3u8",
+      "group": "湖北",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/huakou/z/blob/main/hk.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:27:12+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "timed out",
+      "elapsed_seconds": 8.01,
+      "retry_after": "invalid_or_unreachable_hls"
+    },
+    {
+      "name": "湖北经视",
+      "url": "https://live21-cjy.hbtv.com.cn/new-hbtv/new-hbjs.m3u8?auth_key=1790347762-1a8b2460b8ec11f19b6b31bb73560ab0-0-add0121444a9c2dd237b542b5d073b2a",
+      "group": "湖北",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://news.hbtv.com.cn/app/tv/432"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:20:01+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "HTTP Error 403: Forbidden",
+      "elapsed_seconds": 2.55
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://111.175.166.133:8888/rtp/239.69.1.41:9886",
+      "group": "",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/xiongjian83/zubo/blob/9d7ea1d71b26731a25ce2c6637996320c8e6747a/speedtest/txt/fofa_Hubei_90.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:11+00:00",
+      "ok": false,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[http @ 0x12d615da0] HTTP error 502 Bad Gateway",
+        "[in#0 @ 0x12d6156e0] Error opening input: Server returned 5XX Server Error reply",
+        "Error opening input file http://111.175.166.133:8888/rtp/239.69.1.41:9886."
+      ],
+      "elapsed_seconds": 0.36,
+      "retry_after": "decode_failed"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://111.175.166.209:8686/rtp/239.69.1.41:9886",
+      "group": "",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/xiongjian83/zubo/blob/9d7ea1d71b26731a25ce2c6637996320c8e6747a/speedtest/txt/Hubei_90.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:18+00:00",
+      "ok": false,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[in#0 @ 0x1366156e0] Error opening input: Operation timed out",
+        "Error opening input file http://111.175.166.209:8686/rtp/239.69.1.41:9886.",
+        "Error opening input files: Operation timed out"
+      ],
+      "elapsed_seconds": 8.2,
+      "retry_after": "decode_failed"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://111.48.34.237/PLTV/88888888/224/3221229804/1.m3u8",
+      "group": "",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/zpsw/tvconfig/blob/154f82d27e37948fd8e86bcb465de61936c34c2e/hbyd"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:38+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "timed out",
+      "elapsed_seconds": 8.0,
+      "retry_after": "invalid_or_unreachable_hls"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://113.56.95.223:8889/rtp/228.0.0.125:6108",
+      "group": "",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/iodata999/frxz751113-IPTVzb1/blob/4707b487e378a263585407f740965177d7feb5a0/湖北联通.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:21+00:00",
+      "ok": false,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[in#0 @ 0x140e04550] Error opening input: Operation timed out",
+        "Error opening input file http://113.56.95.223:8889/rtp/228.0.0.125:6108.",
+        "Error opening input files: Operation timed out"
+      ],
+      "elapsed_seconds": 8.18,
+      "retry_after": "decode_failed"
+    },
+    {
+      "name": "湖北经视高清",
+      "url": "http://113.57.109.36:9901/tsfile/live/1015_1.m3u8?key=txiptv&playlive=1&authid=0",
+      "group": "",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/asdjkl6/zx/blob/c00c8ef931ed89c89bd71776832f38b4d1870a77/iptv/测试/酒店源.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:18+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "timed out",
+      "elapsed_seconds": 8.0,
+      "retry_after": "invalid_or_unreachable_hls"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://113.57.21.233:8666/tsfile/live/1017_1.m3u8?key=txiptv&playlive=1&authid=0",
+      "group": "",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/dwc1119/tv/blob/935412e7f0c96d238333ca9587e1e1a6ea5f55df/temp/hubei.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:03+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "timed out",
+      "elapsed_seconds": 8.0,
+      "retry_after": "invalid_or_unreachable_hls"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://119.101.65.2:8888/rtp/239.69.1.41:9886",
+      "group": "",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/kimwang1978/collect-txt/blob/0c168eb41186250607760c52e84d56332ed09b3a/assets/snapshot/2024-11-09(M)/20241109093832_lunbo.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:02+00:00",
+      "ok": false,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[in#0 @ 0x13ee04610] Error opening input: Operation timed out",
+        "Error opening input file http://119.101.65.2:8888/rtp/239.69.1.41:9886.",
+        "Error opening input files: Operation timed out"
+      ],
+      "elapsed_seconds": 8.23,
+      "retry_after": "decode_failed"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://119.36.148.115:59901/tsfile/live/1004_1.m3u8?key=txiptv",
+      "group": "",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/kimwang1978/collect-txt/blob/0c168eb41186250607760c52e84d56332ed09b3a/assets/snapshot/2024-11-09(M)/20241109093832_lunbo.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:28:54+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "HTTP Error 502: Bad Gateway",
+      "elapsed_seconds": 0.38,
+      "retry_after": "invalid_or_unreachable_hls"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://119.98.133.138:4000/rtp/239.69.1.41:9886",
+      "group": "",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/kimwang1978/collect-txt/blob/0c168eb41186250607760c52e84d56332ed09b3a/assets/snapshot/2024-11-09(M)/20241109093832_lunbo.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:02+00:00",
+      "ok": false,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[in#0 @ 0x12a806480] Error opening input: Operation timed out",
+        "Error opening input file http://119.98.133.138:4000/rtp/239.69.1.41:9886.",
+        "Error opening input files: Operation timed out"
+      ],
+      "elapsed_seconds": 8.22,
+      "retry_after": "decode_failed"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://119.98.99.109:5555/rtp/239.69.1.41:9886",
+      "group": "",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/kimwang1978/collect-txt/blob/0c168eb41186250607760c52e84d56332ed09b3a/assets/snapshot/2024-11-09(M)/20241109093832_lunbo.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:28:54+00:00",
+      "ok": false,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[http @ 0x132d054e0] HTTP error 502 Bad Gateway",
+        "[in#0 @ 0x132d04d90] Error opening input: Server returned 5XX Server Error reply",
+        "Error opening input file http://119.98.99.109:5555/rtp/239.69.1.41:9886."
+      ],
+      "elapsed_seconds": 0.39,
+      "retry_after": "decode_failed"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://149.129.100.78/hubei.php?id=432",
+      "group": "地方",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/goolguy007/radioer/blob/8d0e6bb7b5b3eeeb201bf9c4a046542fab18a568/itv.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:35+00:00",
+      "ok": false,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[in#0 @ 0x13d615750] Error opening input: Operation timed out",
+        "Error opening input file http://149.129.100.78/hubei.php?id=432.",
+        "Error opening input files: Operation timed out"
+      ],
+      "elapsed_seconds": 8.18,
+      "retry_after": "decode_failed"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://171.41.255.136:8888/udp/239.69.1.41:9886",
+      "group": "中国电信-湖北-组播",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/zhuxinfu88/EDIPTV/blob/bb7f2bc60beb6daf982226e58f032b585122e2fe/txt/udpxy/中国电信/湖北.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:37+00:00",
+      "ok": false,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[in#0 @ 0x134a047e0] Error opening input: Operation timed out",
+        "Error opening input file http://171.41.255.136:8888/udp/239.69.1.41:9886.",
+        "Error opening input files: Operation timed out"
+      ],
+      "elapsed_seconds": 8.19,
+      "retry_after": "decode_failed"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://183.92.26.72:8123/rtp/228.0.0.125:6108",
+      "group": "",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/iodata999/frxz751113-IPTVzb1/blob/4707b487e378a263585407f740965177d7feb5a0/湖北联通.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:34+00:00",
+      "ok": false,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[in#0 @ 0x125304610] Error opening input: Operation timed out",
+        "Error opening input file http://183.92.26.72:8123/rtp/228.0.0.125:6108.",
+        "Error opening input files: Operation timed out"
+      ],
+      "elapsed_seconds": 8.2,
+      "retry_after": "decode_failed"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://219.140.56.34:3333/tsfile/live/1019_1.m3u8?key=txiptv&playlive=1&authid=0",
+      "group": "",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/dwc1119/tv/blob/935412e7f0c96d238333ca9587e1e1a6ea5f55df/temp/hubei.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:35+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "timed out",
+      "elapsed_seconds": 8.0,
+      "retry_after": "invalid_or_unreachable_hls"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://221.235.42.195:7777/tsfile/live/1000_1.m3u8?key=txiptv",
+      "group": "华中地区",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/huaxiong96/TVBOX/blob/065a0fd1ad51aa1f1f54b45cf0c9c06cbba9705e/IPTV/湖北电信酒店.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:19+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "timed out",
+      "elapsed_seconds": 8.0,
+      "retry_after": "invalid_or_unreachable_hls"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://221.235.43.52:7777/tsfile/live/1000_1.m3u8?key=txiptv",
+      "group": "华中地区",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/huaxiong96/TVBOX/blob/065a0fd1ad51aa1f1f54b45cf0c9c06cbba9705e/IPTV/湖北电信酒店.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:11+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "HTTP Error 502: Bad Gateway",
+      "elapsed_seconds": 0.34,
+      "retry_after": "invalid_or_unreachable_hls"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://221.235.85.41:58888/rtp/239.69.1.41:9886",
+      "group": "",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/hammerget/iptv/blob/65be5ee46a11c291bc6763d3886370c80ef2e259/湖北电信.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:51+00:00",
+      "ok": false,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[in#0 @ 0x150804610] Error opening input: Operation timed out",
+        "Error opening input file http://221.235.85.41:58888/rtp/239.69.1.41:9886.",
+        "Error opening input files: Operation timed out"
+      ],
+      "elapsed_seconds": 8.19,
+      "retry_after": "decode_failed"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://223.75.149.129:9906/tsfile/live/1000_1.m3u8?key=txiptv",
+      "group": "华中地区",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/huaxiong96/TVBOX/blob/065a0fd1ad51aa1f1f54b45cf0c9c06cbba9705e/IPTV/湖北移动酒店.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:12+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "HTTP Error 502: Bad Gateway",
+      "elapsed_seconds": 0.4,
+      "retry_after": "invalid_or_unreachable_hls"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://27.17.111.252:8118/rtp/239.69.1.41:9886",
+      "group": "",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/kimwang1978/collect-txt/blob/0c168eb41186250607760c52e84d56332ed09b3a/assets/snapshot/2024-11-09(M)/20241109093832_lunbo.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:02+00:00",
+      "ok": false,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[in#0 @ 0x158912980] Error opening input: Operation timed out",
+        "Error opening input file http://27.17.111.252:8118/rtp/239.69.1.41:9886.",
+        "Error opening input files: Operation timed out"
+      ],
+      "elapsed_seconds": 8.21,
+      "retry_after": "decode_failed"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://27.19.208.231:4022/rtp/239.69.1.41:9886",
+      "group": "",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/kimwang1978/collect-txt/blob/0c168eb41186250607760c52e84d56332ed09b3a/assets/snapshot/2024-11-09(M)/20241109093832_lunbo.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:03+00:00",
+      "ok": false,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[in#0 @ 0x1358075e0] Error opening input: Operation timed out",
+        "Error opening input file http://27.19.208.231:4022/rtp/239.69.1.41:9886.",
+        "Error opening input files: Operation timed out"
+      ],
+      "elapsed_seconds": 8.19,
+      "retry_after": "decode_failed"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://27.24.224.125:8888/rtp/239.69.1.41:9886",
+      "group": "",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/kimwang1978/collect-txt/blob/0c168eb41186250607760c52e84d56332ed09b3a/assets/snapshot/2024-11-09(M)/20241109093832_lunbo.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:02+00:00",
+      "ok": false,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[in#0 @ 0x137804560] Error opening input: Operation timed out",
+        "Error opening input file http://27.24.224.125:8888/rtp/239.69.1.41:9886.",
+        "Error opening input files: Operation timed out"
+      ],
+      "elapsed_seconds": 8.22,
+      "retry_after": "decode_failed"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://39.136.82.12:6610/170000001115/UmaiCHAN63807203543e3/1.m3u8?m3u8_level=2",
+      "group": "湖北频道",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/frxz751113/IPTVzb1/blob/3d1238052dd2119d34cea3558e61a4261ea8174c/js.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:35+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "timed out",
+      "elapsed_seconds": 8.0,
+      "retry_after": "invalid_or_unreachable_hls"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://58.51.111.46:1111/tsfile/live/1019_1.m3u8?key=txiptv&playlive=1&authid=0",
+      "group": "",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/hjdhnx/hipy-server/blob/33660287986f7b7cc5daaf5884e48ee1bef912bf/app/t4/files/txt/tv.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:29+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "HTTP Error 502: Bad Gateway",
+      "elapsed_seconds": 0.37,
+      "retry_after": "invalid_or_unreachable_hls"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://59.173.122.26:10001/rtp/239.69.1.41:9886",
+      "group": "",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/iodata999/frxz751113-IPTVzb1/blob/4707b487e378a263585407f740965177d7feb5a0/湖北电信.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:21+00:00",
+      "ok": false,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[in#0 @ 0x132e15750] Error opening input: Operation timed out",
+        "Error opening input file http://59.173.122.26:10001/rtp/239.69.1.41:9886.",
+        "Error opening input files: Operation timed out"
+      ],
+      "elapsed_seconds": 8.18,
+      "retry_after": "decode_failed"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://biaohome.f3322.net:8888/rtp/228.0.0.125:6108",
+      "group": "华中地区",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/huaxiong96/TVBOX/blob/065a0fd1ad51aa1f1f54b45cf0c9c06cbba9705e/IPTV/湖北联通组播.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:12+00:00",
+      "ok": false,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[http @ 0x14100a2b0] HTTP error 502 Bad Gateway",
+        "[in#0 @ 0x141009c70] Error opening input: Server returned 5XX Server Error reply",
+        "Error opening input file http://biaohome.f3322.net:8888/rtp/228.0.0.125:6108."
+      ],
+      "elapsed_seconds": 0.4,
+      "retry_after": "decode_failed"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://bv.hbwifipt.cn:4502/tsfile/live/1010_1.m3u8?key=txiptv&playlive=1&down=1",
+      "group": "",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/wudongdefeng/tvdaima/blob/b572e5323d8bd0f858215063fda313a6d4850678/hb.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:43+00:00",
+      "ok": false,
+      "reason": "invalid_or_unreachable_hls",
+      "error": "HTTP Error 502: Bad Gateway",
+      "elapsed_seconds": 0.17,
+      "retry_after": "invalid_or_unreachable_hls"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://httpdvb.slave.homed.hrtn.net/playurl?playtype=live&protocol=hls&accesstoken=R5D22D2B7U309E0093K7735BBEDIAC2DC601PBM3187915V10453Z6B7EDWE3620470C71&playtoken=ABCDEFGHIGK&programid=4200000012.m3u8",
+      "group": "",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/cyubuchen/tv_urls/blob/20f3212e96ec0b5e2cab13213a099308ec389712/hb.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:10+00:00",
+      "ok": false,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[http @ 0x151e15f10] HTTP error 502 Bad Gateway",
+        "[in#0 @ 0x151e15810] Error opening input: Server returned 5XX Server Error reply",
+        "Error opening input file http://httpdvb.slave.homed.hrtn.net/playurl?playtype=live&protocol=hls&accesstoken=R5D22D2B7U309E0093K7735BBEDIAC2DC601PBM3187915V10453Z6B7EDWE3620470C71&playtoken=ABCDEFGHIGK&programid=4200000012.m3u8."
+      ],
+      "elapsed_seconds": 0.18,
+      "retry_after": "decode_failed"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://www.dwphic.com:9999/udp/239.253.156.178:9148",
+      "group": "☘️湖北",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/yezhengcool/LeafStudio_release/blob/3014d2b5b4d88c9de4434c6fd61596c587d429ea/data/live/ydtv.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:19+00:00",
+      "ok": false,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[in#0 @ 0x135104530] Error opening input: Operation timed out",
+        "Error opening input file http://www.dwphic.com:9999/udp/239.253.156.178:9148.",
+        "Error opening input files: Operation timed out"
+      ],
+      "elapsed_seconds": 8.2,
+      "retry_after": "decode_failed"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://www.furymax.top:85/rtp/239.69.1.41:9886",
+      "group": "",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/goldenwuhan/ysc/blob/b0deeba9bec71f654537d6cf8d4c61a7a1cc7c45/whdx2.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:43+00:00",
+      "ok": false,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[http @ 0x152b073f0] HTTP error 502 Bad Gateway",
+        "[in#0 @ 0x152b06d00] Error opening input: Server returned 5XX Server Error reply",
+        "Error opening input file http://www.furymax.top:85/rtp/239.69.1.41:9886."
+      ],
+      "elapsed_seconds": 0.2,
+      "retry_after": "decode_failed"
+    },
+    {
+      "name": "湖北经视",
+      "url": "http://www.hiliu.myds.me:8088/rtp/239.69.1.41:9886",
+      "group": "",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/goldenwuhan/ysc/blob/b0deeba9bec71f654537d6cf8d4c61a7a1cc7c45/whdx.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:29:51+00:00",
+      "ok": false,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[in#0 @ 0x159e156e0] Error opening input: Operation timed out",
+        "Error opening input file http://www.hiliu.myds.me:8088/rtp/239.69.1.41:9886.",
+        "Error opening input files: Operation timed out"
+      ],
+      "elapsed_seconds": 8.19,
+      "retry_after": "decode_failed"
+    }
+  ]
+}

@@ -37,6 +37,12 @@ class ContentReviewTests(unittest.TestCase):
   self.assertFalse(got[0]['ok']);self.assertTrue(got[0]['media_ok'])
   self.assertEqual(u.best_channels(got),[])
   self.assertTrue(results[0]['ok'])
+ def test_review_is_idempotent(self):
+  original=[{'url':'https://example.com/hbjs','ok':True,'reason':'passed'}]
+  reviews=[{'url':original[0]['url'],'decision':'hold','reason':'identity_unconfirmed'}]
+  once=u.apply_content_reviews(original,reviews)
+  self.assertEqual(u.apply_content_reviews(once,reviews),once)
+  self.assertEqual(once[0]['media_reason'],'passed')
  def test_unrelated_channel_not_changed(self):
   row={'url':'https://example.com/another','ok':True}
   self.assertEqual(u.apply_content_reviews([row],[{'url':'https://example.com/held','decision':'hold','reason':'identity_unconfirmed'}]),[row])
