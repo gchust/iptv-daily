@@ -9,6 +9,16 @@ class ExpandedInputTests(unittest.TestCase):
   text='#EXTINF:-1,tvg-id="湖北经视" group-title="湖北,武汉",湖北经视\nhttps://example.com/live.m3u8'
   c=u.parse_playlist(text,'feed')[0]
   self.assertEqual(c.name,'湖北经视');self.assertEqual(c.region,'湖北')
+ def test_new_scenic_and_loop_labels_are_excluded(self):
+  for name in ['云南丽江蓝月谷','北京-水长城02','安徽黄山光明顶','黄山西海大峡谷','泰山碧霞祠','中央电视塔东','江苏无锡大剧院','末日电影合集','黄渤电影','鬼吹灯之云南虫谷','重庆军旅剧场','重庆谍战剧场']:
+   with self.subTest(name=name):self.assertEqual(u.parse_playlist('湖北,#genre#\n'+name+',https://example.com/live.m3u8','feed'),[])
+ def test_existing_movie_channels_remain_eligible(self):
+  for name in ['CCTV6电影','风云剧场','第一剧场','广西影视','辽宁影视']:
+   with self.subTest(name=name):self.assertEqual(len(u.parse_playlist(name+',https://example.com/live.m3u8','feed')),1)
+ def test_obvious_feed_aliases_merge(self):
+  self.assertEqual(u.key('CETN3'),u.key('中国教育3'))
+  self.assertEqual(u.key('CCTV-卫生健康'),u.key('卫生健康'))
+  self.assertEqual(u.key('翡翠台北美版(TVB J1)'),u.key('翡翠台北美版'))
  def test_direct_vod_not_live(self):
   self.assertEqual(u.parse_playlist('湖北,#genre#\n湖北经视,https://example.com/program.mp4','feed'),[])
  def test_hubei_county_classification(self):

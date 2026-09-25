@@ -76,12 +76,12 @@ def clean_name(name):
  name=re.sub(r'\s*\[(?:[^]]*(?:p|geo|not 24/7|1280|1920)[^]]*)\]', '', name, flags=re.I)
  name=re.sub(r'\s*\((?:\d{3,4}p|HD|SD|高清|标清|超清)\)\s*$', '',name,flags=re.I)
  name=re.sub(r'^(?:'+ '|'.join(REGIONS)+r')\s+[I|]\s+', '',name)
- name={'绍兴综合':'绍兴新闻综合','湖北经济':'湖北经视','湖北经济电视':'湖北经视','湖北经济频道':'湖北经视'}.get(name,name)
+ name={'CETN3':'中国教育3','CCTV-卫生健康':'卫生健康','翡翠台北美版(TVB J1)':'翡翠台北美版','绍兴综合':'绍兴新闻综合','湖北经济':'湖北经视','湖北经济电视':'湖北经视','湖北经济频道':'湖北经视'}.get(name,name)
  return re.sub(r'[\r\n"<>]', '',name).strip()[:100]
 
 
 def key(name):
- s=unicodedata.normalize('NFKC',name).upper()
+ s=unicodedata.normalize('NFKC',clean_name(name)).upper()
  s=re.sub(r'\([^)]*(?:高清|标清|超清|HD|SD|备用|测试|720|1080|2160)[^)]*\)','',s)
  s=re.sub(r'(?:超高清|超清|高清|标清|HD|SD|HEVC|H264|H265|4K|8K|1080P|720P)','',s)
  return re.sub(r'[\s_\-·]','',s)
@@ -90,8 +90,8 @@ def key(name):
 def classify(name,group):
  region=next((p for p,words in REGIONS.items() if any(name.upper().startswith(w.upper()) for w in words)),None)
  if not region:region=next((p for p in REGIONS if p in group), '其他')
- if any(w in name+' '+group for w in ['慢直播','风景','景区','日出','云海','草甸','远眺','观景','熊猫直播','峨眉山','九华山','玉女峰','雪山','十八盘','玉皇顶','南天门','山顶','索道','栈道']):return region,'慢直播'
- if any(w in name+' '+group for w in ['轮播','强森电影','林正英','周星驰','钟馗传说','成龙电影','李连杰电影','周润发电影','刘德华电影']):return region,'影视轮播'
+ if any(w in name+' '+group for w in ['慢直播','风景','景区','日出','云海','草甸','远眺','观景','熊猫直播','峨眉山','九华山','玉女峰','雪山','十八盘','玉皇顶','南天门','山顶','索道','栈道','光明顶','大峡谷','碧霞祠','水长城','电视塔','悬崖','蓝月谷','金丝猴','无锡大剧院','瀑布','景观','摄像头']):return region,'慢直播'
+ if any(w in name+' '+group for w in ['轮播','强森电影','林正英','周星驰','钟馗传说','成龙电影','李连杰电影','周润发电影','刘德华电影','黄渤电影','枪战电影','武侠电影','末日电影','电影合集','鬼吹灯之','军旅剧场','谍战剧场']):return region,'影视轮播'
  if re.search(r'CCTV|央视|中国教育|^CETV|^CGTN',name,re.I):return '全国','央视/教育'
  if any(w in name for w in ['广播','电台','之声']) or re.search(r'\b(?:FM|RADIO)\b',name,re.I):return region,'广播'
  if '卫视' in name:return region,'卫视'
@@ -367,12 +367,24 @@ def atomic_write(path,text):
 def json_write(path,obj):atomic_write(path,json.dumps(obj,ensure_ascii=False,indent=2,allow_nan=False)+'\n')
 
 
+def apply_program_eligibility(results):
+ """Recheck program type when reviewing evidence from an older code revision."""
+ filtered=[]
+ for r in results:
+  region,kind=classify(clean_name(r['name']),r.get('group',''))
+  if kind in EXCLUDED_KINDS:
+   r={**r,'media_ok':r.get('media_ok',r['ok']),'media_reason':r.get('media_reason',r.get('reason')),'ok':False,'reason':'non_tv_content','kind':kind,'region':region}
+  filtered.append(r)
+ return filtered
+
+
 def apply_content_reviews(results,reviews):
  held={r['url']:r for r in reviews if r.get('decision')=='hold'}
  return [{**r,'media_ok':r.get('media_ok',r['ok']),'media_reason':r.get('media_reason',r.get('reason')),'ok':False,'reason':held[r['url']]['reason'],'content_review':held[r['url']]} if r['url'] in held else r for r in results]
 
 
 def publish(root,results,sources,total,selected,settings,started):
+ results=apply_program_eligibility(results)
  review_file=root/'config/content-reviews.json'
  if review_file.exists():results=apply_content_reviews(results,json.loads(review_file.read_text()))
  checked=utcnow();rows=best_channels(results)

@@ -6,5 +6,21 @@
     "reason": "identity_unconfirmed",
     "reviewed_at": "2026-09-25T14:32:15+00:00",
     "note": "A 20-second media sample and a 180-second follow-up decoded successfully. Four follow-up frames showed medicine advertisements with no broadcaster logo; the advertised channel identity could not be independently confirmed. Keep this candidate out of published TV playlists until reviewed."
+  },
+  {
+    "url": "http://home.scanflove.com:7788/rtp/235.254.198.83:1608",
+    "channel": "重庆军事",
+    "decision": "hold",
+    "reason": "channel_label_mismatch",
+    "reviewed_at": "2026-09-25T14:43:52+00:00",
+    "note": "The sampled picture shows CCTV-7 branding, not an independently identified Chongqing regional station."
+  },
+  {
+    "url": "http://home.scanflove.com:7788/rtp/235.254.198.118:1748",
+    "channel": "重庆相声小品",
+    "decision": "hold",
+    "reason": "channel_label_mismatch",
+    "reviewed_at": "2026-09-25T14:43:52+00:00",
+    "note": "The sampled picture shows CCTV-11 branding. The provided regional channel label does not match the picture."
   }
 ]
