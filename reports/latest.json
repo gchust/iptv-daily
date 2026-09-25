@@ -1,19 +1,19 @@
 {
   "status": {
     "state": "ok",
-    "last_attempt_at": "2026-09-25T13:56:46+00:00",
-    "last_success_at": "2026-09-25T13:56:46+00:00",
+    "last_attempt_at": "2026-09-25T14:03:22+00:00",
+    "last_success_at": "2026-09-25T14:03:22+00:00",
     "sample_seconds": 20,
     "ocr_enabled": true,
-    "candidate_urls": 3377,
-    "tested_urls": 80,
-    "passed_urls": 21,
-    "unique_channels": 21,
-    "regional_channels": 13,
+    "candidate_urls": 3334,
+    "tested_urls": 60,
+    "passed_urls": 38,
+    "unique_channels": 37,
+    "regional_channels": 28,
     "failed_sources": [],
     "runner": "GitHub Actions",
-    "run_url": "https://github.com/gchust/iptv-daily/actions/runs/36143286927",
-    "duration_seconds": 422.3,
+    "run_url": "https://github.com/gchust/iptv-daily/actions/runs/36144544349",
+    "duration_seconds": 173.1,
     "publication_note": "Only URLs passing this run are published."
   },
   "sources": [
@@ -27,13 +27,13 @@
       "name": "CCSH IPTV",
       "url": "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt",
       "ok": true,
-      "candidates": 2419
+      "candidates": 2400
     },
     {
       "name": "Collect-IPTV",
       "url": "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8",
       "ok": true,
-      "candidates": 755
+      "candidates": 731
     }
   ],
   "results": [
@@ -47,12 +47,17 @@
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:54:41+00:00",
+      "checked_at": "2026-09-25T14:01:29+00:00",
       "ok": false,
-      "reason": "invalid_or_unreachable_hls",
-      "error": "<urlopen error timed out>",
-      "elapsed_seconds": 16.19,
-      "retry_after": "invalid_or_unreachable_hls"
+      "reason": "frozen_picture",
+      "seconds": 19.99,
+      "frames": 495,
+      "resolution": "1920x1080",
+      "audio_rms_db": -18.62793,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 10.72,
+      "errors": [],
+      "elapsed_seconds": 15.67
     },
     {
       "name": "纪实人文",
@@ -64,7 +69,7 @@
         "https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:54:52+00:00",
+      "checked_at": "2026-09-25T14:01:49+00:00",
       "ok": false,
       "reason": "invalid_or_unreachable_hls",
       "error": "<urlopen error timed out>",
@@ -81,7 +86,7 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:54:56+00:00",
+      "checked_at": "2026-09-25T14:01:44+00:00",
       "ok": false,
       "reason": "decode_failed",
       "seconds": 0,
@@ -91,11 +96,11 @@
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [
-        "[in#0 @ 0x5598c3952600] Error opening input: Invalid data found when processing input",
+        "[in#0 @ 0x561f664bc600] Error opening input: Invalid data found when processing input",
         "Error opening input file http://kkk.888.3116598.xyz/api.php?n=tttt&id=igs71Z&tk=FgM0vQMejxvG.",
         "Error opening input files: Invalid data found when processing input"
       ],
-      "elapsed_seconds": 0.29,
+      "elapsed_seconds": 0.42,
       "retry_after": "decode_failed"
     },
     {
@@ -108,7 +113,7 @@
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:54:49+00:00",
+      "checked_at": "2026-09-25T14:01:39+00:00",
       "ok": false,
       "reason": "decode_failed",
       "seconds": 0,
@@ -118,11 +123,11 @@
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [
-        "[in#0 @ 0x561c5d5d0600] Error opening input: Invalid data found when processing input",
+        "[in#0 @ 0x560a7c277600] Error opening input: Invalid data found when processing input",
         "Error opening input file https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV28.m3u8.",
         "Error opening input files: Invalid data found when processing input"
       ],
-      "elapsed_seconds": 0.19,
+      "elapsed_seconds": 0.14,
       "retry_after": "decode_failed"
     },
     {
@@ -135,19 +140,20 @@
         "https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:54:23+00:00",
+      "checked_at": "2026-09-25T14:01:11+00:00",
       "ok": true,
       "reason": "passed",
       "seconds": 19.99,
       "frames": 499,
       "resolution": "640x480",
-      "audio_rms_db": -24.122704,
+      "audio_rms_db": -28.662139,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
       "ocr_checked": true,
-      "elapsed_seconds": 27.26
+      "ocr_elapsed_seconds": 0.88,
+      "elapsed_seconds": 15.71
     },
     {
       "name": "Jiangxi Economy & Life Channel",
@@ -159,28 +165,11 @@
         "https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:54:48+00:00",
+      "checked_at": "2026-09-25T14:01:37+00:00",
       "ok": false,
       "reason": "invalid_or_unreachable_hls",
       "error": "HTTP Error 403: Forbidden",
-      "elapsed_seconds": 1.08,
-      "retry_after": "invalid_or_unreachable_hls"
-    },
-    {
-      "name": "QTV-4",
-      "url": "http://119.166.53.110:85/tsfile/live/1004_1.m3u8?key=txiptv&playlive=1&authid=0",
-      "group": "",
-      "region": "其他",
-      "kind": "其他",
-      "sources": [
-        "https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u"
-      ],
-      "custom": false,
-      "checked_at": "2026-09-25T13:55:19+00:00",
-      "ok": false,
-      "reason": "invalid_or_unreachable_hls",
-      "error": "<urlopen error [Errno 111] Connection refused>",
-      "elapsed_seconds": 0.25,
+      "elapsed_seconds": 0.92,
       "retry_after": "invalid_or_unreachable_hls"
     },
     {
@@ -193,20 +182,20 @@
         "https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:55:41+00:00",
+      "checked_at": "2026-09-25T14:01:15+00:00",
       "ok": true,
       "reason": "passed",
       "seconds": 19.99,
       "frames": 499,
       "resolution": "720x576",
-      "audio_rms_db": -27.376496,
+      "audio_rms_db": -29.916808,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
       "ocr_checked": true,
-      "elapsed_seconds": 24.97,
-      "retry_after": "incomplete_sample"
+      "ocr_elapsed_seconds": 0.61,
+      "elapsed_seconds": 12.83
     },
     {
       "name": "发现之旅",
@@ -218,73 +207,19 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:54:07+00:00",
+      "checked_at": "2026-09-25T14:01:21+00:00",
       "ok": true,
       "reason": "passed",
       "seconds": 19.99,
-      "frames": 498,
+      "frames": 499,
       "resolution": "1280x720",
-      "audio_rms_db": -23.002599,
+      "audio_rms_db": -25.902346,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "ocr_checked": true,
-      "elapsed_seconds": 35.75,
-      "retry_after": "timeout"
-    },
-    {
-      "name": "新视觉HD",
-      "url": "http://120.76.248.139/live/bfgd/4200000249.m3u8",
-      "group": "其他频道",
-      "region": "其他",
-      "kind": "其他",
-      "sources": [
-        "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
-      ],
-      "custom": false,
-      "checked_at": "2026-09-25T13:54:25+00:00",
-      "ok": false,
-      "reason": "media_errors",
-      "seconds": 19.99,
-      "frames": 493,
-      "resolution": "1920x1080",
-      "audio_rms_db": -21.143397,
-      "max_black_seconds": 0,
-      "max_freeze_seconds": 0,
-      "errors": [
-        "[mpegts @ 0x55e2aeda4140] Packet corrupt (stream = 0, dts = 1222188537).",
-        "[hls @ 0x55e2aed9e700] Packet corrupt (stream = 0, dts = 1222186737).",
-        "[in#0/hls @ 0x55e2aed9e600] corrupt input packet in stream 0"
-      ],
-      "elapsed_seconds": 31.03,
-      "retry_after": "timeout"
-    },
-    {
-      "name": "特辑影院",
-      "url": "http://43.138.170.29:35455/douyu/3637778",
-      "group": "电影",
-      "region": "其他",
-      "kind": "其他",
-      "sources": [
-        "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
-      ],
-      "custom": false,
-      "checked_at": "2026-09-25T13:55:14+00:00",
-      "ok": false,
-      "reason": "decode_failed",
-      "seconds": 0,
-      "frames": 0,
-      "resolution": null,
-      "audio_rms_db": null,
-      "max_black_seconds": 0,
-      "max_freeze_seconds": 0,
-      "errors": [
-        "[in#0 @ 0x56484f1af600] Error opening input: Connection timed out",
-        "Error opening input file http://43.138.170.29:35455/douyu/3637778.",
-        "Error opening input files: Connection timed out"
-      ],
-      "elapsed_seconds": 5.06,
-      "retry_after": "decode_failed"
+      "ocr_elapsed_seconds": 0.36,
+      "elapsed_seconds": 15.28
     },
     {
       "name": "电白视窗",
@@ -296,11 +231,11 @@
         "https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:55:01+00:00",
+      "checked_at": "2026-09-25T14:01:46+00:00",
       "ok": false,
       "reason": "invalid_or_unreachable_hls",
       "error": "<urlopen error [Errno -2] Name or service not known>",
-      "elapsed_seconds": 0.53,
+      "elapsed_seconds": 0.49,
       "retry_after": "invalid_or_unreachable_hls"
     },
     {
@@ -313,11 +248,11 @@
         "https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:54:36+00:00",
+      "checked_at": "2026-09-25T14:01:40+00:00",
       "ok": false,
       "reason": "invalid_or_unreachable_hls",
       "error": "<urlopen error timed out>",
-      "elapsed_seconds": 8.02,
+      "elapsed_seconds": 8.05,
       "retry_after": "invalid_or_unreachable_hls"
     },
     {
@@ -330,19 +265,20 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:53:25+00:00",
+      "checked_at": "2026-09-25T14:01:17+00:00",
       "ok": true,
       "reason": "passed",
       "seconds": 19.99,
       "frames": 499,
       "resolution": "1920x1080",
-      "audio_rms_db": -30.509549,
+      "audio_rms_db": -27.654658,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
       "ocr_checked": true,
-      "elapsed_seconds": 46.51
+      "ocr_elapsed_seconds": 0.36,
+      "elapsed_seconds": 24.59
     },
     {
       "name": "中视",
@@ -354,135 +290,21 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:55:36+00:00",
-      "ok": true,
-      "reason": "passed",
-      "seconds": 19.99,
-      "frames": 500,
+      "checked_at": "2026-09-25T14:01:18+00:00",
+      "ok": false,
+      "reason": "incomplete_sample",
+      "seconds": 9.87,
+      "frames": 98,
       "resolution": "1280x720",
-      "audio_rms_db": -27.15193,
+      "audio_rms_db": -26.892569,
       "max_black_seconds": 0,
-      "max_freeze_seconds": 0,
-      "errors": [],
-      "ocr_checked": true,
-      "elapsed_seconds": 15.65,
+      "max_freeze_seconds": 6.007,
+      "errors": [
+        "[in#0/mpegts @ 0x55cd28340600] Error during demuxing: Input/output error",
+        "[h264 @ 0x55cd28381940] error while decoding MB 49 43, bytestream -12"
+      ],
+      "elapsed_seconds": 11.4,
       "retry_after": "incomplete_sample"
-    },
-    {
-      "name": "台视新闻",
-      "url": "http://38.64.72.148/hls/modn/list/4013/chunklist1.m3u8",
-      "group": "港澳台频道",
-      "region": "台湾",
-      "kind": "地方台",
-      "sources": [
-        "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
-      ],
-      "custom": false,
-      "checked_at": "2026-09-25T13:52:24+00:00",
-      "ok": false,
-      "reason": "timeout",
-      "seconds": 20.0,
-      "frames": 575,
-      "resolution": "1920x1080",
-      "audio_rms_db": -25.293137,
-      "max_black_seconds": 0,
-      "max_freeze_seconds": 0,
-      "errors": [],
-      "hls_progressed": true,
-      "elapsed_seconds": 33.34,
-      "retry_after": "timeout"
-    },
-    {
-      "name": "九台综合",
-      "url": "http://stream10.jlntv.cn/jiutaitv/sd/live.m3u8?zjild",
-      "group": "吉林频道",
-      "region": "吉林",
-      "kind": "地方台",
-      "sources": [
-        "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt",
-        "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
-      ],
-      "custom": false,
-      "checked_at": "2026-09-25T13:53:10+00:00",
-      "ok": false,
-      "reason": "timeout",
-      "seconds": 19.99,
-      "frames": 498,
-      "resolution": "720x576",
-      "audio_rms_db": -19.70164,
-      "max_black_seconds": 0,
-      "max_freeze_seconds": 0,
-      "errors": [],
-      "hls_progressed": true,
-      "elapsed_seconds": 41.83,
-      "retry_after": "timeout"
-    },
-    {
-      "name": "桦甸综合",
-      "url": "http://stream10.jlntv.cn/huadian/sd/live.m3u8?zjild",
-      "group": "吉林频道",
-      "region": "吉林",
-      "kind": "地方台",
-      "sources": [
-        "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt",
-        "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
-      ],
-      "custom": false,
-      "checked_at": "2026-09-25T13:52:55+00:00",
-      "ok": false,
-      "reason": "timeout",
-      "seconds": 19.99,
-      "frames": 498,
-      "resolution": "720x576",
-      "audio_rms_db": -27.446438,
-      "max_black_seconds": 0,
-      "max_freeze_seconds": 0,
-      "errors": [],
-      "hls_progressed": true,
-      "elapsed_seconds": 31.33,
-      "retry_after": "timeout"
-    },
-    {
-      "name": "四川西昌邛海景区",
-      "url": "https://gcalic.v.myalicdn.com/gc/xcqh01_1/index.m3u8",
-      "group": "直播中国",
-      "region": "四川",
-      "kind": "地方台",
-      "sources": [
-        "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
-      ],
-      "custom": false,
-      "checked_at": "2026-09-25T13:55:13+00:00",
-      "ok": false,
-      "reason": "invalid_or_unreachable_hls",
-      "error": "<urlopen error timed out>",
-      "elapsed_seconds": 16.21,
-      "retry_after": "invalid_or_unreachable_hls"
-    },
-    {
-      "name": "广安公共",
-      "url": "http://live1.gatv.com.cn:85/live/GGPD.m3u8",
-      "group": "四川频道",
-      "region": "四川",
-      "kind": "地方台",
-      "sources": [
-        "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt",
-        "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
-      ],
-      "custom": false,
-      "checked_at": "2026-09-25T13:52:06+00:00",
-      "ok": false,
-      "reason": "timeout",
-      "seconds": 19.99,
-      "frames": 498,
-      "resolution": "1920x1080",
-      "audio_rms_db": -27.433758,
-      "max_black_seconds": 0,
-      "max_freeze_seconds": 0,
-      "errors": [],
-      "hls_progressed": true,
-      "elapsed_seconds": 56.35,
-      "retry_after": "timeout"
     },
     {
       "name": "天津卫视",
@@ -494,7 +316,7 @@
         "https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:55:03+00:00",
+      "checked_at": "2026-09-25T14:01:50+00:00",
       "ok": false,
       "reason": "decode_failed",
       "seconds": 0,
@@ -504,11 +326,11 @@
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [
-        "[in#0 @ 0x56458d622600] Error opening input: Connection timed out",
+        "[in#0 @ 0x5558a75ab600] Error opening input: Connection timed out",
         "Error opening input file http://183.207.248.71/cntv/live1/HD-2500k-1080P-tianjinstv/HD-2500k-1080P-tianjinstv.",
         "Error opening input files: Connection timed out"
       ],
-      "elapsed_seconds": 5.51,
+      "elapsed_seconds": 5.44,
       "retry_after": "decode_failed"
     },
     {
@@ -521,45 +343,21 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:51:18+00:00",
-      "ok": false,
-      "reason": "media_errors",
+      "checked_at": "2026-09-25T14:01:39+00:00",
+      "ok": true,
+      "reason": "passed",
       "seconds": 19.99,
-      "frames": 498,
+      "frames": 499,
       "resolution": "1280x720",
-      "audio_rms_db": -20.077349,
+      "audio_rms_db": -24.621947,
       "max_black_seconds": 0,
-      "max_freeze_seconds": 10.56,
-      "errors": [
-        "[mpegts @ 0x55f823565080] Packet corrupt (stream = 1, dts = 3171722395).",
-        "[hls @ 0x55f82355f700] Packet corrupt (stream = 1, dts = 3171718795).",
-        "[in#0/hls @ 0x55f82355f600] corrupt input packet in stream 1"
-      ],
-      "elapsed_seconds": 23.4,
-      "retry_after": "timeout"
-    },
-    {
-      "name": "亳州农村",
-      "url": "http://zbbf2.ahbztv.com/live/418.m3u8",
-      "group": "安徽频道",
-      "region": "安徽",
-      "kind": "地方台",
-      "sources": [
-        "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt",
-        "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
-      ],
-      "custom": false,
-      "checked_at": "2026-09-25T13:52:27+00:00",
-      "ok": false,
-      "reason": "frozen_picture",
-      "seconds": 19.99,
-      "frames": 500,
-      "resolution": "1920x1080",
-      "audio_rms_db": -30.308296,
-      "max_black_seconds": 0,
-      "max_freeze_seconds": 11.410353999999998,
+      "max_freeze_seconds": 0,
       "errors": [],
-      "elapsed_seconds": 29.29
+      "hls_progressed": true,
+      "ocr_checked": true,
+      "ocr_elapsed_seconds": 0.28,
+      "elapsed_seconds": 4.61,
+      "retry_after": "hls_not_updating"
     },
     {
       "name": "山东居家购物",
@@ -571,35 +369,12 @@
         "https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:55:01+00:00",
+      "checked_at": "2026-09-25T14:01:48+00:00",
       "ok": false,
       "reason": "invalid_or_unreachable_hls",
       "error": "HTTP Error 403: Forbidden",
-      "elapsed_seconds": 0.01,
+      "elapsed_seconds": 0.03,
       "retry_after": "invalid_or_unreachable_hls"
-    },
-    {
-      "name": "山东教育",
-      "url": "http://2280.eu.org:1234/609154353",
-      "group": "山东频道",
-      "region": "山东",
-      "kind": "地方台",
-      "sources": [
-        "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
-      ],
-      "custom": false,
-      "checked_at": "2026-09-25T13:53:02+00:00",
-      "ok": false,
-      "reason": "timeout",
-      "seconds": 19.99,
-      "frames": 498,
-      "resolution": "1280x720",
-      "audio_rms_db": -33.923961,
-      "max_black_seconds": 0,
-      "max_freeze_seconds": 0,
-      "errors": [],
-      "elapsed_seconds": 37.02,
-      "retry_after": "media_errors"
     },
     {
       "name": "山东综艺",
@@ -611,11 +386,11 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:54:27+00:00",
+      "checked_at": "2026-09-25T14:01:31+00:00",
       "ok": false,
       "reason": "invalid_or_unreachable_hls",
       "error": "unsupported HLS segment URL",
-      "elapsed_seconds": 0.54,
+      "elapsed_seconds": 0.96,
       "retry_after": "invalid_or_unreachable_hls"
     },
     {
@@ -628,12 +403,20 @@
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:55:15+00:00",
-      "ok": false,
-      "reason": "invalid_or_unreachable_hls",
-      "error": "<urlopen error timed out>",
-      "elapsed_seconds": 16.21,
-      "retry_after": "invalid_or_unreachable_hls"
+      "checked_at": "2026-09-25T14:01:44+00:00",
+      "ok": true,
+      "reason": "passed",
+      "seconds": 19.99,
+      "frames": 489,
+      "resolution": "1920x1080",
+      "audio_rms_db": -19.099071,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [],
+      "hls_progressed": true,
+      "ocr_checked": true,
+      "ocr_elapsed_seconds": 0.32,
+      "elapsed_seconds": 26.46
     },
     {
       "name": "东莞新闻综合",
@@ -646,17 +429,20 @@
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
       ],
       "custom": true,
-      "checked_at": "2026-09-25T13:49:44+00:00",
-      "ok": false,
-      "reason": "frozen_picture",
+      "checked_at": "2026-09-25T14:00:29+00:00",
+      "ok": true,
+      "reason": "passed",
       "seconds": 19.99,
-      "frames": 350,
+      "frames": 500,
       "resolution": "1280x720",
-      "audio_rms_db": -25.143419,
+      "audio_rms_db": -23.980188,
       "max_black_seconds": 0,
-      "max_freeze_seconds": 6.04,
+      "max_freeze_seconds": 0,
       "errors": [],
-      "elapsed_seconds": 18.74
+      "hls_progressed": true,
+      "ocr_checked": true,
+      "ocr_elapsed_seconds": 0.34,
+      "elapsed_seconds": 16.75
     },
     {
       "name": "东莞生活资讯",
@@ -669,45 +455,20 @@
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
       ],
       "custom": true,
-      "checked_at": "2026-09-25T13:49:44+00:00",
-      "ok": false,
-      "reason": "frozen_picture",
-      "seconds": 19.98,
-      "frames": 350,
+      "checked_at": "2026-09-25T14:00:29+00:00",
+      "ok": true,
+      "reason": "passed",
+      "seconds": 19.99,
+      "frames": 500,
       "resolution": "1280x720",
-      "audio_rms_db": -24.171053,
+      "audio_rms_db": -25.003753,
       "max_black_seconds": 0,
-      "max_freeze_seconds": 6.04,
+      "max_freeze_seconds": 0,
       "errors": [],
-      "elapsed_seconds": 21.02
-    },
-    {
-      "name": "南国都市",
-      "url": "http://tencentplay.gztv.com/live/nanguodushi.m3u8?txSecret=140110ae3d6c936a77f94c4f4d85b0d3&txTime=18d57929bd4",
-      "group": "广东频道",
-      "region": "广东",
-      "kind": "地方台",
-      "sources": [
-        "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt",
-        "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
-      ],
-      "custom": false,
-      "checked_at": "2026-09-25T13:52:28+00:00",
-      "ok": false,
-      "reason": "incomplete_sample",
-      "seconds": 15.0,
-      "frames": 450,
-      "resolution": "1920x1080",
-      "audio_rms_db": -26.757538,
-      "max_black_seconds": 0,
-      "max_freeze_seconds": 9.04,
-      "errors": [
-        "[mpegts @ 0x55678607b900] Packet corrupt (stream = 0, dts = 1283665016).",
-        "[hls @ 0x556786074700] Packet corrupt (stream = 0, dts = 1283663216).",
-        "[in#0/hls @ 0x556786074600] corrupt input packet in stream 0"
-      ],
-      "elapsed_seconds": 31.2,
-      "retry_after": "media_errors"
+      "hls_progressed": true,
+      "ocr_checked": true,
+      "ocr_elapsed_seconds": 0.71,
+      "elapsed_seconds": 16.54
     },
     {
       "name": "广州新闻",
@@ -720,19 +481,21 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": true,
-      "checked_at": "2026-09-25T13:50:16+00:00",
-      "ok": false,
-      "reason": "timeout",
-      "seconds": 19.99,
+      "checked_at": "2026-09-25T14:00:44+00:00",
+      "ok": true,
+      "reason": "passed",
+      "seconds": 19.98,
       "frames": 500,
       "resolution": "1280x720",
-      "audio_rms_db": -26.226237,
+      "audio_rms_db": -27.275242,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
-      "elapsed_seconds": 32.78,
-      "retry_after": "timeout"
+      "ocr_checked": true,
+      "ocr_elapsed_seconds": 0.63,
+      "elapsed_seconds": 17.65,
+      "retry_after": "media_errors"
     },
     {
       "name": "龙华偶像",
@@ -744,11 +507,11 @@
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:54:58+00:00",
+      "checked_at": "2026-09-25T14:01:46+00:00",
       "ok": false,
       "reason": "invalid_or_unreachable_hls",
       "error": "not an HLS playlist",
-      "elapsed_seconds": 0.11,
+      "elapsed_seconds": 0.16,
       "retry_after": "invalid_or_unreachable_hls"
     },
     {
@@ -762,19 +525,20 @@
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
       ],
       "custom": true,
-      "checked_at": "2026-09-25T13:50:39+00:00",
+      "checked_at": "2026-09-25T14:00:47+00:00",
       "ok": true,
       "reason": "passed",
       "seconds": 19.99,
-      "frames": 442,
+      "frames": 492,
       "resolution": "1280x720",
-      "audio_rms_db": -29.05977,
+      "audio_rms_db": -30.5956,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
       "ocr_checked": true,
-      "elapsed_seconds": 27.33
+      "ocr_elapsed_seconds": 0.64,
+      "elapsed_seconds": 29.17
     },
     {
       "name": "广西新闻",
@@ -786,43 +550,20 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:52:39+00:00",
+      "checked_at": "2026-09-25T14:01:11+00:00",
       "ok": true,
       "reason": "passed",
       "seconds": 19.98,
       "frames": 500,
       "resolution": "1920x1080",
-      "audio_rms_db": -29.380135,
+      "audio_rms_db": -26.289911,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
       "ocr_checked": true,
-      "elapsed_seconds": 29.58
-    },
-    {
-      "name": "句容新闻综合",
-      "url": "http://jrlive.jrntv.com/live/_definst_/jrxwzhs/playlist.m3u8",
-      "group": "江苏频道",
-      "region": "江苏",
-      "kind": "地方台",
-      "sources": [
-        "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
-      ],
-      "custom": false,
-      "checked_at": "2026-09-25T13:53:07+00:00",
-      "ok": false,
-      "reason": "timeout",
-      "seconds": 19.99,
-      "frames": 499,
-      "resolution": "720x576",
-      "audio_rms_db": -23.564159,
-      "max_black_seconds": 0,
-      "max_freeze_seconds": 0,
-      "errors": [],
-      "hls_progressed": true,
-      "elapsed_seconds": 44.57,
-      "retry_after": "invalid_or_unreachable_hls"
+      "ocr_elapsed_seconds": 0.73,
+      "elapsed_seconds": 9.84
     },
     {
       "name": "徐州經濟生活",
@@ -834,39 +575,12 @@
         "https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:54:21+00:00",
+      "checked_at": "2026-09-25T14:01:36+00:00",
       "ok": false,
       "reason": "invalid_or_unreachable_hls",
       "error": "<urlopen error timed out>",
       "elapsed_seconds": 8.01,
       "retry_after": "invalid_or_unreachable_hls"
-    },
-    {
-      "name": "徐州经济生活",
-      "url": "http://stream3.huaihai.tv/xz2t/sd/live.m3u8",
-      "group": "江苏频道",
-      "region": "江苏",
-      "kind": "地方台",
-      "sources": [
-        "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
-      ],
-      "custom": false,
-      "checked_at": "2026-09-25T13:52:00+00:00",
-      "ok": false,
-      "reason": "media_errors",
-      "seconds": 19.98,
-      "frames": 423,
-      "resolution": "1280x720",
-      "audio_rms_db": -8.296219,
-      "max_black_seconds": 0,
-      "max_freeze_seconds": 0,
-      "errors": [
-        "[mpegts @ 0x5628a50d6040] Packet corrupt (stream = 1, dts = 5876638920).",
-        "[aist#0:1/aac @ 0x5628a5224f00] Error submitting packet to decoder: Invalid data found when processing input",
-        "[aist#0:1/aac @ 0x5628a5224f00] Error submitting packet to decoder: Invalid data found when processing input"
-      ],
-      "elapsed_seconds": 27.2,
-      "retry_after": "timeout"
     },
     {
       "name": "武进生活频道",
@@ -878,37 +592,20 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:55:19+00:00",
+      "checked_at": "2026-09-25T14:01:01+00:00",
       "ok": true,
       "reason": "passed",
       "seconds": 19.99,
       "frames": 500,
       "resolution": "720x576",
-      "audio_rms_db": -19.787915,
+      "audio_rms_db": -24.626478,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
       "ocr_checked": true,
-      "elapsed_seconds": 21.08,
-      "retry_after": "media_errors"
-    },
-    {
-      "name": "江苏城市",
-      "url": "http://223.110.245.143/ott.js.chinamobile.com/PLTV/3/224/3221225929/index.m3u8",
-      "group": "",
-      "region": "江苏",
-      "kind": "地方台",
-      "sources": [
-        "https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u"
-      ],
-      "custom": false,
-      "checked_at": "2026-09-25T13:55:26+00:00",
-      "ok": false,
-      "reason": "invalid_or_unreachable_hls",
-      "error": "<urlopen error timed out>",
-      "elapsed_seconds": 8.01,
-      "retry_after": "invalid_or_unreachable_hls"
+      "ocr_elapsed_seconds": 0.68,
+      "elapsed_seconds": 12.42
     },
     {
       "name": "河北农民",
@@ -920,19 +617,37 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:54:42+00:00",
+      "checked_at": "2026-09-25T14:00:59+00:00",
       "ok": true,
       "reason": "passed",
       "seconds": 19.99,
-      "frames": 599,
+      "frames": 600,
       "resolution": "1280x720",
-      "audio_rms_db": -33.685828,
+      "audio_rms_db": -33.42057,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
       "ocr_checked": true,
-      "elapsed_seconds": 16.04
+      "ocr_elapsed_seconds": 0.87,
+      "elapsed_seconds": 12.06
+    },
+    {
+      "name": "河北农民",
+      "url": "https://ls.qingting.fm/live/1650/64k.m3u8",
+      "group": "河北频道",
+      "region": "河北",
+      "kind": "地方台",
+      "sources": [
+        "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt",
+        "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T14:02:34+00:00",
+      "ok": false,
+      "reason": "media_timeout",
+      "elapsed_seconds": 46.9,
+      "retry_after": "media_timeout"
     },
     {
       "name": "邢台综合",
@@ -944,19 +659,21 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:52:04+00:00",
+      "checked_at": "2026-09-25T14:01:20+00:00",
       "ok": true,
       "reason": "passed",
       "seconds": 19.99,
       "frames": 499,
       "resolution": "1280x720",
-      "audio_rms_db": -23.618842,
+      "audio_rms_db": -26.255753,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
       "ocr_checked": true,
-      "elapsed_seconds": 34.69
+      "ocr_elapsed_seconds": 0.4,
+      "elapsed_seconds": 15.26,
+      "retry_after": "hls_not_updating"
     },
     {
       "name": "焦作教育频道",
@@ -968,11 +685,11 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:55:18+00:00",
+      "checked_at": "2026-09-25T14:01:55+00:00",
       "ok": false,
       "reason": "invalid_or_unreachable_hls",
       "error": "HTTP Error 403: Forbidden",
-      "elapsed_seconds": 0.02,
+      "elapsed_seconds": 0.41,
       "retry_after": "invalid_or_unreachable_hls"
     },
     {
@@ -985,7 +702,7 @@
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:54:29+00:00",
+      "checked_at": "2026-09-25T14:01:36+00:00",
       "ok": false,
       "reason": "frozen_picture",
       "seconds": 19.99,
@@ -995,7 +712,7 @@
       "max_black_seconds": 0,
       "max_freeze_seconds": 19.804994999999998,
       "errors": [],
-      "elapsed_seconds": 13.7
+      "elapsed_seconds": 8.35
     },
     {
       "name": "嵊泗综合",
@@ -1007,46 +724,12 @@
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:55:06+00:00",
+      "checked_at": "2026-09-25T14:01:56+00:00",
       "ok": false,
-      "reason": "decode_failed",
-      "seconds": 0,
-      "frames": 0,
-      "resolution": null,
-      "audio_rms_db": null,
-      "max_black_seconds": 0,
-      "max_freeze_seconds": 0,
-      "errors": [
-        "[in#0 @ 0x55666b523600] Error opening input: Connection timed out",
-        "Error opening input file http://l.cztvcloud.com/channels/lantian/SXshengsi1/720p.m3u8.",
-        "Error opening input files: Connection timed out"
-      ],
-      "elapsed_seconds": 17.21,
-      "retry_after": "invalid_or_unreachable_hls"
-    },
-    {
-      "name": "浙江卫视",
-      "url": "http://ali-xwl.cztv.com/live/channel01720Plxw.m3u8",
-      "group": "卫视频道",
-      "region": "浙江",
-      "kind": "卫视",
-      "sources": [
-        "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
-      ],
-      "custom": false,
-      "checked_at": "2026-09-25T13:53:44+00:00",
-      "ok": false,
-      "reason": "timeout",
-      "seconds": 20.0,
-      "frames": 500,
-      "resolution": "1280x720",
-      "audio_rms_db": -24.710943,
-      "max_black_seconds": 0,
-      "max_freeze_seconds": 0,
-      "errors": [],
-      "hls_progressed": true,
-      "elapsed_seconds": 40.07,
-      "retry_after": "timeout"
+      "reason": "invalid_or_unreachable_hls",
+      "error": "<urlopen error timed out>",
+      "elapsed_seconds": 8.21,
+      "retry_after": "decode_failed"
     },
     {
       "name": "浙江少儿",
@@ -1058,19 +741,20 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:51:41+00:00",
-      "ok": false,
-      "reason": "timeout",
+      "checked_at": "2026-09-25T14:01:39+00:00",
+      "ok": true,
+      "reason": "passed",
       "seconds": 19.99,
       "frames": 495,
       "resolution": "1920x1080",
-      "audio_rms_db": -25.959543,
+      "audio_rms_db": -25.73164,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
-      "elapsed_seconds": 45.53,
-      "retry_after": "incomplete_sample"
+      "ocr_checked": true,
+      "ocr_elapsed_seconds": 0.19,
+      "elapsed_seconds": 15.22
     },
     {
       "name": "浙江杭州云栖小镇",
@@ -1082,11 +766,11 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:54:43+00:00",
+      "checked_at": "2026-09-25T14:01:36+00:00",
       "ok": false,
       "reason": "invalid_or_unreachable_hls",
-      "error": "<urlopen error timed out>",
-      "elapsed_seconds": 16.15,
+      "error": "HTTP Error 404: Not Found",
+      "elapsed_seconds": 0.98,
       "retry_after": "invalid_or_unreachable_hls"
     },
     {
@@ -1099,22 +783,20 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:51:39+00:00",
-      "ok": false,
-      "reason": "media_errors",
+      "checked_at": "2026-09-25T14:01:37+00:00",
+      "ok": true,
+      "reason": "passed",
       "seconds": 19.99,
-      "frames": 500,
+      "frames": 495,
       "resolution": "1920x1080",
-      "audio_rms_db": -26.180989,
+      "audio_rms_db": -26.806346,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
-      "errors": [
-        "[null @ 0x5602495180c0] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 413 >= 406",
-        "[null @ 0x5602495180c0] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 413 >= 407",
-        "[null @ 0x5602495180c0] Application provided invalid, non monotonically increasing dts to muxer in stream 0: 413 >= 408"
-      ],
-      "elapsed_seconds": 37.64,
-      "retry_after": "incomplete_sample"
+      "errors": [],
+      "hls_progressed": true,
+      "ocr_checked": true,
+      "ocr_elapsed_seconds": 0.26,
+      "elapsed_seconds": 13.94
     },
     {
       "name": "湖州公共民生",
@@ -1127,20 +809,20 @@
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
       ],
       "custom": true,
-      "checked_at": "2026-09-25T13:50:20+00:00",
+      "checked_at": "2026-09-25T14:00:29+00:00",
       "ok": true,
       "reason": "passed",
       "seconds": 19.99,
-      "frames": 498,
+      "frames": 495,
       "resolution": "1280x720",
-      "audio_rms_db": -33.390588,
+      "audio_rms_db": -31.331372,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
       "ocr_checked": true,
-      "elapsed_seconds": 29.67,
-      "retry_after": "timeout"
+      "ocr_elapsed_seconds": 0.25,
+      "elapsed_seconds": 20.59
     },
     {
       "name": "湖州文化娱乐",
@@ -1153,19 +835,20 @@
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
       ],
       "custom": true,
-      "checked_at": "2026-09-25T13:51:31+00:00",
-      "ok": false,
-      "reason": "timeout",
+      "checked_at": "2026-09-25T14:00:50+00:00",
+      "ok": true,
+      "reason": "passed",
       "seconds": 19.99,
-      "frames": 496,
+      "frames": 596,
       "resolution": "1280x720",
-      "audio_rms_db": -37.088837,
+      "audio_rms_db": -30.932484,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
-      "elapsed_seconds": 42.89,
-      "retry_after": "timeout"
+      "ocr_checked": true,
+      "ocr_elapsed_seconds": 0.63,
+      "elapsed_seconds": 17.61
     },
     {
       "name": "湖州新闻综合",
@@ -1178,19 +861,20 @@
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
       ],
       "custom": true,
-      "checked_at": "2026-09-25T13:51:20+00:00",
-      "ok": false,
-      "reason": "timeout",
+      "checked_at": "2026-09-25T14:00:48+00:00",
+      "ok": true,
+      "reason": "passed",
       "seconds": 19.99,
-      "frames": 536,
+      "frames": 596,
       "resolution": "1280x720",
-      "audio_rms_db": -25.871725,
+      "audio_rms_db": -24.676645,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
-      "elapsed_seconds": 36.57,
-      "retry_after": "timeout"
+      "ocr_checked": true,
+      "ocr_elapsed_seconds": 0.75,
+      "elapsed_seconds": 19.89
     },
     {
       "name": "绍兴公共",
@@ -1203,43 +887,20 @@
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
       ],
       "custom": true,
-      "checked_at": "2026-09-25T13:51:25+00:00",
-      "ok": false,
-      "reason": "timeout",
-      "seconds": 20.0,
-      "frames": 600,
-      "resolution": "1280x720",
-      "audio_rms_db": -27.024564,
-      "max_black_seconds": 0,
-      "max_freeze_seconds": 0,
-      "errors": [],
-      "hls_progressed": true,
-      "elapsed_seconds": 39.09,
-      "retry_after": "timeout"
-    },
-    {
-      "name": "绍兴公共",
-      "url": "http://live.shaoxing.com.cn/video/s10001-sxtv2/index.m3u8?zzhed",
-      "group": "浙江频道",
-      "region": "浙江",
-      "kind": "地方台",
-      "sources": [
-        "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
-      ],
-      "custom": false,
-      "checked_at": "2026-09-25T13:52:56+00:00",
-      "ok": false,
-      "reason": "timeout",
+      "checked_at": "2026-09-25T14:00:50+00:00",
+      "ok": true,
+      "reason": "passed",
       "seconds": 19.98,
       "frames": 600,
       "resolution": "1280x720",
-      "audio_rms_db": -26.660688,
+      "audio_rms_db": -26.226914,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
-      "elapsed_seconds": 31.07,
-      "retry_after": "timeout"
+      "ocr_checked": true,
+      "ocr_elapsed_seconds": 0.46,
+      "elapsed_seconds": 12.66
     },
     {
       "name": "绍兴新闻综合",
@@ -1251,19 +912,20 @@
         "data/custom.m3u"
       ],
       "custom": true,
-      "checked_at": "2026-09-25T13:50:48+00:00",
-      "ok": false,
-      "reason": "timeout",
+      "checked_at": "2026-09-25T14:00:46+00:00",
+      "ok": true,
+      "reason": "passed",
       "seconds": 19.98,
       "frames": 500,
       "resolution": "1280x720",
-      "audio_rms_db": -27.919906,
+      "audio_rms_db": -27.72436,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
-      "elapsed_seconds": 37.32,
-      "retry_after": "timeout"
+      "ocr_checked": true,
+      "ocr_elapsed_seconds": 0.57,
+      "elapsed_seconds": 12.57
     },
     {
       "name": "绍兴新闻综合",
@@ -1275,19 +937,20 @@
         "https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:51:58+00:00",
-      "ok": false,
-      "reason": "timeout",
-      "seconds": 19.98,
+      "checked_at": "2026-09-25T14:01:44+00:00",
+      "ok": true,
+      "reason": "passed",
+      "seconds": 19.99,
       "frames": 500,
       "resolution": "720x576",
-      "audio_rms_db": -28.593953,
+      "audio_rms_db": -26.40227,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
-      "elapsed_seconds": 38.21,
-      "retry_after": "timeout"
+      "ocr_checked": true,
+      "ocr_elapsed_seconds": 0.21,
+      "elapsed_seconds": 12.26
     },
     {
       "name": "三沙卫视",
@@ -1299,19 +962,21 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:53:56+00:00",
-      "ok": false,
-      "reason": "timeout",
+      "checked_at": "2026-09-25T14:01:53+00:00",
+      "ok": true,
+      "reason": "passed",
       "seconds": 19.99,
       "frames": 498,
       "resolution": "720x576",
-      "audio_rms_db": -28.814428,
+      "audio_rms_db": -30.610314,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
-      "elapsed_seconds": 27.04,
-      "retry_after": "timeout"
+      "ocr_checked": true,
+      "ocr_elapsed_seconds": 0.49,
+      "elapsed_seconds": 4.35,
+      "retry_after": "hls_not_updating"
     },
     {
       "name": "十堰新闻",
@@ -1324,22 +989,21 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": true,
-      "checked_at": "2026-09-25T13:50:24+00:00",
-      "ok": false,
-      "reason": "media_errors",
+      "checked_at": "2026-09-25T14:00:49+00:00",
+      "ok": true,
+      "reason": "passed",
       "seconds": 20.0,
-      "frames": 450,
+      "frames": 500,
       "resolution": "1280x720",
-      "audio_rms_db": -19.436021,
+      "audio_rms_db": -18.678341,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
-      "errors": [
-        "[mpegts @ 0x55ca8aad9f00] Packet corrupt (stream = 1, dts = 5281316160).",
-        "[hls @ 0x55ca8aacb700] Packet corrupt (stream = 1, dts = 5281312560).",
-        "[in#0/hls @ 0x55ca8aacb600] corrupt input packet in stream 1"
-      ],
-      "elapsed_seconds": 27.03,
-      "retry_after": "timeout"
+      "errors": [],
+      "hls_progressed": true,
+      "ocr_checked": true,
+      "ocr_elapsed_seconds": 0.47,
+      "elapsed_seconds": 21.74,
+      "retry_after": "media_errors"
     },
     {
       "name": "宜昌旅游生活",
@@ -1351,19 +1015,20 @@
         "data/custom.m3u"
       ],
       "custom": true,
-      "checked_at": "2026-09-25T13:50:18+00:00",
-      "ok": false,
-      "reason": "hls_recheck_failed",
+      "checked_at": "2026-09-25T14:00:29+00:00",
+      "ok": true,
+      "reason": "passed",
       "seconds": 19.99,
-      "frames": 495,
+      "frames": 496,
       "resolution": "1920x1080",
-      "audio_rms_db": -25.048308,
+      "audio_rms_db": -37.517455,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
-      "error": "<urlopen error timed out>",
-      "elapsed_seconds": 63.0,
-      "retry_after": "timeout"
+      "hls_progressed": true,
+      "ocr_checked": true,
+      "ocr_elapsed_seconds": 0.37,
+      "elapsed_seconds": 18.27
     },
     {
       "name": "宜昌综合",
@@ -1375,21 +1040,20 @@
         "data/custom.m3u"
       ],
       "custom": true,
-      "checked_at": "2026-09-25T13:50:33+00:00",
-      "ok": false,
-      "reason": "incomplete_sample",
-      "seconds": 8.4,
-      "frames": 207,
+      "checked_at": "2026-09-25T14:00:29+00:00",
+      "ok": true,
+      "reason": "passed",
+      "seconds": 19.99,
+      "frames": 495,
       "resolution": "1920x1080",
-      "audio_rms_db": -30.379477,
+      "audio_rms_db": -25.907855,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
-      "errors": [
-        "[hls @ 0x55dbd6585700] Failed to reload playlist 0",
-        "[hls @ 0x55dbd6585700] Failed to reload playlist 0"
-      ],
-      "elapsed_seconds": 36.28,
-      "retry_after": "timeout"
+      "errors": [],
+      "hls_progressed": true,
+      "ocr_checked": true,
+      "ocr_elapsed_seconds": 0.35,
+      "elapsed_seconds": 17.12
     },
     {
       "name": "武汉新闻综合",
@@ -1402,22 +1066,20 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": true,
-      "checked_at": "2026-09-25T13:50:19+00:00",
-      "ok": false,
-      "reason": "media_errors",
-      "seconds": 19.99,
-      "frames": 350,
+      "checked_at": "2026-09-25T14:00:29+00:00",
+      "ok": true,
+      "reason": "passed",
+      "seconds": 20.0,
+      "frames": 500,
       "resolution": "1280x720",
-      "audio_rms_db": -27.287504,
+      "audio_rms_db": -29.800494,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
-      "errors": [
-        "[mpegts @ 0x56530460a900] Packet corrupt (stream = 0, dts = 6386069008).",
-        "[hls @ 0x565304603700] Packet corrupt (stream = 0, dts = 6386065408).",
-        "[in#0/hls @ 0x565304603600] corrupt input packet in stream 0"
-      ],
-      "elapsed_seconds": 20.6,
-      "retry_after": "timeout"
+      "errors": [],
+      "hls_progressed": true,
+      "ocr_checked": true,
+      "ocr_elapsed_seconds": 0.33,
+      "elapsed_seconds": 18.41
     },
     {
       "name": "江夏综合",
@@ -1430,19 +1092,20 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": true,
-      "checked_at": "2026-09-25T13:49:44+00:00",
+      "checked_at": "2026-09-25T14:00:29+00:00",
       "ok": true,
       "reason": "passed",
-      "seconds": 19.97,
+      "seconds": 19.98,
       "frames": 500,
       "resolution": "720x576",
-      "audio_rms_db": -21.508246,
+      "audio_rms_db": -21.456329,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
       "ocr_checked": true,
-      "elapsed_seconds": 15.76
+      "ocr_elapsed_seconds": 0.58,
+      "elapsed_seconds": 18.76
     },
     {
       "name": "荆门新闻综合",
@@ -1456,22 +1119,20 @@
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
       ],
       "custom": true,
-      "checked_at": "2026-09-25T13:50:29+00:00",
-      "ok": false,
-      "reason": "incomplete_sample",
-      "seconds": 18.36,
-      "frames": 456,
+      "checked_at": "2026-09-25T14:00:46+00:00",
+      "ok": true,
+      "reason": "passed",
+      "seconds": 19.99,
+      "frames": 498,
       "resolution": "1920x1080",
-      "audio_rms_db": -22.241595,
+      "audio_rms_db": -25.189852,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
-      "errors": [
-        "[mpegts @ 0x56446abe27c0] Packet corrupt (stream = 0, dts = 5277845700).",
-        "[hls @ 0x56446abdb700] Packet corrupt (stream = 0, dts = 5277842100).",
-        "[in#0/hls @ 0x56446abdb600] corrupt input packet in stream 0"
-      ],
-      "elapsed_seconds": 23.4,
-      "retry_after": "media_errors"
+      "errors": [],
+      "hls_progressed": true,
+      "ocr_checked": true,
+      "ocr_elapsed_seconds": 0.3,
+      "elapsed_seconds": 17.95
     },
     {
       "name": "长阳综合",
@@ -1483,12 +1144,20 @@
         "data/custom.m3u"
       ],
       "custom": true,
-      "checked_at": "2026-09-25T13:50:35+00:00",
-      "ok": false,
-      "reason": "invalid_or_unreachable_hls",
-      "error": "<urlopen error timed out>",
-      "elapsed_seconds": 32.23,
-      "retry_after": "invalid_or_unreachable_hls"
+      "checked_at": "2026-09-25T14:00:46+00:00",
+      "ok": true,
+      "reason": "passed",
+      "seconds": 19.99,
+      "frames": 500,
+      "resolution": "1920x1080",
+      "audio_rms_db": -18.302174,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [],
+      "hls_progressed": true,
+      "ocr_checked": true,
+      "ocr_elapsed_seconds": 0.39,
+      "elapsed_seconds": 14.72
     },
     {
       "name": "麻城综合",
@@ -1501,42 +1170,20 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": true,
-      "checked_at": "2026-09-25T13:50:32+00:00",
-      "ok": false,
-      "reason": "timeout",
+      "checked_at": "2026-09-25T14:00:29+00:00",
+      "ok": true,
+      "reason": "passed",
       "seconds": 19.99,
       "frames": 500,
       "resolution": "1920x1080",
-      "audio_rms_db": -16.418564,
+      "audio_rms_db": -16.414537,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
-      "elapsed_seconds": 47.58,
-      "retry_after": "timeout"
-    },
-    {
-      "name": "强森电影",
-      "url": "https://live.metshop.top/huya/21059581",
-      "group": "湖南频道",
-      "region": "湖南",
-      "kind": "地方台",
-      "sources": [
-        "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
-      ],
-      "custom": false,
-      "checked_at": "2026-09-25T13:55:01+00:00",
-      "ok": true,
-      "reason": "passed",
-      "seconds": 20.0,
-      "frames": 598,
-      "resolution": "1280x720",
-      "audio_rms_db": -20.416701,
-      "max_black_seconds": 0,
-      "max_freeze_seconds": 0,
-      "errors": [],
       "ocr_checked": true,
-      "elapsed_seconds": 15.36
+      "ocr_elapsed_seconds": 0.3,
+      "elapsed_seconds": 24.18
     },
     {
       "name": "长沙政法",
@@ -1548,11 +1195,11 @@
         "https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:54:13+00:00",
+      "checked_at": "2026-09-25T14:01:28+00:00",
       "ok": false,
       "reason": "invalid_or_unreachable_hls",
       "error": "HTTP Error 403: Forbidden",
-      "elapsed_seconds": 0.5,
+      "elapsed_seconds": 0.64,
       "retry_after": "invalid_or_unreachable_hls"
     },
     {
@@ -1565,20 +1212,20 @@
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:54:38+00:00",
+      "checked_at": "2026-09-25T14:00:53+00:00",
       "ok": true,
       "reason": "passed",
-      "seconds": 20.0,
+      "seconds": 19.98,
       "frames": 600,
       "resolution": "1920x1080",
-      "audio_rms_db": -30.406419,
+      "audio_rms_db": -29.214149,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
       "ocr_checked": true,
-      "elapsed_seconds": 32.49,
-      "retry_after": "invalid_or_unreachable_hls"
+      "ocr_elapsed_seconds": 0.39,
+      "elapsed_seconds": 35.14
     },
     {
       "name": "甘肃卫视",
@@ -1590,7 +1237,7 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:54:57+00:00",
+      "checked_at": "2026-09-25T14:01:58+00:00",
       "ok": false,
       "reason": "incomplete_sample",
       "seconds": 16.76,
@@ -1600,7 +1247,7 @@
       "max_black_seconds": 0,
       "max_freeze_seconds": 16.76483,
       "errors": [],
-      "elapsed_seconds": 29.16,
+      "elapsed_seconds": 21.9,
       "retry_after": "incomplete_sample"
     },
     {
@@ -1613,43 +1260,20 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:53:51+00:00",
+      "checked_at": "2026-09-25T14:01:24+00:00",
       "ok": true,
       "reason": "passed",
       "seconds": 19.99,
-      "frames": 500,
+      "frames": 499,
       "resolution": "1920x1080",
-      "audio_rms_db": -11.111137,
+      "audio_rms_db": -12.199404,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
       "ocr_checked": true,
-      "elapsed_seconds": 33.56
-    },
-    {
-      "name": "辽宁北方",
-      "url": "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=lnbf",
-      "group": "辽宁频道",
-      "region": "辽宁",
-      "kind": "地方台",
-      "sources": [
-        "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
-      ],
-      "custom": false,
-      "checked_at": "2026-09-25T13:51:50+00:00",
-      "ok": false,
-      "reason": "timeout",
-      "seconds": 19.97,
-      "frames": 497,
-      "resolution": "720x576",
-      "audio_rms_db": -27.160318,
-      "max_black_seconds": 0,
-      "max_freeze_seconds": 0,
-      "errors": [],
-      "hls_progressed": true,
-      "elapsed_seconds": 35.64,
-      "retry_after": "timeout"
+      "ocr_elapsed_seconds": 0.41,
+      "elapsed_seconds": 8.13
     },
     {
       "name": "辽宁卫视",
@@ -1661,60 +1285,20 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:53:56+00:00",
+      "checked_at": "2026-09-25T14:01:13+00:00",
       "ok": true,
       "reason": "passed",
       "seconds": 19.99,
-      "frames": 499,
+      "frames": 500,
       "resolution": "1920x1080",
-      "audio_rms_db": -13.348788,
+      "audio_rms_db": -13.247279,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
       "ocr_checked": true,
-      "elapsed_seconds": 30.0,
-      "retry_after": "timeout"
-    },
-    {
-      "name": "辽宁影视",
-      "url": "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=lnys",
-      "group": "辽宁频道",
-      "region": "辽宁",
-      "kind": "地方台",
-      "sources": [
-        "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
-      ],
-      "custom": false,
-      "checked_at": "2026-09-25T13:52:53+00:00",
-      "ok": false,
-      "reason": "timeout",
-      "seconds": 19.98,
-      "frames": 500,
-      "resolution": "720x576",
-      "audio_rms_db": -14.804893,
-      "max_black_seconds": 0,
-      "max_freeze_seconds": 0,
-      "errors": [],
-      "hls_progressed": true,
-      "elapsed_seconds": 32.13,
-      "retry_after": "timeout"
-    },
-    {
-      "name": "江津新闻",
-      "url": "http://222.179.155.21:1935/ch1.m3u8?zzhongqd",
-      "group": "重庆频道",
-      "region": "重庆",
-      "kind": "地方台",
-      "sources": [
-        "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
-      ],
-      "custom": false,
-      "checked_at": "2026-09-25T13:53:42+00:00",
-      "ok": false,
-      "reason": "timeout",
-      "elapsed_seconds": 45.57,
-      "retry_after": "timeout"
+      "ocr_elapsed_seconds": 0.47,
+      "elapsed_seconds": 10.85
     },
     {
       "name": "陕西卫视",
@@ -1726,19 +1310,20 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:53:52+00:00",
+      "checked_at": "2026-09-25T14:01:24+00:00",
       "ok": true,
       "reason": "passed",
       "seconds": 19.99,
-      "frames": 490,
+      "frames": 496,
       "resolution": "1920x1080",
-      "audio_rms_db": -27.944935,
+      "audio_rms_db": -29.815632,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
       "ocr_checked": true,
-      "elapsed_seconds": 34.41
+      "ocr_elapsed_seconds": 0.28,
+      "elapsed_seconds": 20.29
     },
     {
       "name": "黄龙",
@@ -1750,19 +1335,20 @@
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:55:29+00:00",
+      "checked_at": "2026-09-25T14:01:04+00:00",
       "ok": true,
       "reason": "passed",
       "seconds": 19.99,
-      "frames": 498,
+      "frames": 495,
       "resolution": "1920x1080",
-      "audio_rms_db": -16.275471,
+      "audio_rms_db": -15.637585,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
       "ocr_checked": true,
-      "elapsed_seconds": 19.6
+      "ocr_elapsed_seconds": 0.66,
+      "elapsed_seconds": 20.75
     },
     {
       "name": "青海卫视",
@@ -1774,19 +1360,20 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:54:23+00:00",
+      "checked_at": "2026-09-25T14:01:23+00:00",
       "ok": true,
       "reason": "passed",
       "seconds": 19.99,
-      "frames": 1198,
-      "resolution": "1280x720",
-      "audio_rms_db": -9.287404,
+      "frames": 499,
+      "resolution": "1920x1080",
+      "audio_rms_db": -23.773462,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
       "ocr_checked": true,
-      "elapsed_seconds": 25.81
+      "ocr_elapsed_seconds": 0.49,
+      "elapsed_seconds": 13.05
     },
     {
       "name": "TVBPearl",
@@ -1798,45 +1385,19 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:55:01+00:00",
+      "checked_at": "2026-09-25T14:01:02+00:00",
       "ok": true,
       "reason": "passed",
       "seconds": 19.97,
       "frames": 496,
       "resolution": "1920x1080",
-      "audio_rms_db": -27.425729,
+      "audio_rms_db": -23.908184,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "ocr_checked": true,
-      "elapsed_seconds": 12.34
-    },
-    {
-      "name": "凤凰中文",
-      "url": "http://cdn6.163189.xyz/163189/fhzw",
-      "group": "港澳台",
-      "region": "香港",
-      "kind": "地方台",
-      "sources": [
-        "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
-      ],
-      "custom": false,
-      "checked_at": "2026-09-25T13:55:23+00:00",
-      "ok": false,
-      "reason": "decode_failed",
-      "seconds": 0,
-      "frames": 0,
-      "resolution": null,
-      "audio_rms_db": null,
-      "max_black_seconds": 0,
-      "max_freeze_seconds": 0,
-      "errors": [
-        "[in#0 @ 0x55b34138f600] Error opening input: Invalid data found when processing input",
-        "Error opening input file http://cdn6.163189.xyz/163189/fhzw.",
-        "Error opening input files: Invalid data found when processing input"
-      ],
-      "elapsed_seconds": 0.19,
-      "retry_after": "decode_failed"
+      "ocr_elapsed_seconds": 0.61,
+      "elapsed_seconds": 12.63
     },
     {
       "name": "翡翠台北美版",
@@ -1848,18 +1409,20 @@
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:54:59+00:00",
-      "ok": true,
-      "reason": "passed",
+      "checked_at": "2026-09-25T14:01:12+00:00",
+      "ok": false,
+      "reason": "media_errors",
       "seconds": 19.99,
       "frames": 598,
       "resolution": "1920x1080",
-      "audio_rms_db": -26.469806,
+      "audio_rms_db": -24.154851,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
-      "errors": [],
-      "ocr_checked": true,
-      "elapsed_seconds": 13.53
+      "errors": [
+        "[null @ 0x55bfb6414c00] Application provided invalid, non monotonically increasing dts to muxer in stream 1: 146432 >= 145962"
+      ],
+      "elapsed_seconds": 11.23,
+      "retry_after": "media_errors"
     },
     {
       "name": "黑龙江少儿",
@@ -1872,11 +1435,11 @@
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
       ],
       "custom": false,
-      "checked_at": "2026-09-25T13:55:59+00:00",
+      "checked_at": "2026-09-25T14:02:36+00:00",
       "ok": false,
-      "reason": "timeout",
-      "elapsed_seconds": 46.64,
-      "retry_after": "timeout"
+      "reason": "media_timeout",
+      "elapsed_seconds": 45.41,
+      "retry_after": "media_timeout"
     }
   ]
 }
