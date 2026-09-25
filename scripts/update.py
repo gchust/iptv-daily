@@ -88,7 +88,7 @@ def key(name):
 def classify(name,group):
  region=next((p for p,words in REGIONS.items() if any(name.upper().startswith(w.upper()) for w in words)),None)
  if not region:region=next((p for p in REGIONS if p in group), '其他')
- if any(w in name+' '+group for w in ['慢直播','风景','景区','日出','云海','草甸','远眺','观景','熊猫直播','峨眉山','九华山','玉女峰','雪山']):return region,'慢直播'
+ if any(w in name+' '+group for w in ['慢直播','风景','景区','日出','云海','草甸','远眺','观景','熊猫直播','峨眉山','九华山','玉女峰','雪山','十八盘','玉皇顶','南天门','山顶','索道','栈道']):return region,'慢直播'
  if any(w in name+' '+group for w in ['轮播','强森电影','林正英','周星驰','钟馗传说','成龙电影','李连杰电影','周润发电影','刘德华电影']):return region,'影视轮播'
  if re.search(r'CCTV|央视|中国教育|^CETV|^CGTN',name,re.I):return '全国','央视/教育'
  if any(w in name for w in ['广播','电台','之声']) or re.search(r'\b(?:FM|RADIO)\b',name,re.I):return region,'广播'

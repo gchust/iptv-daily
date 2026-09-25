@@ -6,12 +6,14 @@
   "ocr_enabled": true,
   "candidate_urls": 3334,
   "tested_urls": 60,
-  "passed_urls": 38,
-  "unique_channels": 37,
-  "regional_channels": 28,
+  "passed_urls": 37,
+  "unique_channels": 36,
+  "regional_channels": 27,
   "failed_sources": [],
   "runner": "GitHub Actions",
   "run_url": "https://github.com/gchust/iptv-daily/actions/runs/36144544349",
   "duration_seconds": 173.1,
-  "publication_note": "Only URLs passing this run are published."
+  "publication_note": "Only URLs passing this run are published.",
+  "eligibility_filtered_at": "2026-09-25T14:06:24+00:00",
+  "eligibility_filter_note": "Local review removed one scenic webcam after cloud media verification; media verification timestamps are unchanged."
 }

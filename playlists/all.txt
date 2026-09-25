@@ -9,8 +9,6 @@
 麻城综合,https://video.yscxy.cn:8888/mctv1.m3u8
 天津地方台,#genre#
 天津新闻,http://38.75.136.137:98/gslb/dsdqpub/tjtv1.m3u8?auth=testpub
-山东地方台,#genre#
-泰山十八盘,https://gcalic.v.myalicdn.com/gc/taishan05_1/index.m3u8
 广东地方台,#genre#
 东莞新闻综合,https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
 东莞生活资讯,https://stream.sun0769.com/dgrtv1/mp4tv2_800/index.m3u8

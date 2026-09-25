@@ -32,6 +32,8 @@ class ParsingTests(unittest.TestCase):
   self.assertFalse(u.parse_playlist('四川峨眉山云海日出,'+URL,'test'))
  def test_actor_loop_not_regional_tv(self):
   self.assertFalse(u.parse_playlist('湖南,#genre#\n强森电影,'+URL,'test'))
+ def test_landmark_camera_excluded(self):
+  self.assertFalse(u.parse_playlist('山东,#genre#\n泰山十八盘,'+URL,'test'))
  def test_camera_group_excluded(self):
   self.assertFalse(u.parse_playlist('慢直播,#genre#\n安徽综合,'+URL,'test'))
  def test_radio_skipped(self):

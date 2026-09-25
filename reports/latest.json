@@ -7,14 +7,16 @@
     "ocr_enabled": true,
     "candidate_urls": 3334,
     "tested_urls": 60,
-    "passed_urls": 38,
-    "unique_channels": 37,
-    "regional_channels": 28,
+    "passed_urls": 37,
+    "unique_channels": 36,
+    "regional_channels": 27,
     "failed_sources": [],
     "runner": "GitHub Actions",
     "run_url": "https://github.com/gchust/iptv-daily/actions/runs/36144544349",
     "duration_seconds": 173.1,
-    "publication_note": "Only URLs passing this run are published."
+    "publication_note": "Only URLs passing this run are published.",
+    "eligibility_filtered_at": "2026-09-25T14:06:24+00:00",
+    "eligibility_filter_note": "Local review removed one scenic webcam after cloud media verification; media verification timestamps are unchanged."
   },
   "sources": [
     {
@@ -398,14 +400,14 @@
       "url": "https://gcalic.v.myalicdn.com/gc/taishan05_1/index.m3u8",
       "group": "山东频道",
       "region": "山东",
-      "kind": "地方台",
+      "kind": "慢直播",
       "sources": [
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:01:44+00:00",
-      "ok": true,
-      "reason": "passed",
+      "ok": false,
+      "reason": "excluded_scenic_camera",
       "seconds": 19.99,
       "frames": 489,
       "resolution": "1920x1080",
@@ -416,7 +418,8 @@
       "hls_progressed": true,
       "ocr_checked": true,
       "ocr_elapsed_seconds": 0.32,
-      "elapsed_seconds": 26.46
+      "elapsed_seconds": 26.46,
+      "media_ok": true
     },
     {
       "name": "东莞新闻综合",

@@ -18,8 +18,6 @@ https://changyang-live21.cjyun.org/10114/s10114-cy1t.m3u8?auth_key=1798732799-ce
 https://video.yscxy.cn:8888/mctv1.m3u8
 #EXTINF:-1 tvg-name="天津新闻" group-title="天津地方台",天津新闻
 http://38.75.136.137:98/gslb/dsdqpub/tjtv1.m3u8?auth=testpub
-#EXTINF:-1 tvg-name="泰山十八盘" group-title="山东地方台",泰山十八盘
-https://gcalic.v.myalicdn.com/gc/taishan05_1/index.m3u8
 #EXTINF:-1 tvg-name="东莞新闻综合" group-title="广东地方台",东莞新闻综合
 https://stream.sun0769.com/dgrtv1/mp4tv1_800/index.m3u8
 #EXTINF:-1 tvg-name="东莞生活资讯" group-title="广东地方台",东莞生活资讯
