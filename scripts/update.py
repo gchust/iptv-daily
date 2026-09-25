@@ -180,7 +180,7 @@ def analyze_decode(stderr,stdout,seconds,returncode):
  peaks=[float(v) for v in re.findall(r'Peak level dB: ([-+\w.]+)',stderr)]
  rms=[float(v) for v in re.findall(r'RMS level dB: ([-+\w.]+)',stderr)]
  resolution=re.search(r'Video:.*?\b(\d{3,4})x(\d{3,4})\b',stderr)
- errors=[l.strip() for l in stderr.splitlines() if re.search(r'HTTP error|Error (?:opening|while|during)|Invalid data|Packet corrupt|corrupt input|non.monoton|Failed to|Error applying|Error initializing',l,re.I)]
+ errors=[l.strip() for l in stderr.splitlines() if re.search(r'Protocol .*not on whitelist|HTTP error|Error (?:opening|while|during)|Invalid data|Packet corrupt|corrupt input|non.monoton|Failed to|Error applying|Error initializing',l,re.I)]
  black=[float(v) for v in re.findall(r'black_duration:([\d.]+)',stderr)]
  starts=[float(v) for v in re.findall(r'black_start:([\d.]+)',stderr)]
  ends=[float(v) for v in re.findall(r'black_end:([\d.]+)',stderr)]
@@ -231,7 +231,7 @@ def probe(channel,settings,ffmpeg,ocr=False):
   except Exception as e:
    result.update(ok=False,reason='invalid_or_unreachable_hls',error=str(e)[:160],elapsed_seconds=round(time.monotonic()-started,2))
    return result
- cmd=[ffmpeg,'-hide_banner','-nostdin','-rw_timeout','8000000','-protocol_whitelist','http,https,tcp,tls,crypto','-threads','1','-filter_threads','1','-user_agent',UA,'-i',channel.url,'-t',str(seconds),'-map','0:v:0','-map','0:a:0','-vf','scale=320:-2,blackdetect=d=3:pix_th=0.1,freezedetect=n=-50dB:d=6','-af','astats=metadata=0:reset=0','-progress','pipe:1','-f','null','-']
+ cmd=[ffmpeg,'-hide_banner','-nostdin','-rw_timeout','8000000','-protocol_whitelist','http,https,httpproxy,tcp,tls,crypto','-threads','1','-filter_threads','1','-user_agent',UA,'-i',channel.url,'-t',str(seconds),'-map','0:v:0','-map','0:a:0','-vf','scale=320:-2,blackdetect=d=3:pix_th=0.1,freezedetect=n=-50dB:d=6','-af','astats=metadata=0:reset=0','-progress','pipe:1','-f','null','-']
  try:
   with tempfile.TemporaryDirectory(prefix='iptv-probe-') as tmp:
    frame=Path(tmp)/'sample.png'
@@ -343,7 +343,16 @@ def main(argv=None):
  settings['ocr_enabled']=ocr
  items,source_results=collect([] if args.custom_only else sources,root)
  previous=[]
- if (root/'reports/channels.json').exists():previous=[r['url'] for r in json.loads((root/'reports/channels.json').read_text())['channels']]
+ if (root/'reports/channels.json').exists():
+  previous_rows=json.loads((root/'reports/channels.json').read_text())['channels']
+  previous=[r['url'] for r in previous_rows]
+  # A temporary feed outage must not prevent rechecking its last known good URLs.
+  # Explicitly removed custom URLs / disabled feeds are not resurrected.
+  active_sources={s['url'] for s in sources if s.get('enabled',True)} if not args.custom_only else set()
+  present={c.url for c in items}
+  for row in previous_rows:
+   if row['url'] not in present and not row.get('custom') and any(s in active_sources for s in row.get('sources',[])) and safe_url(row['url']):
+    items.append(Channel(**{f.name:row[f.name] for f in dataclasses.fields(Channel)}));present.add(row['url'])
  selected=select_channels(items,settings['max_candidates'],previous)
  print(json.dumps({'stage':'collected','candidates':len(items),'selected':len(selected),'sources':source_results,'ocr':ocr},ensure_ascii=False),flush=True)
  results=[];host_locks={}
