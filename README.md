@@ -19,18 +19,19 @@
 
 - 默认北京时间每天 **06:23**（UTC 22:23）触发，也可在 Actions 页面手动 Run workflow。GitHub 定时任务可能排队、延迟，不能保证精确到分钟。
 - 从 [config/sources.json](config/sources.json) 中启用的多个上游实时拉取候选，并合并 [data/custom.m3u](data/custom.m3u) 中的自定义频道。初始自定义列表包含人工核对过的武汉及其他地方台，它们每天仍需重新通过检测。
-- 按 URL 去重，保留签名查询参数，并剔除可识别的广播、景区慢直播及演员电影轮播，避免混入地方台。默认每轮最多检测 **600 个候选URL**，优先自定义及上一轮通过的源，上游临时不可达时会把该上游上次通过的URL加入本轮重新检测，绝不直接作为已验证结果；其余候选按日期轮换，地方台约占发现名额的三分之二。不是每天穷举整个互联网；可以调整上限。
+- 按 URL 去重，保留签名查询参数，并剔除可识别的广播、景区慢直播及演员电影轮播，避免混入地方台。默认每轮最多检测 **1600 个候选URL**，从 **17 个上游**收集候选。优先检查湖北经视的所有候选（最多128个）、自定义及上一轮通过的源，并为湖北地方台预留检查名额，上游临时不可达时会把该上游上次通过的URL加入本轮重新检测，绝不直接作为已验证结果；其余候选按日期轮换，地方台约占发现名额的三分之二。不是每天穷举整个互联网；可以调整上限。
 - HLS 检查实际媒体清单、媒体分片链接及清单是否持续推进，排除结束的点播清单。
 - FFmpeg 必须实际解码 **20 秒媒体内容**、有足够视频帧和非静音音轨；仅 HTTP 200 不算通过。遇到失败或超时会按配置重试一次。
 - 自动剔除至少3秒黑屏、至少6秒冻结画面、明显解码错误。GitHub Actions 还使用中文 OCR 检测“暂不支持播放”“版权限制”等提示。
 - 同一频道有多个通过源时，优先清晰度，再比较本次检测耗时；发布一个主源。通过的备选及失败原因保存在 [reports/latest.json](reports/latest.json)。
 - 正常更新只发布**本轮通过**的源，旧源不会因历史成功而自动混入。若整轮零通过，保留上次成功列表并将状态标记失败，记录最后成功时间，Actions 报错；这时旧列表不能被当作当天验证通过。
+- 所有分片均完成、URL数量完整、候选清单指纹一致、中文OCR已启用，才汇总发布。任一分片未完成或结果来自旧任务时，工作流报错并保留原列表；不会发布只测了部分候选的新列表。
 - 列表和报告由 GitHub Actions 自动提交到 main，commit message 使用英文。无须个人访问令牌，工作流使用仓库自带、仅限该仓库的 GITHUB_TOKEN 写入权限。
 
 ## 如何增加频道和上游
 
 1. 添加或修改 data/custom.m3u，保留标准 EXTINF 频道名和分组；直播URL写在下一行。
-2. 或在 config/sources.json 添加一个公开的 M3U/TXT 上游地址。支持 M3U 的 group-title 及 TXT 的“地区,#genre#”分组。
+2. 或在 config/sources.json 添加一个公开的 M3U/TXT 上游地址。当前接入 iptv-org、CCSH、Collect-IPTV、doubwing、米奇TV、githubhc20、okay、maowei湖北电信、iptvjs、suxuang、Meroser、Hengstchon、CHINA-IPTV、Akira、reysc 等仓库/列表；上游名称只代表候选来源，不代表其中每路都能播放。支持 M3U 的 group-title 及 TXT 的“地区,#genre#”分组。
 3. 在 Actions → Refresh live TV → Run workflow 手动执行，或等待每日任务。
 4. 在 reports/summary.md 查看通过的地方台；在 reports/latest.json 查看逐源失败原因。
 
@@ -38,7 +39,7 @@
 
 ## 配置和本地运行
 
-修改 config/settings.json 可设置检测上限、并发数、样本长度、单次FFmpeg超时和重试。默认并发10，同一主机最多2路同时检测；中文OCR最多并发2个且每个只用一个计算线程，避免集中请求。脚本仅依赖 Python 3.10+ 标准库及 FFmpeg。中文 OCR 需要 Tesseract 的 chi_sim 和 eng 语言包。
+修改 config/settings.json 可设置检测上限、并发数、样本长度、单次FFmpeg超时和重试。priority_channels 是优先频道（现为湖北经视），priority_regions 是优先地区（现为湖北），shards 是云端检测分片数。每日任务先收集一次并冻结候选清单，再按主机分为4个并行检测任务，每个任务并发8。同一主机只分配给一个任务、最多2路同时检测；中文OCR最多并发2个且每个只用一个计算线程，避免集中请求。脚本仅依赖 Python 3.10+ 标准库及 FFmpeg。中文 OCR 需要 Tesseract 的 chi_sim 和 eng 语言包。
 
     python -m unittest discover -v
     python scripts/update.py --require-ocr

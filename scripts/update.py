@@ -71,10 +71,12 @@ def safe_url(url):
 
 def clean_name(name):
  name=unicodedata.normalize('NFKC',name).strip().lstrip('\ufeff')
+ name=re.sub(r'^\[(?:BD|IPTV|HD)\]\s*','',name,flags=re.I).lstrip('💚❤❤️📺 ')
+ name=re.sub(r'(?<=湖北经视)\(湖北有线\)$','',name)
  name=re.sub(r'\s*\[(?:[^]]*(?:p|geo|not 24/7|1280|1920)[^]]*)\]', '', name, flags=re.I)
  name=re.sub(r'\s*\((?:\d{3,4}p|HD|SD|高清|标清|超清)\)\s*$', '',name,flags=re.I)
  name=re.sub(r'^(?:'+ '|'.join(REGIONS)+r')\s+[I|]\s+', '',name)
- name={'绍兴综合':'绍兴新闻综合'}.get(name,name)
+ name={'绍兴综合':'绍兴新闻综合','湖北经济':'湖北经视','湖北经济电视':'湖北经视','湖北经济频道':'湖北经视'}.get(name,name)
  return re.sub(r'[\r\n"<>]', '',name).strip()[:100]
 
 
@@ -103,6 +105,8 @@ def parse_playlist(text,source,custom=False):
   line=raw.strip()
   if not line:continue
   if line.startswith('#EXTINF:'):
+   # Some public lists put an extra comma before the first attribute.
+   line=re.sub(r'^(#EXTINF:[^,]*),(?=(?:tvg-|group-title)[\w-]*=)',r'\1 ',line)
    attrs=dict(re.findall(r'([\w-]+)="([^"]*)"',line))
    match=re.match(r'^#EXTINF:(?:[^",]|"[^"]*")*,(.*)$',line)
    name=match.group(1).strip() if match else line.rsplit(',',1)[-1]
@@ -167,30 +171,64 @@ def restore_previous(items,rows,active_sources):
  return result
 
 
-def select_channels(items,limit,previous=(),day=None):
- """Keep custom/last-good first; rotate discoveries and fairly spread by name."""
+def select_channels(items,limit,previous=(),day=None,priority_channels=(),priority_regions=()):
+ """Reserve requested channels/regions, then rotate fairly across channel names."""
  previous=set(previous);day=day or dt.datetime.now(dt.timezone.utc).date().isoformat()
- priority=[c for c in items if c.custom or c.url in previous]
- others=[c for c in items if not c.custom and c.url not in previous]
+ requested={key(clean_name(n)) for n in priority_channels}
  token=lambda c:hashlib.sha256((day+c.url).encode()).hexdigest()
- priority.sort(key=lambda c:(not c.custom,c.kind!='地方台',token(c)))
- buckets=defaultdict(list)
- for c in sorted(others,key=token):buckets[(c.kind=='地方台',key(c.name))].append(c)
- def fair(regional):
-  b=[v for (r,k),v in buckets.items() if r==regional]
-  return [c for round_no in range(4) for v in b for c in v[round_no:round_no+1]]
- local,other=fair(True),fair(False)
- # Two regional discoveries for every other discovery, when both exist.
+ # Interleave hosts for focused channels; one mirror must not take every slot.
+ def fair(candidates,rounds=4):
+  buckets=defaultdict(list)
+  for c in sorted(candidates,key=token):buckets[key(c.name)].append(c)
+  for name,bucket in buckets.items():
+   hosts=defaultdict(list)
+   for c in bucket:hosts[urlsplit(c.url).hostname].append(c)
+   buckets[name]=[c for i in range(max(map(len,hosts.values()),default=0)) for h in hosts.values() for c in h[i:i+1]]
+  return [c for i in range(rounds) for b in buckets.values() for c in b[i:i+1]]
+ focused=fair([c for c in items if key(c.name) in requested],128)[:min(128,max(1,limit//4))]
+ priority=sorted([c for c in items if c.custom or c.url in previous],key=lambda c:(not c.custom,c.kind!='地方台',token(c)))
+ regional=fair([c for c in items if c.region in priority_regions and c.kind=='地方台'],6)[:min(240,max(1,limit//5))]
+ others=[c for c in items if not c.custom and c.url not in previous]
+ local=fair([c for c in others if c.kind=='地方台'])
+ other=fair([c for c in others if c.kind!='地方台'])
  order=[]
  while local or other:
   order+=local[:2];local=local[2:];order+=other[:1];other=other[1:]
- selected=[];per_channel=Counter()
- for c in priority+order:
-  k=key(c.name)
-  if per_channel[k]>=4:continue
-  per_channel[k]+=1;selected.append(c)
+ selected=[];per_channel=Counter();seen=set()
+ for c in focused+priority+regional+order:
+  k=key(c.name);cap=128 if k in requested else (6 if c.region in priority_regions else 4)
+  if c.url in seen or per_channel[k]>=cap:continue
+  seen.add(c.url);per_channel[k]+=1;selected.append(c)
   if len(selected)>=limit:break
  return selected
+
+
+def probe_many(selected,settings,ffmpeg,ocr=False):
+ """Limit each host without occupying worker threads waiting on host locks."""
+ pending=defaultdict(list)
+ for c in selected:pending[urlsplit(c.url).hostname].append(c)
+ active=Counter();results=[]
+ def check(c):
+  r=probe(c,settings,ffmpeg,ocr)
+  if not r['ok'] and r['reason'] in ('timeout','media_timeout','decode_failed','media_errors','incomplete_sample','invalid_or_unreachable_hls','hls_recheck_failed','hls_not_updating') and settings.get('retry_failures',1):
+   first=r['reason'];r=probe(c,settings,ffmpeg,ocr);r['retry_after']=first
+  return r
+ with concurrent.futures.ThreadPoolExecutor(max_workers=settings['workers']) as pool:
+  futures={}
+  while any(pending.values()) or futures:
+   while len(futures)<settings['workers']:
+    eligible=[h for h,q in pending.items() if q and active[h]<2]
+    if not eligible:break
+    host=min(eligible,key=lambda h:active[h]);c=pending[host].pop(0)
+    futures[pool.submit(check,c)]=(host,c);active[host]+=1
+   done,_=concurrent.futures.wait(futures,return_when=concurrent.futures.FIRST_COMPLETED)
+   for future in done:
+    host,c=futures.pop(future);active[host]-=1
+    try:r=future.result()
+    except Exception as e:r={**dataclasses.asdict(c),'ok':False,'reason':'unexpected_probe_error','error':str(e)[:200],'checked_at':utcnow()}
+    results.append(r)
+    if r['ok'] or len(results)%25==0:print(json.dumps({'progress':f'{len(results)}/{len(selected)}','name':r['name'],'ok':r['ok'],'reason':r['reason']},ensure_ascii=False),flush=True)
+ return sorted(results,key=lambda r:(r['region'],key(r['name']),r['url']))
 
 
 def analyze_decode(stderr,stdout,seconds,returncode):
@@ -379,26 +417,9 @@ def main(argv=None):
   # Explicitly removed custom URLs / disabled feeds are not resurrected.
   active_sources={s['url'] for s in sources if s.get('enabled',True)} if not args.custom_only else set()
   items=restore_previous(items,previous_rows,active_sources)
- selected=select_channels(items,settings['max_candidates'],previous)
+ selected=select_channels(items,settings['max_candidates'],previous,priority_channels=settings.get('priority_channels',()),priority_regions=settings.get('priority_regions',()))
  print(json.dumps({'stage':'collected','candidates':len(items),'selected':len(selected),'sources':source_results,'ocr':ocr},ensure_ascii=False),flush=True)
- results=[];host_locks={}
- import threading
- for c in selected:host_locks.setdefault(urlsplit(c.url).hostname,threading.Semaphore(2))
- def check(c):
-  with host_locks[urlsplit(c.url).hostname]:
-   r=probe(c,settings,ffmpeg,ocr)
-   if not r['ok'] and r['reason'] in ('timeout','media_timeout','decode_failed','media_errors','incomplete_sample','invalid_or_unreachable_hls','hls_recheck_failed','hls_not_updating') and settings.get('retry_failures',1):
-    first=r['reason'];r=probe(c,settings,ffmpeg,ocr);r['retry_after']=first
-   return r
- with concurrent.futures.ThreadPoolExecutor(max_workers=settings['workers']) as pool:
-  futures={pool.submit(check,c):c for c in selected}
-  for future in concurrent.futures.as_completed(futures):
-   c=futures[future]
-   try:r=future.result()
-   except Exception as e:r={**dataclasses.asdict(c),'ok':False,'reason':'unexpected_probe_error','error':str(e)[:200],'checked_at':utcnow()}
-   results.append(r)
-   if r['ok'] or len(results)%25==0:print(json.dumps({'progress':f'{len(results)}/{len(selected)}','name':r['name'],'ok':r['ok'],'reason':r['reason']},ensure_ascii=False),flush=True)
- results.sort(key=lambda r:(r['region'],key(r['name']),r['url']))
+ results=probe_many(selected,settings,ffmpeg,ocr)
  status=publish(root,results,source_results,len(items),len(selected),settings,started)
  print(json.dumps(status,ensure_ascii=False),flush=True)
  return 0 if status['state']=='ok' else 2

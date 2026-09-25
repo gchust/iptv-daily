@@ -13,5 +13,75 @@
     "name": "Collect-IPTV",
     "url": "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8",
     "enabled": true
+  },
+  {
+    "name": "doubwing IPTV",
+    "url": "https://raw.githubusercontent.com/doubwing/iptv-5/main/list.txt",
+    "enabled": true
+  },
+  {
+    "name": "米奇TV",
+    "url": "https://raw.githubusercontent.com/rekaabsex13/iptv/main/%E7%B1%B3%E5%A5%87TV%E7%9B%B4%E6%92%AD%E6%BA%90.txt",
+    "enabled": true
+  },
+  {
+    "name": "githubhc20 TV",
+    "url": "https://raw.githubusercontent.com/githubhc20/tv/main/tvv.txt",
+    "enabled": true
+  },
+  {
+    "name": "okay 汇集",
+    "url": "https://raw.githubusercontent.com/songlees355-wq/okay/main/live.txt",
+    "enabled": true
+  },
+  {
+    "name": "maowei 湖北电信",
+    "url": "https://raw.githubusercontent.com/maowei1125/spider-iptv/main/source/multicast/%E6%B9%96%E5%8C%97-%E7%94%B5%E4%BF%A1-239.69.1.m3u",
+    "enabled": true
+  },
+  {
+    "name": "CCSH 地方台候选",
+    "url": "https://raw.githubusercontent.com/CCSH/IPTV/main/assets/test.txt",
+    "enabled": true
+  },
+  {
+    "name": "iptvjs 汇集",
+    "url": "https://raw.githubusercontent.com/iptvjs/iptvjs.github.io/main/txt/ew_all.txt",
+    "enabled": true
+  },
+  {
+    "name": "suxuang IPTV",
+    "url": "https://raw.githubusercontent.com/suxuang/myIPTV/main/%E6%A6%B4%E8%8A%92%E7%94%B5%E8%A7%86.txt",
+    "enabled": true
+  },
+  {
+    "name": "suxuang IPv6",
+    "url": "https://raw.githubusercontent.com/suxuang/myIPTV/main/back/ipv6.txt",
+    "enabled": true
+  },
+  {
+    "name": "Meroser IPTV",
+    "url": "https://raw.githubusercontent.com/cjh19831115/Meroser/main/IPTV-tvbox.txt",
+    "enabled": true
+  },
+  {
+    "name": "Hengstchon 地方台",
+    "url": "https://gist.githubusercontent.com/hengstchon/ff4ad884617b9e41a20f2ff8b585adbf/raw",
+    "enabled": true
+  },
+  {
+    "name": "CHINA-IPTV 湖北移动",
+    "url": "https://raw.githubusercontent.com/xisohi/CHINA-IPTV/main/Unicast/hubei/mobile.txt",
+    "enabled": true
+  },
+  {
+    "name": "Akira IPTV",
+    "url": "https://raw.githubusercontent.com/akiralereal/iptv/main/IPTV.m3u",
+    "enabled": true
+  },
+  {
+    "name": "reysc IPTV",
+    "url": "https://raw.githubusercontent.com/reysc/M3U8/master/lt.txt",
+    "enabled": true
   }
 ]
