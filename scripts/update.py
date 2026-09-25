@@ -11,7 +11,7 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parents[1]
 UA = 'Mozilla/5.0 IPTV-Daily/1.0'
 OCR_SLOTS = threading.BoundedSemaphore(2)
-EXCLUDED_KINDS = {'广播','慢直播','影视轮播'}
+EXCLUDED_KINDS = {'广播','慢直播','影视轮播','海外频道'}
 REGIONS = {
  '湖北':['湖北','武汉','江夏','宜昌','长阳','荆州','十堰','咸宁','襄阳','荆门','仙桃','潜江','随州','恩施','黄石','黄冈','麻城','保康','通山','远安','汉川','蕲春','鄂州','天门','神农架','阳新','房县','大冶','团风','浠水','英山','红安','嘉鱼','赤壁','崇阳','通城','巴东','利川','建始','宣恩','咸丰','来凤','鹤峰','枝江','当阳','宜都','秭归','兴山','五峰','罗田','武穴','黄梅','竹山','竹溪','郧阳','郧西','丹江口','钟祥','京山','沙洋','应城','安陆','云梦','孝昌','大悟','汉南','蔡甸'],
  '广东':['广东','广州','深圳','佛山','东莞','珠海','潮州','揭阳','汕头','江门','惠州','肇庆','湛江','茂名','中山','梅州','清远','韶关','河源','阳江','汕尾','云浮'],
@@ -74,9 +74,9 @@ def clean_name(name):
  name=re.sub(r'^\[(?:BD|IPTV|HD)\]\s*','',name,flags=re.I).lstrip('💚❤❤️📺 ')
  name=re.sub(r'(?<=湖北经视)\(湖北有线\)$','',name)
  name=re.sub(r'\s*\[(?:[^]]*(?:p|geo|not 24/7|1280|1920)[^]]*)\]', '', name, flags=re.I)
- name=re.sub(r'\s*\((?:\d{3,4}p|HD|SD|高清|标清|超清)\)\s*$', '',name,flags=re.I)
+ name=re.sub(r'\s*\((?:\d{3,4}[pi]|HD|SD|高清|标清|超清)\)\s*$', '',name,flags=re.I)
  name=re.sub(r'^(?:'+ '|'.join(REGIONS)+r')\s+[I|]\s+', '',name)
- name={'CETN3':'中国教育3','CCTV-卫生健康':'卫生健康','翡翠台北美版(TVB J1)':'翡翠台北美版','绍兴综合':'绍兴新闻综合','湖北经济':'湖北经视','湖北经济电视':'湖北经视','湖北经济频道':'湖北经视'}.get(name,name)
+ name={'江夏':'江夏综合','江夏新闻综合':'江夏综合','CGTN记录':'CGTN Documentary','CCTV+1':'CCTV1','CCTV+2':'CCTV2','CETN3':'中国教育3','CCTV-卫生健康':'卫生健康','翡翠台北美版(TVB J1)':'翡翠台北美版','绍兴综合':'绍兴新闻综合','湖北经济':'湖北经视','湖北经济电视':'湖北经视','湖北经济频道':'湖北经视'}.get(name,name)
  return re.sub(r'[\r\n"<>]', '',name).strip()[:100]
 
 
@@ -91,7 +91,8 @@ def classify(name,group):
  region=next((p for p,words in REGIONS.items() if any(name.upper().startswith(w.upper()) for w in words)),None)
  if not region:region=next((p for p in REGIONS if p in group), '其他')
  if any(w in name+' '+group for w in ['慢直播','风景','景区','日出','云海','草甸','远眺','观景','熊猫直播','峨眉山','九华山','玉女峰','雪山','十八盘','玉皇顶','南天门','山顶','索道','栈道','光明顶','大峡谷','碧霞祠','水长城','电视塔','悬崖','蓝月谷','金丝猴','无锡大剧院','瀑布','景观','摄像头']):return region,'慢直播'
- if any(w in name+' '+group for w in ['轮播','强森电影','林正英','周星驰','钟馗传说','成龙电影','李连杰电影','周润发电影','刘德华电影','黄渤电影','枪战电影','武侠电影','末日电影','电影合集','鬼吹灯之','军旅剧场','谍战剧场']):return region,'影视轮播'
+ if any(w in name+' '+group for w in ['轮播','强森电影','林正英','周星驰','钟馗传说','成龙电影','李连杰电影','周润发电影','刘德华电影','黄渤电影','枪战电影','武侠电影','末日电影','电影合集','韩国电影','鬼吹灯之','军旅剧场','谍战剧场']):return region,'影视轮播'
+ if name.upper()=='WILD TV' or name.startswith(('美国','加拿大','英国','日本','韩国','俄罗斯','法国','德国','意大利','西班牙','印度','巴西','阿根廷','伊朗','玻利维亚')):return '海外','海外频道'
  if re.search(r'CCTV|央视|中国教育|^CETV|^CGTN',name,re.I):return '全国','央视/教育'
  if any(w in name for w in ['广播','电台','之声']) or re.search(r'\b(?:FM|RADIO)\b',name,re.I):return region,'广播'
  if '卫视' in name:return region,'卫视'
@@ -337,6 +338,8 @@ def best_channels(results):
   return (w*h,-r.get('elapsed_seconds',999))
  for r in results:
   if not r['ok']:continue
+  display_name=clean_name(r['name'])
+  if display_name!=r['name']:r={**r,'source_name':r['name'],'name':display_name}
   k=key(r['name'])
   if k not in choices or score(r)>score(choices[k]):choices[k]=r
  return sorted(choices.values(),key=lambda r:(r['kind']!='地方台',r['region']!='湖北',r['region'],key(r['name'])))
@@ -373,7 +376,7 @@ def apply_program_eligibility(results):
  for r in results:
   region,kind=classify(clean_name(r['name']),r.get('group',''))
   if kind in EXCLUDED_KINDS:
-   r={**r,'media_ok':r.get('media_ok',r['ok']),'media_reason':r.get('media_reason',r.get('reason')),'ok':False,'reason':'non_tv_content','kind':kind,'region':region}
+   r={**r,'media_ok':r.get('media_ok',r['ok']),'media_reason':r.get('media_reason',r.get('reason')),'ok':False,'reason':'out_of_scope' if kind=='海外频道' else 'non_tv_content','kind':kind,'region':region}
   filtered.append(r)
  return filtered
 

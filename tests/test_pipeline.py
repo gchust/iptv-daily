@@ -15,6 +15,13 @@ class ExpandedInputTests(unittest.TestCase):
  def test_existing_movie_channels_remain_eligible(self):
   for name in ['CCTV6电影','风云剧场','第一剧场','广西影视','辽宁影视']:
    with self.subTest(name=name):self.assertEqual(len(u.parse_playlist(name+',https://example.com/live.m3u8','feed')),1)
+ def test_foreign_tv_is_not_a_domestic_regional_station(self):
+  self.assertEqual(u.classify('Wild TV','台湾'),('海外','海外频道'))
+  self.assertEqual(u.classify('美国Newsmax TV','香港'),('海外','海外频道'))
+ def test_jiangxia_and_interlaced_labels_merge(self):
+  self.assertEqual(u.key('江夏'),u.key('江夏新闻综合'))
+  self.assertEqual(u.key('江夏综合'),u.key('江夏新闻综合'))
+  self.assertEqual(u.key('CCTV-10 (576i)'),u.key('CCTV-10HD'))
  def test_obvious_feed_aliases_merge(self):
   self.assertEqual(u.key('CETN3'),u.key('中国教育3'))
   self.assertEqual(u.key('CCTV-卫生健康'),u.key('卫生健康'))

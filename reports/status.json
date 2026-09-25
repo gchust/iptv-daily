@@ -6,26 +6,29 @@
   "ocr_enabled": true,
   "candidate_urls": 22427,
   "tested_urls": 1600,
-  "passed_urls": 160,
-  "unique_channels": 156,
-  "regional_channels": 119,
+  "passed_urls": 138,
+  "unique_channels": 127,
+  "regional_channels": 95,
   "failed_sources": [],
   "runner": "GitHub Actions",
   "run_url": "https://github.com/gchust/iptv-daily/actions/runs/36147307360",
   "duration_seconds": 1123.3,
-  "publication_note": "Only URLs passing this run are published.",
+  "publication_note": "Only URLs passing the referenced cloud run and subsequent content eligibility review are published. Original media timestamps are preserved.",
   "requested_channels": [
     {
       "name": "湖北经视",
       "tested_urls": 39,
-      "passed_urls": 1,
+      "passed_urls": 0,
       "failure_reasons": {
         "invalid_or_unreachable_hls": 32,
+        "identity_unconfirmed": 1,
         "decode_failed": 6
       }
     }
   ],
-  "hubei_channels": 16,
-  "wuhan_channels": 4,
-  "upstream_count": 20
+  "hubei_channels": 13,
+  "wuhan_channels": 2,
+  "upstream_count": 20,
+  "media_passed_urls": 160,
+  "eligibility_reviewed_at": "2026-09-25T14:49:31+00:00"
 }

@@ -7,28 +7,31 @@
     "ocr_enabled": true,
     "candidate_urls": 22427,
     "tested_urls": 1600,
-    "passed_urls": 160,
-    "unique_channels": 156,
-    "regional_channels": 119,
+    "passed_urls": 138,
+    "unique_channels": 127,
+    "regional_channels": 95,
     "failed_sources": [],
     "runner": "GitHub Actions",
     "run_url": "https://github.com/gchust/iptv-daily/actions/runs/36147307360",
     "duration_seconds": 1123.3,
-    "publication_note": "Only URLs passing this run are published.",
+    "publication_note": "Only URLs passing the referenced cloud run and subsequent content eligibility review are published. Original media timestamps are preserved.",
     "requested_channels": [
       {
         "name": "湖北经视",
         "tested_urls": 39,
-        "passed_urls": 1,
+        "passed_urls": 0,
         "failure_reasons": {
           "invalid_or_unreachable_hls": 32,
+          "identity_unconfirmed": 1,
           "decode_failed": 6
         }
       }
     ],
-    "hubei_channels": 16,
-    "wuhan_channels": 4,
-    "upstream_count": 20
+    "hubei_channels": 13,
+    "wuhan_channels": 2,
+    "upstream_count": 20,
+    "media_passed_urls": 160,
+    "eligibility_reviewed_at": "2026-09-25T14:49:31+00:00"
   },
   "sources": [
     {
@@ -814,32 +817,34 @@
       "url": "https://gctxyc.liveplay.myqcloud.com/gc/ljgcdsc_1/index.m3u8",
       "group": "摄像头直播",
       "region": "云南",
-      "kind": "地方台",
+      "kind": "慢直播",
       "sources": [
         "https://raw.githubusercontent.com/reysc/M3U8/master/lt.txt"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:34:47+00:00",
       "ok": false,
-      "reason": "invalid_or_unreachable_hls",
+      "reason": "non_tv_content",
       "error": "Remote end closed connection without response",
       "elapsed_seconds": 1.88,
-      "retry_after": "invalid_or_unreachable_hls"
+      "retry_after": "invalid_or_unreachable_hls",
+      "media_ok": false,
+      "media_reason": "invalid_or_unreachable_hls"
     },
     {
       "name": "云南丽江蓝月谷",
       "url": "https://gcalic.v.myalicdn.com/gc/ylxs12_1/index.m3u8",
       "group": "云南频道",
       "region": "云南",
-      "kind": "地方台",
+      "kind": "慢直播",
       "sources": [
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8",
         "https://raw.githubusercontent.com/CCSH/IPTV/main/assets/test.txt"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:30:04+00:00",
-      "ok": true,
-      "reason": "passed",
+      "ok": false,
+      "reason": "non_tv_content",
       "seconds": 19.99,
       "frames": 496,
       "resolution": "1280x720",
@@ -850,7 +855,9 @@
       "hls_progressed": true,
       "ocr_checked": true,
       "ocr_elapsed_seconds": 1.26,
-      "elapsed_seconds": 12.36
+      "elapsed_seconds": 12.36,
+      "media_ok": true,
+      "media_reason": "passed"
     },
     {
       "name": "云南云南公共台",
@@ -962,34 +969,38 @@
       "url": "https://gctxyc.liveplay.myqcloud.com/gc/dlst03_1_md.m3u8",
       "group": "摄像头直播",
       "region": "云南",
-      "kind": "地方台",
+      "kind": "慢直播",
       "sources": [
         "https://raw.githubusercontent.com/reysc/M3U8/master/lt.txt"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:34:56+00:00",
       "ok": false,
-      "reason": "invalid_or_unreachable_hls",
+      "reason": "non_tv_content",
       "error": "Remote end closed connection without response",
       "elapsed_seconds": 7.07,
-      "retry_after": "invalid_or_unreachable_hls"
+      "retry_after": "invalid_or_unreachable_hls",
+      "media_ok": false,
+      "media_reason": "invalid_or_unreachable_hls"
     },
     {
       "name": "云南大理崇圣寺三塔湖面",
       "url": "https://gccncc.v.wscdns.com/gc/dlst02_1/index.m3u8",
       "group": "摄像头直播",
       "region": "云南",
-      "kind": "地方台",
+      "kind": "慢直播",
       "sources": [
         "https://raw.githubusercontent.com/reysc/M3U8/master/lt.txt"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:28:35+00:00",
       "ok": false,
-      "reason": "invalid_or_unreachable_hls",
+      "reason": "non_tv_content",
       "error": "<urlopen error [Errno -2] Name or service not known>",
       "elapsed_seconds": 0.05,
-      "retry_after": "invalid_or_unreachable_hls"
+      "retry_after": "invalid_or_unreachable_hls",
+      "media_ok": false,
+      "media_reason": "invalid_or_unreachable_hls"
     },
     {
       "name": "云南影视",
@@ -1227,14 +1238,14 @@
       "url": "https://live.ottiptv.cc/huya/11352898",
       "group": "云南频道",
       "region": "云南",
-      "kind": "地方台",
+      "kind": "影视轮播",
       "sources": [
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:38:07+00:00",
-      "ok": true,
-      "reason": "passed",
+      "ok": false,
+      "reason": "non_tv_content",
       "seconds": 20.0,
       "frames": 498,
       "resolution": "1920x804",
@@ -1244,7 +1255,9 @@
       "errors": [],
       "ocr_checked": true,
       "ocr_elapsed_seconds": 0.36,
-      "elapsed_seconds": 16.41
+      "elapsed_seconds": 16.41,
+      "media_ok": true,
+      "media_reason": "passed"
     },
     {
       "name": "20260925 06:48",
@@ -8275,15 +8288,15 @@
       "url": "https://gcalic.v.myalicdn.com/gc/wgw02_1/index.m3u8?contentid=2820180516001",
       "group": "",
       "region": "北京",
-      "kind": "地方台",
+      "kind": "慢直播",
       "sources": [
         "https://raw.githubusercontent.com/doubwing/iptv-5/main/list.txt",
         "https://raw.githubusercontent.com/reysc/M3U8/master/lt.txt"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:28:52+00:00",
-      "ok": true,
-      "reason": "passed",
+      "ok": false,
+      "reason": "non_tv_content",
       "seconds": 19.99,
       "frames": 399,
       "resolution": "1920x1080",
@@ -8294,7 +8307,9 @@
       "hls_progressed": true,
       "ocr_checked": true,
       "ocr_elapsed_seconds": 0.42,
-      "elapsed_seconds": 18.29
+      "elapsed_seconds": 18.29,
+      "media_ok": true,
+      "media_reason": "passed"
     },
     {
       "name": "北京清华大学电视台",
@@ -8651,15 +8666,15 @@
       "name": "Wild TV",
       "url": "https://dfhsahpa45kk2.cloudfront.net/scheduler/scheduleMaster/476.m3u8",
       "group": "🇹🇼台湾",
-      "region": "台湾",
-      "kind": "地方台",
+      "region": "海外",
+      "kind": "海外频道",
       "sources": [
         "https://raw.githubusercontent.com/CCSH/IPTV/main/assets/test.txt"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:33:54+00:00",
-      "ok": true,
-      "reason": "passed",
+      "ok": false,
+      "reason": "out_of_scope",
       "seconds": 19.99,
       "frames": 597,
       "resolution": "1920x1080",
@@ -8670,7 +8685,9 @@
       "hls_progressed": true,
       "ocr_checked": true,
       "ocr_elapsed_seconds": 0.46,
-      "elapsed_seconds": 13.95
+      "elapsed_seconds": 13.95,
+      "media_ok": true,
+      "media_reason": "passed"
     },
     {
       "name": "三立台湾台",
@@ -10262,17 +10279,19 @@
       "url": "https://gccncc.v.wscdns.com/gc/sgns01_1/index.m3u8",
       "group": "摄像头直播",
       "region": "四川",
-      "kind": "地方台",
+      "kind": "慢直播",
       "sources": [
         "https://raw.githubusercontent.com/reysc/M3U8/master/lt.txt"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:28:35+00:00",
       "ok": false,
-      "reason": "invalid_or_unreachable_hls",
+      "reason": "non_tv_content",
       "error": "<urlopen error [Errno -2] Name or service not known>",
       "elapsed_seconds": 0.01,
-      "retry_after": "invalid_or_unreachable_hls"
+      "retry_after": "invalid_or_unreachable_hls",
+      "media_ok": false,
+      "media_reason": "invalid_or_unreachable_hls"
     },
     {
       "name": "四川妇女",
@@ -10890,17 +10909,19 @@
       "url": "https://gccncc.v.wscdns.com/gc/tjhh01_1/index.m3u8",
       "group": "摄像头直播",
       "region": "天津",
-      "kind": "地方台",
+      "kind": "慢直播",
       "sources": [
         "https://raw.githubusercontent.com/reysc/M3U8/master/lt.txt"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:28:35+00:00",
       "ok": false,
-      "reason": "invalid_or_unreachable_hls",
+      "reason": "non_tv_content",
       "error": "<urlopen error [Errno -2] Name or service not known>",
       "elapsed_seconds": 0.01,
-      "retry_after": "invalid_or_unreachable_hls"
+      "retry_after": "invalid_or_unreachable_hls",
+      "media_ok": false,
+      "media_reason": "invalid_or_unreachable_hls"
     },
     {
       "name": "天津卫视",
@@ -11267,17 +11288,19 @@
       "url": "https://gccncc.v.wscdns.com/gc/nxspthhpl_1/index.m3u8",
       "group": "摄像头直播",
       "region": "宁夏",
-      "kind": "地方台",
+      "kind": "慢直播",
       "sources": [
         "https://raw.githubusercontent.com/reysc/M3U8/master/lt.txt"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:28:35+00:00",
       "ok": false,
-      "reason": "invalid_or_unreachable_hls",
+      "reason": "non_tv_content",
       "error": "<urlopen error [Errno -2] Name or service not known>",
       "elapsed_seconds": 0.02,
-      "retry_after": "invalid_or_unreachable_hls"
+      "retry_after": "invalid_or_unreachable_hls",
+      "media_ok": false,
+      "media_reason": "invalid_or_unreachable_hls"
     },
     {
       "name": "亳州农村",
@@ -11679,14 +11702,14 @@
       "url": "https://gcalic.v.myalicdn.com/gc/drs01_1/index.m3u8",
       "group": "🌈直播中国",
       "region": "安徽",
-      "kind": "地方台",
+      "kind": "慢直播",
       "sources": [
         "https://raw.githubusercontent.com/CCSH/IPTV/main/assets/test.txt"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:30:26+00:00",
-      "ok": true,
-      "reason": "passed",
+      "ok": false,
+      "reason": "non_tv_content",
       "seconds": 19.99,
       "frames": 496,
       "resolution": "1920x1080",
@@ -11697,7 +11720,9 @@
       "hls_progressed": true,
       "ocr_checked": true,
       "ocr_elapsed_seconds": 0.36,
-      "elapsed_seconds": 21.26
+      "elapsed_seconds": 21.26,
+      "media_ok": true,
+      "media_reason": "passed"
     },
     {
       "name": "淮北经济生活",
@@ -11870,7 +11895,7 @@
       "url": "https://gcalic.v.myalicdn.com/gc/hsgmd_1/index.m3u8",
       "group": "直播中国",
       "region": "安徽",
-      "kind": "地方台",
+      "kind": "慢直播",
       "sources": [
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt",
         "https://raw.githubusercontent.com/reysc/M3U8/master/lt.txt"
@@ -11878,10 +11903,12 @@
       "custom": false,
       "checked_at": "2026-09-25T14:28:48+00:00",
       "ok": false,
-      "reason": "invalid_or_unreachable_hls",
+      "reason": "non_tv_content",
       "error": "HTTP Error 404: Not Found",
       "elapsed_seconds": 0.77,
-      "retry_after": "invalid_or_unreachable_hls"
+      "retry_after": "invalid_or_unreachable_hls",
+      "media_ok": false,
+      "media_reason": "invalid_or_unreachable_hls"
     },
     {
       "name": "黄山公共生活",
@@ -11916,14 +11943,14 @@
       "url": "https://gcalic.v.myalicdn.com/gc/hsxhdxg_1/index.m3u8?contentid=2820180516001",
       "group": "摄像头直播",
       "region": "安徽",
-      "kind": "地方台",
+      "kind": "慢直播",
       "sources": [
         "https://raw.githubusercontent.com/reysc/M3U8/master/lt.txt"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:29:51+00:00",
-      "ok": true,
-      "reason": "passed",
+      "ok": false,
+      "reason": "non_tv_content",
       "seconds": 19.99,
       "frames": 499,
       "resolution": "1280x720",
@@ -11934,7 +11961,9 @@
       "hls_progressed": true,
       "ocr_checked": true,
       "ocr_elapsed_seconds": 0.68,
-      "elapsed_seconds": 12.27
+      "elapsed_seconds": 12.27,
+      "media_ok": true,
+      "media_reason": "passed"
     },
     {
       "name": "东营公共",
@@ -12776,7 +12805,7 @@
       "url": "https://gcalic.v.myalicdn.com/gc/hkts03_1/index.m3u8",
       "group": "山东频道",
       "region": "山东",
-      "kind": "地方台",
+      "kind": "慢直播",
       "sources": [
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8",
         "https://raw.githubusercontent.com/CCSH/IPTV/main/assets/test.txt",
@@ -12784,8 +12813,8 @@
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:29:10+00:00",
-      "ok": true,
-      "reason": "passed",
+      "ok": false,
+      "reason": "non_tv_content",
       "seconds": 19.99,
       "frames": 498,
       "resolution": "1280x720",
@@ -12796,7 +12825,9 @@
       "hls_progressed": true,
       "ocr_checked": true,
       "ocr_elapsed_seconds": 0.36,
-      "elapsed_seconds": 11.14
+      "elapsed_seconds": 11.14,
+      "media_ok": true,
+      "media_reason": "passed"
     },
     {
       "name": "济南平阴综合",
@@ -13398,16 +13429,16 @@
       "name": "黄花城水长城03",
       "url": "https://gcalic.v.myalicdn.com/gc/wgw03_1/index.m3u8",
       "group": "其他频道",
-      "region": "山东",
-      "kind": "地方台",
+      "region": "其他",
+      "kind": "慢直播",
       "sources": [
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8",
         "https://raw.githubusercontent.com/CCSH/IPTV/main/assets/test.txt"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:29:21+00:00",
-      "ok": true,
-      "reason": "passed",
+      "ok": false,
+      "reason": "non_tv_content",
       "seconds": 19.99,
       "frames": 498,
       "resolution": "1920x1080",
@@ -13418,7 +13449,9 @@
       "hls_progressed": true,
       "ocr_checked": true,
       "ocr_elapsed_seconds": 0.79,
-      "elapsed_seconds": 12.23
+      "elapsed_seconds": 12.23,
+      "media_ok": true,
+      "media_reason": "passed"
     },
     {
       "name": "古县综合",
@@ -14292,17 +14325,19 @@
       "url": "https://gctxyc.liveplay.myqcloud.com/gc/szgk01_1/index.m3u8",
       "group": "摄像头直播",
       "region": "广东",
-      "kind": "地方台",
+      "kind": "慢直播",
       "sources": [
         "https://raw.githubusercontent.com/reysc/M3U8/master/lt.txt"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:34:31+00:00",
       "ok": false,
-      "reason": "invalid_or_unreachable_hls",
+      "reason": "non_tv_content",
       "error": "Remote end closed connection without response",
       "elapsed_seconds": 5.49,
-      "retry_after": "invalid_or_unreachable_hls"
+      "retry_after": "invalid_or_unreachable_hls",
+      "media_ok": false,
+      "media_reason": "invalid_or_unreachable_hls"
     },
     {
       "name": "广东经济科教",
@@ -14556,7 +14591,7 @@
       "url": "https://gcalic.v.myalicdn.com/gc/hkts02_1/index.m3u8",
       "group": "广东频道",
       "region": "广东",
-      "kind": "地方台",
+      "kind": "慢直播",
       "sources": [
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8",
         "https://raw.githubusercontent.com/CCSH/IPTV/main/assets/test.txt",
@@ -14564,8 +14599,8 @@
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:29:34+00:00",
-      "ok": true,
-      "reason": "passed",
+      "ok": false,
+      "reason": "non_tv_content",
       "seconds": 19.99,
       "frames": 495,
       "resolution": "1280x720",
@@ -14576,7 +14611,9 @@
       "hls_progressed": true,
       "ocr_checked": true,
       "ocr_elapsed_seconds": 0.52,
-      "elapsed_seconds": 16.32
+      "elapsed_seconds": 16.32,
+      "media_ok": true,
+      "media_reason": "passed"
     },
     {
       "name": "深圳卫视",
@@ -16655,14 +16692,14 @@
       "url": "https://gcalic.v.myalicdn.com/gc/taishan05_1/index.m3u8",
       "group": "🌈直播中国",
       "region": "江苏",
-      "kind": "地方台",
+      "kind": "慢直播",
       "sources": [
         "https://raw.githubusercontent.com/CCSH/IPTV/main/assets/test.txt"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:28:21+00:00",
-      "ok": true,
-      "reason": "passed",
+      "ok": false,
+      "reason": "non_tv_content",
       "seconds": 19.99,
       "frames": 495,
       "resolution": "1920x1080",
@@ -16673,7 +16710,9 @@
       "hls_progressed": true,
       "ocr_checked": true,
       "ocr_elapsed_seconds": 0.48,
-      "elapsed_seconds": 24.82
+      "elapsed_seconds": 24.82,
+      "media_ok": true,
+      "media_reason": "passed"
     },
     {
       "name": "江苏无锡生活",
@@ -17263,8 +17302,8 @@
       "name": "中央电视塔东",
       "url": "https://gcalic.v.myalicdn.com/gc/ztd_1/index.m3u8",
       "group": "其他频道",
-      "region": "河北",
-      "kind": "地方台",
+      "region": "其他",
+      "kind": "慢直播",
       "sources": [
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8",
         "https://raw.githubusercontent.com/CCSH/IPTV/main/assets/test.txt",
@@ -17272,8 +17311,8 @@
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:30:57+00:00",
-      "ok": true,
-      "reason": "passed",
+      "ok": false,
+      "reason": "non_tv_content",
       "seconds": 19.99,
       "frames": 496,
       "resolution": "1920x1080",
@@ -17284,7 +17323,9 @@
       "hls_progressed": true,
       "ocr_checked": true,
       "ocr_elapsed_seconds": 0.47,
-      "elapsed_seconds": 18.52
+      "elapsed_seconds": 18.52,
+      "media_ok": true,
+      "media_reason": "passed"
     },
     {
       "name": "保定生活健康",
@@ -22915,17 +22956,19 @@
       "url": "http://play-a.quklive.com/live/a1580195060766997.m3u8",
       "group": "摄像头直播",
       "region": "湖北",
-      "kind": "地方台",
+      "kind": "慢直播",
       "sources": [
         "https://raw.githubusercontent.com/reysc/M3U8/master/lt.txt"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:29:05+00:00",
       "ok": false,
-      "reason": "invalid_or_unreachable_hls",
+      "reason": "non_tv_content",
       "error": "<urlopen error timed out>",
       "elapsed_seconds": 8.13,
-      "retry_after": "invalid_or_unreachable_hls"
+      "retry_after": "invalid_or_unreachable_hls",
+      "media_ok": false,
+      "media_reason": "invalid_or_unreachable_hls"
     },
     {
       "name": "武汉生活",
@@ -24170,8 +24213,8 @@
       ],
       "custom": true,
       "checked_at": "2026-09-25T14:27:51+00:00",
-      "ok": true,
-      "reason": "passed",
+      "ok": false,
+      "reason": "identity_unconfirmed",
       "seconds": 19.99,
       "frames": 1198,
       "resolution": "1280x720",
@@ -24182,7 +24225,17 @@
       "hls_progressed": true,
       "ocr_checked": true,
       "ocr_elapsed_seconds": 0.4,
-      "elapsed_seconds": 14.78
+      "elapsed_seconds": 14.78,
+      "media_ok": true,
+      "media_reason": "passed",
+      "content_review": {
+        "url": "http://207.56.13.146:81/daili/hbjs.m3u8",
+        "channel": "湖北经视",
+        "decision": "hold",
+        "reason": "identity_unconfirmed",
+        "reviewed_at": "2026-09-25T14:32:15+00:00",
+        "note": "A 20-second media sample and a 180-second follow-up decoded successfully. Four follow-up frames showed medicine advertisements with no broadcaster logo; the advertised channel identity could not be independently confirmed. Keep this candidate out of published TV playlists until reviewed."
+      }
     },
     {
       "name": "湖北经视",
@@ -24959,7 +25012,7 @@
       "url": "https://gcalic.v.myalicdn.com/gc/jshhd01_1/index.m3u8",
       "group": "直播中国",
       "region": "湖北",
-      "kind": "地方台",
+      "kind": "慢直播",
       "sources": [
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt",
         "https://raw.githubusercontent.com/reysc/M3U8/master/lt.txt"
@@ -24967,44 +25020,50 @@
       "custom": false,
       "checked_at": "2026-09-25T14:27:39+00:00",
       "ok": false,
-      "reason": "invalid_or_unreachable_hls",
+      "reason": "non_tv_content",
       "error": "HTTP Error 404: Not Found",
       "elapsed_seconds": 0.96,
-      "retry_after": "invalid_or_unreachable_hls"
+      "retry_after": "invalid_or_unreachable_hls",
+      "media_ok": false,
+      "media_reason": "invalid_or_unreachable_hls"
     },
     {
       "name": "神农架金丝猴02",
       "url": "https://gccncc.v.wscdns.com/gc/jsh02_1/index.m3u8",
       "group": "摄像头直播",
       "region": "湖北",
-      "kind": "地方台",
+      "kind": "慢直播",
       "sources": [
         "https://raw.githubusercontent.com/reysc/M3U8/master/lt.txt"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:28:34+00:00",
       "ok": false,
-      "reason": "invalid_or_unreachable_hls",
+      "reason": "non_tv_content",
       "error": "<urlopen error [Errno -2] Name or service not known>",
       "elapsed_seconds": 0.01,
-      "retry_after": "invalid_or_unreachable_hls"
+      "retry_after": "invalid_or_unreachable_hls",
+      "media_ok": false,
+      "media_reason": "invalid_or_unreachable_hls"
     },
     {
       "name": "神农架金丝猴06",
       "url": "https://gccncc.v.wscdns.com/gc/jsh06_1/index.m3u8",
       "group": "摄像头直播",
       "region": "湖北",
-      "kind": "地方台",
+      "kind": "慢直播",
       "sources": [
         "https://raw.githubusercontent.com/reysc/M3U8/master/lt.txt"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:28:34+00:00",
       "ok": false,
-      "reason": "invalid_or_unreachable_hls",
+      "reason": "non_tv_content",
       "error": "<urlopen error [Errno -2] Name or service not known>",
       "elapsed_seconds": 0.01,
-      "retry_after": "invalid_or_unreachable_hls"
+      "retry_after": "invalid_or_unreachable_hls",
+      "media_ok": false,
+      "media_reason": "invalid_or_unreachable_hls"
     },
     {
       "name": "秭归新闻综合",
@@ -26335,14 +26394,14 @@
       "url": "https://live.ottiptv.cc/yy/1354889019",
       "group": "湖南频道",
       "region": "湖南",
-      "kind": "地方台",
+      "kind": "影视轮播",
       "sources": [
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:37:47+00:00",
-      "ok": true,
-      "reason": "passed",
+      "ok": false,
+      "reason": "non_tv_content",
       "seconds": 19.99,
       "frames": 599,
       "resolution": "1280x720",
@@ -26353,21 +26412,23 @@
       "ocr_checked": true,
       "ocr_elapsed_seconds": 0.46,
       "elapsed_seconds": 19.59,
-      "retry_after": "incomplete_sample"
+      "retry_after": "incomplete_sample",
+      "media_ok": true,
+      "media_reason": "passed"
     },
     {
       "name": "枪战电影",
       "url": "https://live.metshop.top/huya/21059579",
       "group": "湖南频道",
       "region": "湖南",
-      "kind": "地方台",
+      "kind": "影视轮播",
       "sources": [
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:34:05+00:00",
-      "ok": true,
-      "reason": "passed",
+      "ok": false,
+      "reason": "non_tv_content",
       "seconds": 19.98,
       "frames": 499,
       "resolution": "1280x720",
@@ -26377,21 +26438,23 @@
       "errors": [],
       "ocr_checked": true,
       "ocr_elapsed_seconds": 0.33,
-      "elapsed_seconds": 16.51
+      "elapsed_seconds": 16.51,
+      "media_ok": true,
+      "media_reason": "passed"
     },
     {
       "name": "武侠电影",
       "url": "https://live.metshop.top/huya/11342427",
       "group": "湖南频道",
       "region": "湖南",
-      "kind": "地方台",
+      "kind": "影视轮播",
       "sources": [
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:35:06+00:00",
-      "ok": true,
-      "reason": "passed",
+      "ok": false,
+      "reason": "non_tv_content",
       "seconds": 19.99,
       "frames": 598,
       "resolution": "1280x720",
@@ -26402,7 +26465,9 @@
       "ocr_checked": true,
       "ocr_elapsed_seconds": 0.32,
       "elapsed_seconds": 14.28,
-      "retry_after": "media_errors"
+      "retry_after": "media_errors",
+      "media_ok": true,
+      "media_reason": "passed"
     },
     {
       "name": "湖南公共",
@@ -27035,15 +27100,15 @@
       "url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=743",
       "group": "湖南频道",
       "region": "湖南",
-      "kind": "地方台",
+      "kind": "影视轮播",
       "sources": [
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8",
         "https://raw.githubusercontent.com/CCSH/IPTV/main/assets/test.txt"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:35:36+00:00",
-      "ok": true,
-      "reason": "passed",
+      "ok": false,
+      "reason": "non_tv_content",
       "seconds": 19.99,
       "frames": 598,
       "resolution": "1280x720",
@@ -27054,21 +27119,23 @@
       "hls_progressed": true,
       "ocr_checked": true,
       "ocr_elapsed_seconds": 0.35,
-      "elapsed_seconds": 12.48
+      "elapsed_seconds": 12.48,
+      "media_ok": true,
+      "media_reason": "passed"
     },
     {
       "name": "黄渤电影",
       "url": "https://live.metshop.top/huya/11352876",
       "group": "湖南频道",
       "region": "湖南",
-      "kind": "地方台",
+      "kind": "影视轮播",
       "sources": [
         "https://raw.githubusercontent.com/zilong7728/Collect-IPTV/main/best_sorted.m3u8"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:34:37+00:00",
-      "ok": true,
-      "reason": "passed",
+      "ok": false,
+      "reason": "non_tv_content",
       "seconds": 19.98,
       "frames": 598,
       "resolution": "1280x720",
@@ -27079,7 +27146,9 @@
       "ocr_checked": true,
       "ocr_elapsed_seconds": 0.39,
       "elapsed_seconds": 14.43,
-      "retry_after": "media_errors"
+      "retry_after": "media_errors",
+      "media_ok": true,
+      "media_reason": "passed"
     },
     {
       "name": "澳视MACAU衛視",
@@ -28160,17 +28229,19 @@
       "url": "https://gccncc.v.wscdns.com/gc/wysdhpcy_1/index.m3u8",
       "group": "摄像头直播",
       "region": "福建",
-      "kind": "地方台",
+      "kind": "慢直播",
       "sources": [
         "https://raw.githubusercontent.com/reysc/M3U8/master/lt.txt"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:28:35+00:00",
       "ok": false,
-      "reason": "invalid_or_unreachable_hls",
+      "reason": "non_tv_content",
       "error": "<urlopen error [Errno -2] Name or service not known>",
       "elapsed_seconds": 0.01,
-      "retry_after": "invalid_or_unreachable_hls"
+      "retry_after": "invalid_or_unreachable_hls",
+      "media_ok": false,
+      "media_reason": "invalid_or_unreachable_hls"
     },
     {
       "name": "福建海峡卫视",
@@ -29353,8 +29424,8 @@
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:32:54+00:00",
-      "ok": true,
-      "reason": "passed",
+      "ok": false,
+      "reason": "channel_label_mismatch",
       "seconds": 19.99,
       "frames": 482,
       "resolution": "1920x1080",
@@ -29364,21 +29435,31 @@
       "errors": [],
       "ocr_checked": true,
       "ocr_elapsed_seconds": 0.8,
-      "elapsed_seconds": 21.57
+      "elapsed_seconds": 21.57,
+      "media_ok": true,
+      "media_reason": "passed",
+      "content_review": {
+        "url": "http://home.scanflove.com:7788/rtp/235.254.198.83:1608",
+        "channel": "重庆军事",
+        "decision": "hold",
+        "reason": "channel_label_mismatch",
+        "reviewed_at": "2026-09-25T14:43:52+00:00",
+        "note": "The sampled picture shows CCTV-7 branding, not an independently identified Chongqing regional station."
+      }
     },
     {
       "name": "重庆军旅剧场",
       "url": "http://home.scanflove.com:7788/rtp/235.254.198.75:1576",
       "group": "📡地方频道",
       "region": "重庆",
-      "kind": "地方台",
+      "kind": "影视轮播",
       "sources": [
         "https://raw.githubusercontent.com/CCSH/IPTV/main/assets/test.txt"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:34:43+00:00",
-      "ok": true,
-      "reason": "passed",
+      "ok": false,
+      "reason": "non_tv_content",
       "seconds": 19.99,
       "frames": 489,
       "resolution": "1920x1080",
@@ -29388,7 +29469,9 @@
       "errors": [],
       "ocr_checked": true,
       "ocr_elapsed_seconds": 0.42,
-      "elapsed_seconds": 21.61
+      "elapsed_seconds": 21.61,
+      "media_ok": true,
+      "media_reason": "passed"
     },
     {
       "name": "重庆卫视",
@@ -29690,8 +29773,8 @@
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:33:15+00:00",
-      "ok": true,
-      "reason": "passed",
+      "ok": false,
+      "reason": "channel_label_mismatch",
       "seconds": 19.99,
       "frames": 475,
       "resolution": "1920x1080",
@@ -29701,7 +29784,17 @@
       "errors": [],
       "ocr_checked": true,
       "ocr_elapsed_seconds": 0.76,
-      "elapsed_seconds": 23.57
+      "elapsed_seconds": 23.57,
+      "media_ok": true,
+      "media_reason": "passed",
+      "content_review": {
+        "url": "http://home.scanflove.com:7788/rtp/235.254.198.118:1748",
+        "channel": "重庆相声小品",
+        "decision": "hold",
+        "reason": "channel_label_mismatch",
+        "reviewed_at": "2026-09-25T14:43:52+00:00",
+        "note": "The sampled picture shows CCTV-11 branding. The provided regional channel label does not match the picture."
+      }
     },
     {
       "name": "重庆社会与法",
@@ -29733,14 +29826,14 @@
       "url": "http://home.scanflove.com:7788/rtp/235.254.198.117:1744",
       "group": "📡地方频道",
       "region": "重庆",
-      "kind": "地方台",
+      "kind": "影视轮播",
       "sources": [
         "https://raw.githubusercontent.com/CCSH/IPTV/main/assets/test.txt"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:33:39+00:00",
-      "ok": true,
-      "reason": "passed",
+      "ok": false,
+      "reason": "non_tv_content",
       "seconds": 19.99,
       "frames": 496,
       "resolution": "1920x1080",
@@ -29750,7 +29843,9 @@
       "errors": [],
       "ocr_checked": true,
       "ocr_elapsed_seconds": 0.49,
-      "elapsed_seconds": 21.39
+      "elapsed_seconds": 21.39,
+      "media_ok": true,
+      "media_reason": "passed"
     },
     {
       "name": "重庆都市",
@@ -30247,17 +30342,19 @@
       "url": "https://gccncc.v.wscdns.com/gc/zhhd01_1/index.m3u8",
       "group": "摄像头直播",
       "region": "陕西",
-      "kind": "地方台",
+      "kind": "慢直播",
       "sources": [
         "https://raw.githubusercontent.com/reysc/M3U8/master/lt.txt"
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:28:34+00:00",
       "ok": false,
-      "reason": "invalid_or_unreachable_hls",
+      "reason": "non_tv_content",
       "error": "<urlopen error [Errno -2] Name or service not known>",
       "elapsed_seconds": 0.45,
-      "retry_after": "invalid_or_unreachable_hls"
+      "retry_after": "invalid_or_unreachable_hls",
+      "media_ok": false,
+      "media_reason": "invalid_or_unreachable_hls"
     },
     {
       "name": "陕西生活",
@@ -31980,8 +32077,8 @@
       "name": "美国Newsmax TV",
       "url": "https://nmxlive.akamaized.net/hls/live/529965/Live_1/index.m3u8",
       "group": "国际",
-      "region": "香港",
-      "kind": "卫视",
+      "region": "海外",
+      "kind": "海外频道",
       "sources": [
         "https://raw.githubusercontent.com/reysc/M3U8/master/lt.txt",
         "https://raw.githubusercontent.com/xiaoran67/update/main/output/simple/full.txt",
@@ -31989,8 +32086,8 @@
       ],
       "custom": false,
       "checked_at": "2026-09-25T14:38:10+00:00",
-      "ok": true,
-      "reason": "passed",
+      "ok": false,
+      "reason": "out_of_scope",
       "seconds": 19.99,
       "frames": 600,
       "resolution": "1920x1080",
@@ -32001,7 +32098,9 @@
       "hls_progressed": true,
       "ocr_checked": true,
       "ocr_elapsed_seconds": 0.28,
-      "elapsed_seconds": 7.53
+      "elapsed_seconds": 7.53,
+      "media_ok": true,
+      "media_reason": "passed"
     },
     {
       "name": "翡翠剧集台(北美)",
