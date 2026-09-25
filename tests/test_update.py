@@ -26,6 +26,11 @@ class ParsingTests(unittest.TestCase):
   self.assertEqual(u.classify('CCTV-1','湖北'),('全国','央视/教育'))
   self.assertEqual(u.classify('湖北卫视',''),('湖北','卫视'))
   self.assertEqual(u.classify('南宁影视娱乐',''),('广西','地方台'))
+ def test_scenic_camera_not_regional_tv(self):
+  self.assertEqual(u.classify('四川峨眉山云海日出','四川')[1],'慢直播')
+  self.assertFalse(u.parse_playlist('四川峨眉山云海日出,'+URL,'test'))
+ def test_camera_group_excluded(self):
+  self.assertFalse(u.parse_playlist('慢直播,#genre#\n安徽综合,'+URL,'test'))
  def test_radio_skipped(self):
   self.assertFalse(u.parse_playlist('武汉广播,'+URL,'test'))
  def test_feed_quality_label_deduplicates(self):
