@@ -28,6 +28,10 @@ class ParsingTests(unittest.TestCase):
   self.assertEqual(u.classify('南宁影视娱乐',''),('广西','地方台'))
  def test_radio_skipped(self):
   self.assertFalse(u.parse_playlist('武汉广播,'+URL,'test'))
+ def test_feed_quality_label_deduplicates(self):
+  self.assertEqual(u.clean_name('浙江 I 绍兴综合 (576p)'), '绍兴新闻综合')
+ def test_negative_freeze_timestamp(self):
+  self.assertEqual(u.analyze_decode(GOOD_ERR+'freeze_start: -0.04',GOOD_OUT,20,0)['reason'],'frozen_picture')
  def test_normalization(self):self.assertEqual(u.key('武汉新闻综合（高清）'),u.key('武汉新闻综合 HD'))
  def test_hls_endlist_rejected(self):
   with patch.object(u,'fetch_text',return_value='#EXTM3U\n#EXTINF:10,\na.ts\n#EXT-X-ENDLIST'):

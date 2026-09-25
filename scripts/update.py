@@ -70,6 +70,9 @@ def safe_url(url):
 def clean_name(name):
  name=unicodedata.normalize('NFKC',name).strip().lstrip('\ufeff')
  name=re.sub(r'\s*\[(?:[^]]*(?:p|geo|not 24/7|1280|1920)[^]]*)\]', '', name, flags=re.I)
+ name=re.sub(r'\s*\((?:\d{3,4}p|HD|SD|高清|标清|超清)\)\s*$', '',name,flags=re.I)
+ name=re.sub(r'^(?:'+ '|'.join(REGIONS)+r')\s+[I|]\s+', '',name)
+ name={'绍兴综合':'绍兴新闻综合'}.get(name,name)
  return re.sub(r'[\r\n"<>]', '',name).strip()[:100]
 
 
@@ -112,7 +115,7 @@ def parse_playlist(text,source,custom=False):
    u=u.strip().split('$',1)[0]
    n=clean_name(name)
    if not n or not safe_url(u):continue
-   region,kind=classify(n,g)
+   region,kind=classify(n,g or name)
    if kind=='广播':continue
    result.append(Channel(n,u,g,region,kind,[source],custom))
  return result
@@ -182,11 +185,11 @@ def analyze_decode(stderr,stdout,seconds,returncode):
  resolution=re.search(r'Video:.*?\b(\d{3,4})x(\d{3,4})\b',stderr)
  errors=[l.strip() for l in stderr.splitlines() if re.search(r'Protocol .*not on whitelist|HTTP error|Error (?:opening|while|during)|Invalid data|Packet corrupt|corrupt input|non.monoton|Failed to|Error applying|Error initializing',l,re.I)]
  black=[float(v) for v in re.findall(r'black_duration:([\d.]+)',stderr)]
- starts=[float(v) for v in re.findall(r'black_start:([\d.]+)',stderr)]
- ends=[float(v) for v in re.findall(r'black_end:([\d.]+)',stderr)]
+ starts=[float(v) for v in re.findall(r'black_start:([-+]?[\d.]+)',stderr)]
+ ends=[float(v) for v in re.findall(r'black_end:([-+]?[\d.]+)',stderr)]
  freeze=[float(v) for v in re.findall(r'freeze_duration: ([\d.]+)',stderr)]
- fs=[float(v) for v in re.findall(r'freeze_start: ([\d.]+)',stderr)]
- fe=[float(v) for v in re.findall(r'freeze_end: ([\d.]+)',stderr)]
+ fs=[float(v) for v in re.findall(r'freeze_start: ([-+]?[\d.]+)',stderr)]
+ fe=[float(v) for v in re.findall(r'freeze_end: ([-+]?[\d.]+)',stderr)]
  duration=max(times,default=0)
  if len(starts)>len(ends):black.append(max(0,duration-starts[-1]))
  if len(fs)>len(fe):freeze.append(max(0,duration-fs[-1]))
