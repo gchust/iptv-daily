@@ -10,5 +10,10 @@
   "priority_regions": [
     "湖北"
   ],
-  "shards": 4
+  "shards": 4,
+  "include_kinds": [
+    "地方台",
+    "卫视",
+    "央视/教育"
+  ]
 }

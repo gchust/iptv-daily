@@ -83,5 +83,11 @@
     "name": "南宁影视娱乐",
     "url": "http://hls.nntv.cn/nnlive/YSYL_244.m3u8",
     "source": "https://github.com/zilong7728/Collect-IPTV/blob/main/best_sorted.m3u8"
+  },
+  {
+    "name": "湖北经视",
+    "url": "http://207.56.13.146:81/daili/hbjs.m3u8",
+    "source": "https://github.com/huakou/z/blob/main/hk.txt",
+    "note": "Candidate discovered 2026-09-25. Local 20-second media sample passed; must pass each cloud run. Channel identity is not implied by the source label."
   }
 ]

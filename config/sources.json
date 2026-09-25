@@ -83,5 +83,20 @@
     "name": "reysc IPTV",
     "url": "https://raw.githubusercontent.com/reysc/M3U8/master/lt.txt",
     "enabled": true
+  },
+  {
+    "name": "imDazui 国内电视台",
+    "url": "https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/%E5%9B%BD%E5%86%85%E7%94%B5%E8%A7%86%E5%8F%B0202509.m3u",
+    "enabled": true
+  },
+  {
+    "name": "xiaoran67 汇集",
+    "url": "https://raw.githubusercontent.com/xiaoran67/update/main/output/simple/full.txt",
+    "enabled": true
+  },
+  {
+    "name": "bravenavigator 地方台",
+    "url": "https://raw.githubusercontent.com/bravenavigator/link/main/live.txt",
+    "enabled": true
   }
 ]

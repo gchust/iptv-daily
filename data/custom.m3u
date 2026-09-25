@@ -33,3 +33,6 @@ http://live.shaoxing.com.cn/video/s10001-sxhb/index.m3u8
 http://live.shaoxing.com.cn/video/s10001-sxtv2/index.m3u8
 #EXTINF:-1 tvg-name="南宁影视娱乐" group-title="广西地方台",南宁影视娱乐
 http://hls.nntv.cn/nnlive/YSYL_244.m3u8
+
+#EXTINF:-1 group-title="湖北",湖北经视
+http://207.56.13.146:81/daili/hbjs.m3u8

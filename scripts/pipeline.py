@@ -36,7 +36,7 @@ def create_plan(root,limit=None):
   previous_rows=json.loads((root/'reports/channels.json').read_text())['channels']
   previous=[r['url'] for r in previous_rows]
   items=u.restore_previous(items,previous_rows,{s['url'] for s in sources if s.get('enabled',True)})
- selected=u.select_channels(items,settings['max_candidates'],previous,priority_channels=settings.get('priority_channels',()),priority_regions=settings.get('priority_regions',()))
+ selected=u.select_channels([c for c in items if c.kind in settings.get('include_kinds',('地方台','卫视','央视/教育','其他'))],settings['max_candidates'],previous,priority_channels=settings.get('priority_channels',()),priority_regions=settings.get('priority_regions',()))
  if not selected:raise ValueError('no candidates; previous playlists must not be replaced')
  plan={'created_at':u.utcnow(),'settings':settings,'sources':source_results,'candidate_urls':len(items),'selected':[dataclasses.asdict(c) for c in selected],'batches':split_hosts(selected,settings.get('shards',4))}
  plan['id']=plan_digest(plan)

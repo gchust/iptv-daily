@@ -13,7 +13,7 @@ UA = 'Mozilla/5.0 IPTV-Daily/1.0'
 OCR_SLOTS = threading.BoundedSemaphore(2)
 EXCLUDED_KINDS = {'广播','慢直播','影视轮播'}
 REGIONS = {
- '湖北':['湖北','武汉','江夏','宜昌','长阳','荆州','十堰','咸宁','襄阳','荆门','仙桃','潜江','随州','恩施','黄石','黄冈','麻城','保康','通山','远安','汉川','蕲春'],
+ '湖北':['湖北','武汉','江夏','宜昌','长阳','荆州','十堰','咸宁','襄阳','荆门','仙桃','潜江','随州','恩施','黄石','黄冈','麻城','保康','通山','远安','汉川','蕲春','鄂州','天门','神农架','阳新','房县','大冶','团风','浠水','英山','红安','嘉鱼','赤壁','崇阳','通城','巴东','利川','建始','宣恩','咸丰','来凤','鹤峰','枝江','当阳','宜都','秭归','兴山','五峰','罗田','武穴','黄梅','竹山','竹溪','郧阳','郧西','丹江口','钟祥','京山','沙洋','应城','安陆','云梦','孝昌','大悟','汉南','蔡甸'],
  '广东':['广东','广州','深圳','佛山','东莞','珠海','潮州','揭阳','汕头','江门','惠州','肇庆','湛江','茂名','中山','梅州','清远','韶关','河源','阳江','汕尾','云浮'],
  '浙江':['浙江','杭州','宁波','温州','绍兴','嘉兴','湖州','金华','台州','舟山','衢州','丽水','义乌','余姚','诸暨','海宁','桐乡','临海','瑞安','乐清'],
  '江苏':['江苏','南京','苏州','无锡','常州','镇江','扬州','南通','泰州','徐州','盐城','淮安','连云港','宿迁','昆山','常熟','江阴','宜兴'],
@@ -123,6 +123,7 @@ def parse_playlist(text,source,custom=False):
    u=u.strip().split('$',1)[0]
    n=clean_name(name)
    if not n or not safe_url(u):continue
+   if urlsplit(u).path.lower().endswith(('.mp4','.mkv','.mov','.avi','.mp3','.m4a','.wav')):continue
    region,kind=classify(n,g or name)
    if kind in EXCLUDED_KINDS:continue
    result.append(Channel(n,u,g,region,kind,[source],custom))
@@ -370,11 +371,18 @@ def publish(root,results,sources,total,selected,settings,started):
  checked=utcnow();rows=best_channels(results)
  reports=root/'reports';playlists=root/'playlists';old={}
  if (reports/'status.json').exists():old=json.loads((reports/'status.json').read_text())
+ requested=[]
+ for name in settings.get('priority_channels',[]):
+  attempted=[r for r in results if key(r['name'])==key(name)]
+  requested.append({'name':name,'tested_urls':len(attempted),'passed_urls':sum(r['ok'] for r in attempted),'failure_reasons':dict(Counter(r['reason'] for r in attempted if not r['ok']))})
  local=[r for r in rows if r['kind']=='地方台']
  hubei=[r for r in local if r['region']=='湖北']
  wuhan=[r for r in local if r['name'].startswith(('武汉','江夏'))]
  state='ok' if rows else 'failed_no_channels'
  status={'state':state,'last_attempt_at':checked,'last_success_at':checked if rows else old.get('last_success_at'),'sample_seconds':settings['sample_seconds'],'ocr_enabled':settings.get('ocr_enabled',False),'candidate_urls':total,'tested_urls':selected,'passed_urls':sum(r['ok'] for r in results),'unique_channels':len(rows),'regional_channels':len(local),'failed_sources':[s['name'] for s in sources if not s['ok']],'runner':os.getenv('GITHUB_ACTIONS') and 'GitHub Actions' or 'local','run_url':(os.getenv('GITHUB_SERVER_URL','https://github.com')+'/'+os.getenv('GITHUB_REPOSITORY','')+'/actions/runs/'+os.getenv('GITHUB_RUN_ID','')) if os.getenv('GITHUB_RUN_ID') else None,'duration_seconds':round(time.monotonic()-started,1),'publication_note':'Only URLs passing this run are published.' if rows else 'No playlist updated. Existing playlists are from the last successful run; see last_success_at.'}
+ status['requested_channels']=requested
+ status['hubei_channels']=len(hubei);status['wuhan_channels']=len(wuhan)
+ status['upstream_count']=len(sources)
  if rows:
   for name,subset in [('all',rows),('regional',local),('hubei',hubei),('wuhan',wuhan)]:
    atomic_write(playlists/(name+'.m3u'),m3u(subset,checked));atomic_write(playlists/(name+'.txt'),txt(subset))
@@ -384,6 +392,10 @@ def publish(root,results,sources,total,selected,settings,started):
  summary=['# 最近一次直播源检查','',f'- 检查时间（UTC）：{checked}',f'- 状态：{state}',f'- 收集 {total} 个去重URL，检测 {selected} 个，通过 {status["passed_urls"]} 个URL。',f'- 合并为 {len(rows)} 个频道，其中地方台 {len(local)} 个。',f'- 每路样本：{settings["sample_seconds"]} 秒；检测解码、音轨、黑屏、冻结及可用时的中文错误提示OCR。',f'- 执行环境：{status["runner"]}；结果不代表家庭网络连通性或长期稳定。']
  if not rows:summary+=['','**此次未发布任何新列表。现有播放列表保留上次成功结果，请检查最后成功时间；不能视为今天验证通过。**']
  if status['failed_sources']:summary+=['','部分上游读取失败：'+', '.join(status['failed_sources'])]
+ summary+=['','## 重点频道','','| 频道 | 检测URL | 通过URL | 未通过原因 |','|---|---:|---:|---|']
+ summary += [f'| {r["name"]} | {r["tested_urls"]} | {r["passed_urls"]} | {r["failure_reasons"]} |' for r in requested]
+ summary+=['','## 上游读取情况','','| 上游 | 候选条目 | 状态 |','|---|---:|---|']
+ summary += [f'| {s["name"]} | {s.get("candidates",0)} | {"成功" if s["ok"] else "失败"} |' for s in sources]
  summary+=['','## 通过的地方台','','| 地区 | 频道 | 分辨率 |','|---|---|---|']
  summary += [f'| {r["region"]} | {r["name"].replace("|", " ")} | {r["resolution"]} |' for r in local]
  atomic_write(reports/'summary.md','\n'.join(summary)+'\n')
@@ -417,7 +429,7 @@ def main(argv=None):
   # Explicitly removed custom URLs / disabled feeds are not resurrected.
   active_sources={s['url'] for s in sources if s.get('enabled',True)} if not args.custom_only else set()
   items=restore_previous(items,previous_rows,active_sources)
- selected=select_channels(items,settings['max_candidates'],previous,priority_channels=settings.get('priority_channels',()),priority_regions=settings.get('priority_regions',()))
+ selected=select_channels([c for c in items if c.kind in settings.get('include_kinds',('地方台','卫视','央视/教育','其他'))],settings['max_candidates'],previous,priority_channels=settings.get('priority_channels',()),priority_regions=settings.get('priority_regions',()))
  print(json.dumps({'stage':'collected','candidates':len(items),'selected':len(selected),'sources':source_results,'ocr':ocr},ensure_ascii=False),flush=True)
  results=probe_many(selected,settings,ffmpeg,ocr)
  status=publish(root,results,source_results,len(items),len(selected),settings,started)

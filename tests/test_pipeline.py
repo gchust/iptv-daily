@@ -9,6 +9,12 @@ class ExpandedInputTests(unittest.TestCase):
   text='#EXTINF:-1,tvg-id="湖北经视" group-title="湖北,武汉",湖北经视\nhttps://example.com/live.m3u8'
   c=u.parse_playlist(text,'feed')[0]
   self.assertEqual(c.name,'湖北经视');self.assertEqual(c.region,'湖北')
+ def test_direct_vod_not_live(self):
+  self.assertEqual(u.parse_playlist('湖北,#genre#\n湖北经视,https://example.com/program.mp4','feed'),[])
+ def test_hubei_county_classification(self):
+  self.assertEqual(u.classify('鄂州新闻综合',''),('湖北','地方台'))
+ def test_prefixed_jingshi_name(self):
+  self.assertEqual(u.clean_name('[BD]湖北经视'),'湖北经视')
  def test_economy_alias(self):self.assertEqual(u.clean_name('湖北经济'),'湖北经视')
  def test_all_requested_alternatives_get_a_chance(self):
   focused=[u.Channel('湖北经视',f'https://tv{i}.example.com/a.m3u8',region='湖北',kind='地方台') for i in range(20)]
