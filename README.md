@@ -32,6 +32,8 @@
 
 ## 重点频道专项复测
 
+[湖北经视实测记录（2026-09-25）](reports/hubei-jingshi-discovery-2026-09-25.md)：已确认两条真实频道线路；第二条通过云端60秒检测，但两条180秒延长测试均出现坏包。请把“当前能播”与“长期稳定”区分开。
+
 [Verify priority channels](https://github.com/gchust/iptv-daily/actions/workflows/priority.yml) 可单独复测自定义列表中的重点频道，实际解码60秒并执行中文OCR。结果独立写入 priority.m3u / priority.txt 和 reports/priority.json，不改变大列表的检测时间与历史记录；每日完整检测也会刷新这份重点频道订阅。专项检测没有通过项时会清空重点频道列表并报错，避免把旧结果冒充本次通过。大列表要等下一次完整检测通过后才收录新发现的频道。
 
 ## 如何增加频道和上游

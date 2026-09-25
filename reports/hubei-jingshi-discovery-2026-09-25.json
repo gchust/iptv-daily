@@ -55,6 +55,158 @@
     ],
     "elapsed_seconds": 181.84
   },
-  "conclusion": "Channel identity is confirmed and a 20-second sample passed. The 180-second sample decoded continuously without black/frozen/silent intervals, but reported corrupt packets and an H.264 decoding error. Long-sample strict health check therefore failed; do not describe this as an error-free 180-second pass.",
-  "image": "evidence/hubei-jingshi-2026-09-25.jpg"
+  "conclusion": "Two real Hubei Jingshi routes were visually confirmed. The second route passed a fresh GitHub Actions 60-second media and Chinese-OCR check and is published in the priority subscription. Both local 180-second samples reported packet/decode errors; do not describe either as an error-free or guaranteed-stable stream. The first route later returned HTTP 503 Client limit reached from GitHub Actions.",
+  "image": "evidence/hubei-jingshi-2026-09-25.jpg",
+  "updated_at": "2026-09-25T15:18:43.951295+00:00",
+  "currently_published_url": "http://58.19.32.207:4022/rtp/239.254.96.178:9148",
+  "latest_cloud_run": {
+    "url": "https://github.com/gchust/iptv-daily/actions/runs/36152869207",
+    "checked_at": "2026-09-25T15:16:23+00:00",
+    "tested_urls": 3,
+    "passed_urls": 1,
+    "sample_seconds": 60,
+    "results": [
+      {
+        "name": "湖北经视",
+        "url": "http://207.56.13.146:81/daili/hbjs.m3u8",
+        "group": "湖北",
+        "region": "湖北",
+        "kind": "地方台",
+        "sources": [
+          "data/custom.m3u"
+        ],
+        "custom": true,
+        "checked_at": "2026-09-25T15:15:22+00:00",
+        "ok": false,
+        "reason": "identity_unconfirmed",
+        "seconds": 59.99,
+        "frames": 1498,
+        "resolution": "1280x720",
+        "audio_rms_db": -12.216357,
+        "max_black_seconds": 0,
+        "max_freeze_seconds": 0,
+        "errors": [],
+        "hls_progressed": true,
+        "ocr_checked": true,
+        "ocr_elapsed_seconds": 0.3,
+        "elapsed_seconds": 29.69,
+        "media_ok": true,
+        "media_reason": "passed",
+        "content_review": {
+          "url": "http://207.56.13.146:81/daili/hbjs.m3u8",
+          "channel": "湖北经视",
+          "decision": "hold",
+          "reason": "identity_unconfirmed",
+          "reviewed_at": "2026-09-25T14:32:15+00:00",
+          "note": "A 20-second media sample and a 180-second follow-up decoded successfully. Four follow-up frames showed medicine advertisements with no broadcaster logo; the advertised channel identity could not be independently confirmed. Keep this candidate out of published TV playlists until reviewed."
+        }
+      },
+      {
+        "name": "湖北经视",
+        "url": "http://58.19.32.207:4022/rtp/239.254.96.178:9148",
+        "group": "湖北地方台",
+        "region": "湖北",
+        "kind": "地方台",
+        "sources": [
+          "data/custom.m3u"
+        ],
+        "custom": true,
+        "checked_at": "2026-09-25T15:15:22+00:00",
+        "ok": true,
+        "reason": "passed",
+        "seconds": 59.98,
+        "frames": 1494,
+        "resolution": "720x576",
+        "audio_rms_db": -29.402817,
+        "max_black_seconds": 0,
+        "max_freeze_seconds": 0,
+        "errors": [],
+        "ocr_checked": true,
+        "ocr_elapsed_seconds": 0.26,
+        "elapsed_seconds": 60.68
+      },
+      {
+        "name": "湖北经视",
+        "url": "http://hiliu.myds.me:18088/rtp/239.254.96.178:9148",
+        "group": "湖北地方台",
+        "region": "湖北",
+        "kind": "地方台",
+        "sources": [
+          "data/custom.m3u"
+        ],
+        "custom": true,
+        "checked_at": "2026-09-25T15:15:22+00:00",
+        "ok": false,
+        "reason": "decode_failed",
+        "seconds": 0,
+        "frames": 0,
+        "resolution": null,
+        "audio_rms_db": null,
+        "max_black_seconds": 0,
+        "max_freeze_seconds": 0,
+        "errors": [
+          "[http @ 0x56330cb28b40] HTTP error 503 Client limit reached",
+          "[in#0 @ 0x56330cb28600] Error opening input: Server returned 5XX Server Error reply",
+          "Error opening input file http://hiliu.myds.me:18088/rtp/239.254.96.178:9148."
+        ],
+        "elapsed_seconds": 0.54,
+        "retry_after": "decode_failed"
+      }
+    ]
+  },
+  "second_candidate": {
+    "url": "http://58.19.32.207:4022/rtp/239.254.96.178:9148",
+    "identity_confirmed": true,
+    "identity_method": "Manual live frame inspection: 湖北经视 logo and 桃花朵朵开 program",
+    "source": "https://github.com/jmheqiao/i-p-t-v/blob/fba192f80bac6ec454f0e11d2390caf88a095ebd/py/live.txt",
+    "short_probe": {
+      "name": "湖北经视频道",
+      "url": "http://58.19.32.207:4022/rtp/239.254.96.178:9148",
+      "group": "",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/jmheqiao/i-p-t-v/blob/fba192f80bac6ec454f0e11d2390caf88a095ebd/py/live.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T15:12:36+00:00",
+      "ok": true,
+      "reason": "passed",
+      "seconds": 20.0,
+      "frames": 490,
+      "resolution": "720x576",
+      "audio_rms_db": -32.002289,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [],
+      "elapsed_seconds": 21.1
+    },
+    "extended_probe": {
+      "name": "湖北经视",
+      "url": "http://58.19.32.207:4022/rtp/239.254.96.178:9148",
+      "group": "湖北",
+      "region": "湖北",
+      "kind": "地方台",
+      "sources": [
+        "https://github.com/jmheqiao/i-p-t-v/blob/fba192f80bac6ec454f0e11d2390caf88a095ebd/py/live.txt"
+      ],
+      "custom": false,
+      "checked_at": "2026-09-25T15:13:35+00:00",
+      "ok": false,
+      "reason": "media_errors",
+      "seconds": 180.0,
+      "frames": 4413,
+      "resolution": "720x576",
+      "audio_rms_db": -30.250437,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[mpegts @ 0x14f815380] Packet corrupt (stream = 0, dts = 6112130558).",
+        "[in#0/mpegts @ 0x14f8151a0] corrupt input packet in stream 0",
+        "[h264 @ 0x12ef11480] error while decoding MB 0 32, bytestream 1726"
+      ],
+      "elapsed_seconds": 183.25
+    },
+    "image": "evidence/hubei-jingshi-second-2026-09-25.jpg"
+  }
 }
