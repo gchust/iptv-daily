@@ -1,10 +1,10 @@
 {
   "state": "ok",
-  "checked_at": "2026-10-08T02:38:21+00:00",
+  "checked_at": "2026-10-09T02:41:41+00:00",
   "sample_seconds": 20,
   "ocr_enabled": true,
   "runner": "GitHub Actions",
-  "run_url": "https://github.com/gchust/iptv-daily/actions/runs/37716168815",
+  "run_url": "https://github.com/gchust/iptv-daily/actions/runs/37874023523",
   "tested_urls": 27,
   "passed_urls": 3,
   "channels": [
@@ -19,20 +19,20 @@
         "https://raw.githubusercontent.com/bravenavigator/link/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-10-08T02:06:59+00:00",
+      "checked_at": "2026-10-09T02:20:33+00:00",
       "ok": true,
       "reason": "passed",
       "seconds": 19.99,
       "frames": 1199,
       "resolution": "1280x720",
-      "audio_rms_db": -12.124066,
+      "audio_rms_db": -12.217055,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
       "ocr_checked": true,
-      "ocr_elapsed_seconds": 0.47,
-      "elapsed_seconds": 18.58
+      "ocr_elapsed_seconds": 0.6,
+      "elapsed_seconds": 34.04
     }
   ],
   "results": [
@@ -46,11 +46,11 @@
         "https://raw.githubusercontent.com/doubwing/iptv-5/main/list.txt"
       ],
       "custom": false,
-      "checked_at": "2026-10-08T02:07:07+00:00",
+      "checked_at": "2026-10-09T02:20:41+00:00",
       "ok": false,
       "reason": "invalid_or_unreachable_hls",
       "error": "<urlopen error timed out>",
-      "elapsed_seconds": 8.01,
+      "elapsed_seconds": 8.0,
       "retry_after": "invalid_or_unreachable_hls"
     },
     {
@@ -63,11 +63,11 @@
         "https://raw.githubusercontent.com/bravenavigator/link/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-10-08T02:06:54+00:00",
+      "checked_at": "2026-10-09T02:20:33+00:00",
       "ok": false,
       "reason": "invalid_or_unreachable_hls",
       "error": "<urlopen error [Errno 111] Connection refused>",
-      "elapsed_seconds": 0.24,
+      "elapsed_seconds": 0.23,
       "retry_after": "invalid_or_unreachable_hls"
     },
     {
@@ -81,11 +81,11 @@
         "https://raw.githubusercontent.com/xiaoran67/update/main/output/simple/full.txt"
       ],
       "custom": false,
-      "checked_at": "2026-10-08T02:06:59+00:00",
+      "checked_at": "2026-10-09T02:20:33+00:00",
       "ok": false,
       "reason": "invalid_or_unreachable_hls",
       "error": "not an HLS playlist",
-      "elapsed_seconds": 0.07,
+      "elapsed_seconds": 0.05,
       "retry_after": "invalid_or_unreachable_hls"
     },
     {
@@ -98,21 +98,20 @@
         "data/custom.m3u"
       ],
       "custom": true,
-      "checked_at": "2026-10-08T02:26:20+00:00",
+      "checked_at": "2026-10-09T02:20:37+00:00",
       "ok": false,
       "reason": "identity_unconfirmed",
       "seconds": 19.99,
       "frames": 498,
       "resolution": "1280x720",
-      "audio_rms_db": -12.590066,
+      "audio_rms_db": -13.679707,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
       "ocr_checked": true,
       "ocr_elapsed_seconds": 0.55,
-      "elapsed_seconds": 14.55,
-      "retry_after": "hls_not_updating",
+      "elapsed_seconds": 20.81,
       "media_ok": true,
       "media_reason": "passed",
       "content_review": {
@@ -135,20 +134,20 @@
         "https://raw.githubusercontent.com/bravenavigator/link/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-10-08T02:06:59+00:00",
+      "checked_at": "2026-10-09T02:20:33+00:00",
       "ok": true,
       "reason": "passed",
       "seconds": 19.99,
       "frames": 1199,
       "resolution": "1280x720",
-      "audio_rms_db": -12.124066,
+      "audio_rms_db": -12.217055,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "hls_progressed": true,
       "ocr_checked": true,
-      "ocr_elapsed_seconds": 0.47,
-      "elapsed_seconds": 18.58
+      "ocr_elapsed_seconds": 0.6,
+      "elapsed_seconds": 34.04
     },
     {
       "name": "湖北经视",
@@ -161,19 +160,19 @@
         "https://raw.githubusercontent.com/jmheqiao/i-p-t-v/HEAD/py/live.txt"
       ],
       "custom": true,
-      "checked_at": "2026-10-08T02:26:46+00:00",
+      "checked_at": "2026-10-09T02:20:33+00:00",
       "ok": true,
       "reason": "passed",
       "seconds": 19.99,
-      "frames": 475,
+      "frames": 495,
       "resolution": "720x576",
-      "audio_rms_db": -26.953859,
+      "audio_rms_db": -26.988619,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "ocr_checked": true,
-      "ocr_elapsed_seconds": 0.55,
-      "elapsed_seconds": 21.39
+      "ocr_elapsed_seconds": 0.84,
+      "elapsed_seconds": 21.49
     },
     {
       "name": "湖北经视",
@@ -185,21 +184,21 @@
         "https://raw.githubusercontent.com/jmheqiao/i-p-t-v/HEAD/py/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-10-08T02:26:26+00:00",
+      "checked_at": "2026-10-09T02:21:15+00:00",
       "ok": false,
       "reason": "media_errors",
       "seconds": 19.99,
-      "frames": 389,
+      "frames": 437,
       "resolution": "1920x1080",
-      "audio_rms_db": -26.351913,
+      "audio_rms_db": -26.736603,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [
-        "[mpegts @ 0x55aec9cce700] Packet corrupt (stream = 0, dts = 3791376233).",
-        "[h264 @ 0x55aec9cef9c0] error while decoding MB 117 30",
-        "[mpegts @ 0x55aec9cce700] Packet corrupt (stream = 0, dts = 3791448233)."
+        "[mpegts @ 0x557756aa7700] Packet corrupt (stream = 0, dts = 2949487641).",
+        "[mpegts @ 0x557756aa7700] Packet corrupt (stream = 0, dts = 2949556041).",
+        "[mpegts @ 0x557756aa7700] Packet corrupt (stream = 0, dts = 2949728841)."
       ],
-      "elapsed_seconds": 20.8,
+      "elapsed_seconds": 20.34,
       "retry_after": "media_errors"
     },
     {
@@ -212,7 +211,7 @@
         "https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/%E5%9B%BD%E5%86%85%E7%94%B5%E8%A7%86%E5%8F%B0202509.m3u"
       ],
       "custom": false,
-      "checked_at": "2026-10-08T02:07:22+00:00",
+      "checked_at": "2026-10-09T02:20:41+00:00",
       "ok": false,
       "reason": "invalid_or_unreachable_hls",
       "error": "<urlopen error timed out>",
@@ -229,7 +228,7 @@
         "https://raw.githubusercontent.com/bravenavigator/link/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-10-08T02:07:06+00:00",
+      "checked_at": "2026-10-09T02:20:57+00:00",
       "ok": false,
       "reason": "invalid_or_unreachable_hls",
       "error": "<urlopen error timed out>",
@@ -246,7 +245,7 @@
         "https://raw.githubusercontent.com/suxuang/myIPTV/main/back/ipv6.txt"
       ],
       "custom": false,
-      "checked_at": "2026-10-08T02:26:13+00:00",
+      "checked_at": "2026-10-09T02:20:41+00:00",
       "ok": false,
       "reason": "invalid_or_unreachable_hls",
       "error": "<urlopen error timed out>",
@@ -263,11 +262,11 @@
         "https://raw.githubusercontent.com/bravenavigator/link/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-10-08T02:26:05+00:00",
+      "checked_at": "2026-10-09T02:20:38+00:00",
       "ok": false,
       "reason": "invalid_or_unreachable_hls",
       "error": "<urlopen error [Errno 111] Connection refused>",
-      "elapsed_seconds": 0.25,
+      "elapsed_seconds": 0.21,
       "retry_after": "invalid_or_unreachable_hls"
     },
     {
@@ -280,7 +279,7 @@
         "https://raw.githubusercontent.com/maowei1125/spider-iptv/main/source/multicast/%E6%B9%96%E5%8C%97-%E7%94%B5%E4%BF%A1-239.69.1.m3u"
       ],
       "custom": false,
-      "checked_at": "2026-10-08T02:07:03+00:00",
+      "checked_at": "2026-10-09T02:20:38+00:00",
       "ok": false,
       "reason": "decode_failed",
       "seconds": 0,
@@ -290,11 +289,11 @@
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [
-        "[in#0 @ 0x564cdbac6600] Error opening input: Connection timed out",
+        "[in#0 @ 0x556585ddd600] Error opening input: Connection timed out",
         "Error opening input file http://59.173.49.7:8787/rtp/239.69.1.41:9886.",
         "Error opening input files: Connection timed out"
       ],
-      "elapsed_seconds": 5.07,
+      "elapsed_seconds": 5.06,
       "retry_after": "decode_failed"
     },
     {
@@ -307,11 +306,11 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/assets/test.txt"
       ],
       "custom": false,
-      "checked_at": "2026-10-08T02:07:00+00:00",
+      "checked_at": "2026-10-09T02:20:33+00:00",
       "ok": false,
       "reason": "invalid_or_unreachable_hls",
       "error": "<urlopen error [Errno 111] Connection refused>",
-      "elapsed_seconds": 0.26,
+      "elapsed_seconds": 0.24,
       "retry_after": "invalid_or_unreachable_hls"
     },
     {
@@ -324,11 +323,21 @@
         "https://raw.githubusercontent.com/CCSH/IPTV/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-10-08T02:06:59+00:00",
+      "checked_at": "2026-10-09T02:20:33+00:00",
       "ok": false,
-      "reason": "invalid_or_unreachable_hls",
-      "error": "not an HLS playlist",
-      "elapsed_seconds": 0.13,
+      "reason": "decode_failed",
+      "seconds": 0,
+      "frames": 0,
+      "resolution": null,
+      "audio_rms_db": null,
+      "max_black_seconds": 0,
+      "max_freeze_seconds": 0,
+      "errors": [
+        "[in#0 @ 0x555889cb9600] Error opening input: Invalid data found when processing input",
+        "Error opening input file http://63.141.230.178:82/gslb/zbdq5.m3u8?id=hbjs.",
+        "Error opening input files: Invalid data found when processing input"
+      ],
+      "elapsed_seconds": 1.21,
       "retry_after": "invalid_or_unreachable_hls"
     },
     {
@@ -341,7 +350,7 @@
         "https://raw.githubusercontent.com/cjh19831115/Meroser/main/IPTV-tvbox.txt"
       ],
       "custom": false,
-      "checked_at": "2026-10-08T02:06:54+00:00",
+      "checked_at": "2026-10-09T02:20:37+00:00",
       "ok": false,
       "reason": "invalid_or_unreachable_hls",
       "error": "<urlopen error [Errno 101] Network is unreachable>",
@@ -358,7 +367,7 @@
         "https://raw.githubusercontent.com/huaxiong96/TVBOX/HEAD/IPTV/%E6%B9%96%E5%8C%97%E7%94%B5%E4%BF%A1%E7%BB%84%E6%92%AD.txt"
       ],
       "custom": false,
-      "checked_at": "2026-10-08T02:26:14+00:00",
+      "checked_at": "2026-10-09T02:20:48+00:00",
       "ok": false,
       "reason": "decode_failed",
       "seconds": 0,
@@ -368,11 +377,11 @@
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [
-        "[in#0 @ 0x5568503a9600] Error opening input: Connection timed out",
+        "[in#0 @ 0x560dfe8de600] Error opening input: Connection timed out",
         "Error opening input file http://bk.myds.me:8899/rtp/239.254.96.178:9148.",
         "Error opening input files: Connection timed out"
       ],
-      "elapsed_seconds": 9.1,
+      "elapsed_seconds": 5.12,
       "retry_after": "decode_failed"
     },
     {
@@ -385,7 +394,7 @@
         "https://raw.githubusercontent.com/huaxiong96/TVBOX/HEAD/IPTV/%E6%B9%96%E5%8C%97%E7%94%B5%E4%BF%A1%E7%BB%84%E6%92%AD.txt"
       ],
       "custom": false,
-      "checked_at": "2026-10-08T02:26:28+00:00",
+      "checked_at": "2026-10-09T02:20:38+00:00",
       "ok": false,
       "reason": "decode_failed",
       "seconds": 0,
@@ -395,7 +404,7 @@
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [
-        "[in#0 @ 0x55e4b7aa1600] Error opening input: Connection timed out",
+        "[in#0 @ 0x559172f63600] Error opening input: Connection timed out",
         "Error opening input file http://bk.myds.me:8899/rtp/239.69.1.41:9886.",
         "Error opening input files: Connection timed out"
       ],
@@ -412,7 +421,7 @@
         "https://raw.githubusercontent.com/githubhc20/tv/main/tvv.txt"
       ],
       "custom": false,
-      "checked_at": "2026-10-08T02:26:05+00:00",
+      "checked_at": "2026-10-09T02:20:34+00:00",
       "ok": false,
       "reason": "decode_failed",
       "seconds": 0,
@@ -422,11 +431,11 @@
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [
-        "[in#0 @ 0x561017f13600] Error opening input: Network is unreachable",
+        "[in#0 @ 0x556965c19600] Error opening input: Network is unreachable",
         "Error opening input file http://dd.ikhs.cn:8880/udp/239.69.1.41:9886.",
         "Error opening input files: Network is unreachable"
       ],
-      "elapsed_seconds": 0.27,
+      "elapsed_seconds": 0.29,
       "retry_after": "decode_failed"
     },
     {
@@ -440,19 +449,20 @@
         "https://raw.githubusercontent.com/huaxiong96/TVBOX/HEAD/IPTV/%E6%B9%96%E5%8C%97%E7%94%B5%E4%BF%A1%E7%BB%84%E6%92%AD.txt"
       ],
       "custom": true,
-      "checked_at": "2026-10-08T02:26:47+00:00",
+      "checked_at": "2026-10-09T02:21:39+00:00",
       "ok": true,
       "reason": "passed",
       "seconds": 19.99,
-      "frames": 490,
+      "frames": 491,
       "resolution": "720x576",
-      "audio_rms_db": -26.919361,
+      "audio_rms_db": -28.885091,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [],
       "ocr_checked": true,
-      "ocr_elapsed_seconds": 0.5,
-      "elapsed_seconds": 21.31
+      "ocr_elapsed_seconds": 1.04,
+      "elapsed_seconds": 25.18,
+      "retry_after": "media_errors"
     },
     {
       "name": "湖北经视",
@@ -464,21 +474,21 @@
         "https://raw.githubusercontent.com/huaxiong96/TVBOX/HEAD/IPTV/%E6%B9%96%E5%8C%97%E7%94%B5%E4%BF%A1%E7%BB%84%E6%92%AD.txt"
       ],
       "custom": false,
-      "checked_at": "2026-10-08T02:26:26+00:00",
+      "checked_at": "2026-10-09T02:20:58+00:00",
       "ok": false,
       "reason": "media_errors",
-      "seconds": 19.96,
-      "frames": 423,
+      "seconds": 19.99,
+      "frames": 378,
       "resolution": "1920x1080",
-      "audio_rms_db": -26.328172,
+      "audio_rms_db": -27.903103,
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [
-        "[mpegts @ 0x556e6cd55700] Packet corrupt (stream = 0, dts = 3791394233).",
-        "[mpegts @ 0x556e6cd55700] Packet corrupt (stream = 0, dts = 3791451833).",
-        "[mpegts @ 0x556e6cd55700] Packet corrupt (stream = 0, dts = 3791581433)."
+        "[mpegts @ 0x55b2e4f28700] Packet corrupt (stream = 0, dts = 2947954041).",
+        "[mpegts @ 0x55b2e4f28700] Packet corrupt (stream = 0, dts = 2948026041).",
+        "[mpegts @ 0x55b2e4f28700] Packet corrupt (stream = 0, dts = 2948040441)."
       ],
-      "elapsed_seconds": 21.26,
+      "elapsed_seconds": 21.07,
       "retry_after": "media_errors"
     },
     {
@@ -491,7 +501,7 @@
         "https://raw.githubusercontent.com/bravenavigator/link/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-10-08T02:07:00+00:00",
+      "checked_at": "2026-10-09T02:20:39+00:00",
       "ok": false,
       "reason": "decode_failed",
       "seconds": 0,
@@ -501,11 +511,11 @@
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [
-        "[in#0 @ 0x555fe3958600] Error opening input: Connection refused",
+        "[in#0 @ 0x5582a5585600] Error opening input: Connection refused",
         "Error opening input file http://home.sylaigym.top:8887/rtp/239.69.1.41:9886.",
         "Error opening input files: Connection refused"
       ],
-      "elapsed_seconds": 0.58,
+      "elapsed_seconds": 0.55,
       "retry_after": "decode_failed"
     },
     {
@@ -518,7 +528,7 @@
         "https://raw.githubusercontent.com/reysc/M3U8/master/lt.txt"
       ],
       "custom": false,
-      "checked_at": "2026-10-08T02:07:00+00:00",
+      "checked_at": "2026-10-09T02:20:34+00:00",
       "ok": false,
       "reason": "decode_failed",
       "seconds": 0,
@@ -528,11 +538,11 @@
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [
-        "[tcp @ 0x558d8a431540] Failed to resolve hostname httpdvb.slave.homed.hrtn.net: Name or service not known",
-        "[in#0 @ 0x558d8a478600] Error opening input: Input/output error",
+        "[tcp @ 0x555c16e77540] Failed to resolve hostname httpdvb.slave.homed.hrtn.net: Name or service not known",
+        "[in#0 @ 0x555c16ebe600] Error opening input: Input/output error",
         "Error opening input file http://httpdvb.slave.homed.hrtn.net/playurl?playtype=live&protocol=hls&accesstoken=R5D22D2B7U309E0093K7735BBEDIAC2DC601PBM3187915V10453Z6B7EDWE3620470C71&&playtoken=&programid=4200000145.m3u8."
       ],
-      "elapsed_seconds": 0.39,
+      "elapsed_seconds": 0.3,
       "retry_after": "decode_failed"
     },
     {
@@ -545,7 +555,7 @@
         "https://raw.githubusercontent.com/xisohi/CHINA-IPTV/main/Unicast/hubei/mobile.txt"
       ],
       "custom": false,
-      "checked_at": "2026-10-08T02:26:21+00:00",
+      "checked_at": "2026-10-09T02:20:54+00:00",
       "ok": false,
       "reason": "invalid_or_unreachable_hls",
       "error": "<urlopen error [Errno 101] Network is unreachable>",
@@ -562,7 +572,7 @@
         "https://raw.githubusercontent.com/huaxiong96/TVBOX/HEAD/IPTV/%E6%B9%96%E5%8C%97%E7%94%B5%E4%BF%A1%E7%BB%84%E6%92%AD.txt"
       ],
       "custom": false,
-      "checked_at": "2026-10-08T02:07:03+00:00",
+      "checked_at": "2026-10-09T02:20:39+00:00",
       "ok": false,
       "reason": "decode_failed",
       "seconds": 0,
@@ -572,11 +582,11 @@
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [
-        "[in#0 @ 0x5623615f6600] Error opening input: Connection refused",
+        "[in#0 @ 0x55cb03b7c600] Error opening input: Connection refused",
         "Error opening input file http://laopo995mz.gicp.net:88/rtp/239.254.96.178:9148.",
         "Error opening input files: Connection refused"
       ],
-      "elapsed_seconds": 0.57,
+      "elapsed_seconds": 0.82,
       "retry_after": "decode_failed"
     },
     {
@@ -589,7 +599,7 @@
         "https://raw.githubusercontent.com/huaxiong96/TVBOX/HEAD/IPTV/%E6%B9%96%E5%8C%97%E7%94%B5%E4%BF%A1%E7%BB%84%E6%92%AD.txt"
       ],
       "custom": false,
-      "checked_at": "2026-10-08T02:07:01+00:00",
+      "checked_at": "2026-10-09T02:20:40+00:00",
       "ok": false,
       "reason": "decode_failed",
       "seconds": 0,
@@ -599,11 +609,11 @@
       "max_black_seconds": 0,
       "max_freeze_seconds": 0,
       "errors": [
-        "[in#0 @ 0x563a114c9600] Error opening input: Connection refused",
+        "[in#0 @ 0x55ed70a2d600] Error opening input: Connection refused",
         "Error opening input file http://laopo995mz.gicp.net:88/rtp/239.69.1.41:9886.",
         "Error opening input files: Connection refused"
       ],
-      "elapsed_seconds": 0.84,
+      "elapsed_seconds": 0.51,
       "retry_after": "decode_failed"
     },
     {
@@ -616,11 +626,11 @@
         "https://raw.githubusercontent.com/xisohi/CHINA-IPTV/main/Unicast/hubei/mobile.txt"
       ],
       "custom": false,
-      "checked_at": "2026-10-08T02:26:24+00:00",
+      "checked_at": "2026-10-09T02:20:50+00:00",
       "ok": false,
       "reason": "invalid_or_unreachable_hls",
       "error": "<urlopen error [Errno 101] Network is unreachable>",
-      "elapsed_seconds": 16.02,
+      "elapsed_seconds": 16.01,
       "retry_after": "invalid_or_unreachable_hls"
     },
     {
@@ -634,11 +644,11 @@
         "https://raw.githubusercontent.com/bravenavigator/link/main/live.txt"
       ],
       "custom": false,
-      "checked_at": "2026-10-08T02:07:02+00:00",
+      "checked_at": "2026-10-09T02:20:46+00:00",
       "ok": false,
       "reason": "invalid_or_unreachable_hls",
       "error": "The read operation timed out",
-      "elapsed_seconds": 8.08,
+      "elapsed_seconds": 8.05,
       "retry_after": "invalid_or_unreachable_hls"
     }
   ],
