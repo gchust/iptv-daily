@@ -1,4 +1,4 @@
 #EXTM3U
-# Verified at 2026-10-11T01:26:41+00:00; short media samples, no uptime guarantee.
+# Verified at 2026-10-12T01:49:11+00:00; short media samples, no uptime guarantee.
 #EXTINF:-1 tvg-name="湖北经视" group-title="湖北地方台",湖北经视
-http://192.151.150.154/live/hbjs.m3u8
+http://63.141.230.178:82/gslb/zbdq5.m3u8?id=hbjs
