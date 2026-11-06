@@ -1,7 +1,11 @@
 #EXTM3U
-# Verified at 2026-11-05T03:04:12+00:00; short media samples, no uptime guarantee.
+# Verified at 2026-11-06T02:57:58+00:00; short media samples, no uptime guarantee.
 #EXTINF:-1 tvg-name="十堰新闻" group-title="湖北地方台",十堰新闻
 http://61.184.94.75:83/hls/stream0.m3u8
+#EXTINF:-1 tvg-name="十堰经济旅游" group-title="湖北地方台",十堰经济旅游
+http://p8.vzan.com/slowlive/701367497774448672/live.m3u8
+#EXTINF:-1 tvg-name="宜昌旅游生活" group-title="湖北地方台",宜昌旅游生活
+http://liveplay.ycrmt.cn/sxgd/lysh.m3u8
 #EXTINF:-1 tvg-name="湖北IPTV导视" group-title="湖北地方台",湖北IPTV导视
 http://hiliu.myds.me:18088/rtp/239.69.1.65:10030
 #EXTINF:-1 tvg-name="湖北垄上" group-title="湖北地方台",湖北垄上
@@ -20,5 +24,5 @@ http://hiliu.myds.me:18088/rtp/239.254.96.177:9142
 http://hiliu.myds.me:18088/rtp/239.254.96.178:9148
 #EXTINF:-1 tvg-name="湖北综合频道" group-title="湖北地方台",湖北综合频道
 http://58.19.32.207:4022/rtp/239.254.96.177:9142
-#EXTINF:-1 tvg-name="随州综合" group-title="湖北地方台",随州综合
-https://34766.hlsplay.aodianyun.com/guangdianyun_34766/tv_channel_304.m3u8?auth_key=3302215019-0-0-de184e5122771cc495e468e9c7436cef&extra_key=Gpp9OoaDCH7QYfDm16Wcl4hKcngRCXVGx9VcHeaQX930Ka3v-c4mV2j97p_kbvdufvKF3Q6wFS1W_H1aXcWh_V1jOTCERh56NU_qMoXr0phq-bmgkVoBH38ozPxOe3-ykriQMcm-F2_pLFglvV2A78dDHi093smvbecTkzhTa9c
+#EXTINF:-1 tvg-name="麻城综合" group-title="湖北地方台",麻城综合
+https://video.yscxy.cn:8888/mctv1.m3u8
