@@ -1,20 +1,20 @@
 {
   "state": "ok",
-  "last_attempt_at": "2026-11-08T01:50:52+00:00",
-  "last_success_at": "2026-11-08T01:50:52+00:00",
+  "last_attempt_at": "2026-11-09T02:03:53+00:00",
+  "last_success_at": "2026-11-09T02:03:53+00:00",
   "sample_seconds": 20,
   "ocr_enabled": true,
-  "candidate_urls": 22679,
+  "candidate_urls": 22671,
   "tested_urls": 1600,
-  "passed_urls": 150,
-  "unique_channels": 140,
-  "regional_channels": 106,
+  "passed_urls": 152,
+  "unique_channels": 143,
+  "regional_channels": 107,
   "failed_sources": [
     "okay 汇集"
   ],
   "runner": "GitHub Actions",
-  "run_url": "https://github.com/gchust/iptv-daily/actions/runs/42434914956",
-  "duration_seconds": 881.0,
+  "run_url": "https://github.com/gchust/iptv-daily/actions/runs/42547424299",
+  "duration_seconds": 941.6,
   "publication_note": "Only URLs passing this run are published.",
   "requested_channels": [
     {
@@ -22,15 +22,14 @@
       "tested_urls": 44,
       "passed_urls": 2,
       "failure_reasons": {
-        "incomplete_sample": 1,
-        "invalid_or_unreachable_hls": 29,
+        "decode_failed": 9,
+        "invalid_or_unreachable_hls": 30,
         "identity_unconfirmed": 1,
-        "media_errors": 2,
-        "decode_failed": 9
+        "media_errors": 2
       }
     }
   ],
   "hubei_channels": 12,
-  "wuhan_channels": 1,
+  "wuhan_channels": 0,
   "upstream_count": 22
 }

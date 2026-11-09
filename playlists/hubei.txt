@@ -1,7 +1,6 @@
 湖北地方台,#genre#
 十堰新闻,http://61.184.94.75:83/hls/stream0.m3u8
-咸丰综合,https://46240.hlsplay.aodianyun.com/tv_radio_46240/tv_channel_3567.m3u8?auth_key=4867549325-0-0-cc7ce201270f1bfda8bd5c54e0e5739c&extra_key=hKfYhS2z6614oV0yCs-AFVt7IpvlJJgoGCHOij1q2onFz-Yr5Us2Cd41rIlv4l1XjWrMXCVgYMdOmrNAgjF2W_2a6vxf1HxtHHoYEC6BCIqSeo4VGtaHFxadD2xtzAtmsjFPKB3DP_Ev_ci_KC8TQllAks-AnwmJWoohc4XLA6Q
-江夏综合,http://59.175.226.142:280/gb28181/xwzh.m3u8
+宜昌综合,https://liveplay.ycrmt.cn/sxgd/zhpd.m3u8
 湖北IPTV导视,http://hiliu.myds.me:18088/rtp/239.69.1.65:10030
 湖北垄上,http://hiliu.myds.me:18088/rtp/239.254.96.184:9184
 湖北垄上频道,http://58.19.32.207:4022/rtp/239.254.96.184:9184
@@ -9,5 +8,6 @@
 湖北教育,http://hiliu.myds.me:18088/rtp/239.254.96.180:9160
 湖北教育频道,http://58.19.32.207:4022/rtp/239.254.96.180:9160
 湖北电视台,http://hiliu.myds.me:18088/rtp/239.254.96.177:9142
-湖北经视,http://hiliu.myds.me:18088/rtp/239.254.96.178:9148
-麻城综合,https://video.yscxy.cn:8888/mctv1.m3u8
+湖北经视,http://58.19.32.207:4022/rtp/239.254.96.178:9148
+湖北综合频道,http://58.19.32.207:4022/rtp/239.254.96.177:9142
+长阳综合,https://changyang-live21.cjyun.org/10114/s10114-cy1t.m3u8?auth_key=1798732799-ced13be0a8ae11efa7dfa7dfd677b8f3-0-69b7adceccbc5ea8f2cc6f34b34171af
