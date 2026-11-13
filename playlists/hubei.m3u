@@ -1,7 +1,7 @@
 #EXTM3U
-# Verified at 2026-11-12T03:26:12+00:00; short media samples, no uptime guarantee.
-#EXTINF:-1 tvg-name="宜昌综合" group-title="湖北地方台",宜昌综合
-https://liveplay.ycrmt.cn/sxgd/zhpd.m3u8
+# Verified at 2026-11-13T02:58:04+00:00; short media samples, no uptime guarantee.
+#EXTINF:-1 tvg-name="江夏综合" group-title="湖北地方台",江夏综合
+http://59.175.226.142:280/gb28181/xwzh.m3u8
 #EXTINF:-1 tvg-name="湖北IPTV导视" group-title="湖北地方台",湖北IPTV导视
 http://hiliu.myds.me:18088/rtp/239.69.1.65:10030
 #EXTINF:-1 tvg-name="湖北垄上" group-title="湖北地方台",湖北垄上
@@ -20,5 +20,7 @@ http://hiliu.myds.me:18088/rtp/239.254.96.177:9142
 http://hiliu.myds.me:18088/rtp/239.254.96.178:9148
 #EXTINF:-1 tvg-name="湖北综合频道" group-title="湖北地方台",湖北综合频道
 http://58.19.32.207:4022/rtp/239.254.96.177:9142
-#EXTINF:-1 tvg-name="麻城综合" group-title="湖北地方台",麻城综合
-https://video.yscxy.cn:8888/mctv1.m3u8
+#EXTINF:-1 tvg-name="长阳综合" group-title="湖北地方台",长阳综合
+https://changyang-live21.cjyun.org/10114/s10114-cy1t.m3u8?auth_key=1798732799-ced13be0a8ae11efa7dfa7dfd677b8f3-0-69b7adceccbc5ea8f2cc6f34b34171af
+#EXTINF:-1 tvg-name="随州农村" group-title="湖北地方台",随州农村
+https://34766.hlsplay.aodianyun.com/guangdianyun_34766/tv_channel_305.m3u8?auth_key=3302215637-0-0-ced6f406c4ff6e16edb0959f7d6600c5&extra_key=Z7grDZO4e_1OJTbTzz9CB1XhDyBay1lf_GPwKh_Q1ye7qTAt80lk4bAnyqM1YtS7-cCnEE600CDUMfLyba0O3pOROiZm7BHYTGFQuWxWiS176QsQu9OY_VTcvIkwzij3U_hgBqEW2Ko-M2oKgnFWVKgLft8SROIMGz1ZpWAPorQ

@@ -1,35 +1,35 @@
 {
   "state": "ok",
-  "last_attempt_at": "2026-11-12T03:26:12+00:00",
-  "last_success_at": "2026-11-12T03:26:12+00:00",
+  "last_attempt_at": "2026-11-13T02:58:04+00:00",
+  "last_success_at": "2026-11-13T02:58:04+00:00",
   "sample_seconds": 20,
   "ocr_enabled": true,
-  "candidate_urls": 22623,
+  "candidate_urls": 20659,
   "tested_urls": 1600,
-  "passed_urls": 153,
-  "unique_channels": 146,
-  "regional_channels": 120,
+  "passed_urls": 150,
+  "unique_channels": 140,
+  "regional_channels": 112,
   "failed_sources": [
     "okay 汇集"
   ],
   "runner": "GitHub Actions",
-  "run_url": "https://github.com/gchust/iptv-daily/actions/runs/43146315877",
-  "duration_seconds": 942.0,
+  "run_url": "https://github.com/gchust/iptv-daily/actions/runs/43354060701",
+  "duration_seconds": 866.8,
   "publication_note": "Only URLs passing this run are published.",
   "requested_channels": [
     {
       "name": "湖北经视",
-      "tested_urls": 44,
+      "tested_urls": 31,
       "passed_urls": 2,
       "failure_reasons": {
-        "invalid_or_unreachable_hls": 30,
+        "invalid_or_unreachable_hls": 18,
         "identity_unconfirmed": 1,
         "media_errors": 2,
-        "decode_failed": 9
+        "decode_failed": 8
       }
     }
   ],
-  "hubei_channels": 11,
-  "wuhan_channels": 0,
+  "hubei_channels": 12,
+  "wuhan_channels": 1,
   "upstream_count": 22
 }
