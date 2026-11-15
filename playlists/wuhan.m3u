@@ -1,2 +1,4 @@
 #EXTM3U
-# Verified at 2026-11-14T02:48:01+00:00; short media samples, no uptime guarantee.
+# Verified at 2026-11-15T02:14:25+00:00; short media samples, no uptime guarantee.
+#EXTINF:-1 tvg-name="江夏综合" group-title="湖北地方台",江夏综合
+http://59.175.226.142:280/gb28181/xwzh.m3u8
