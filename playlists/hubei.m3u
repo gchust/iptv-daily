@@ -1,7 +1,11 @@
 #EXTM3U
-# Verified at 2026-11-15T02:14:25+00:00; short media samples, no uptime guarantee.
+# Verified at 2026-11-16T02:30:58+00:00; short media samples, no uptime guarantee.
+#EXTINF:-1 tvg-name="十堰新闻" group-title="湖北地方台",十堰新闻
+http://61.184.94.75:83/hls/stream0.m3u8
+#EXTINF:-1 tvg-name="武汉一台新闻综合" group-title="湖北地方台",武汉一台新闻综合
+https://livestream.hannews.com.cn/hannews/1511-hannews.m3u8?txSecret=d5f030dd267db26d2311752e7cfcea76&txTime=6B352A80
 #EXTINF:-1 tvg-name="江夏综合" group-title="湖北地方台",江夏综合
-http://59.175.226.142:280/gb28181/xwzh.m3u8
+http://59.175.226.142:280/gb28181/xwzh.m3u8?zhubdhttp://hbqjdb.chinashadt.com:2035/live/3.stream/playlist.m3u8
 #EXTINF:-1 tvg-name="湖北IPTV导视" group-title="湖北地方台",湖北IPTV导视
 http://hiliu.myds.me:18088/rtp/239.69.1.65:10030
 #EXTINF:-1 tvg-name="湖北垄上" group-title="湖北地方台",湖北垄上
@@ -17,6 +21,6 @@ http://58.19.32.207:4022/rtp/239.254.96.180:9160
 #EXTINF:-1 tvg-name="湖北电视台" group-title="湖北地方台",湖北电视台
 http://hiliu.myds.me:18088/rtp/239.254.96.177:9142
 #EXTINF:-1 tvg-name="湖北经视" group-title="湖北地方台",湖北经视
-http://hiliu.myds.me:18088/rtp/239.254.96.178:9148
+http://58.19.32.207:4022/rtp/239.254.96.178:9148
 #EXTINF:-1 tvg-name="湖北综合频道" group-title="湖北地方台",湖北综合频道
 http://58.19.32.207:4022/rtp/239.254.96.177:9142
