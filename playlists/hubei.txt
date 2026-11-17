@@ -1,6 +1,5 @@
 湖北地方台,#genre#
 十堰新闻,http://61.184.94.75:83/hls/stream0.m3u8
-武汉一台新闻综合,https://livestream.hannews.com.cn/hannews/1511-hannews.m3u8?txSecret=d5f030dd267db26d2311752e7cfcea76&txTime=6B352A80
 江夏综合,http://59.175.226.142:280/gb28181/xwzh.m3u8?zhubdhttp://hbqjdb.chinashadt.com:2035/live/3.stream/playlist.m3u8
 湖北IPTV导视,http://hiliu.myds.me:18088/rtp/239.69.1.65:10030
 湖北垄上,http://hiliu.myds.me:18088/rtp/239.254.96.184:9184
